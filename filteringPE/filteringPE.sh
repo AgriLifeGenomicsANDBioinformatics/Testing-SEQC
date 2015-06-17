@@ -123,6 +123,7 @@ echo "For far: $FAR_FORMAT"
 echo "For bowtie: $BOWTIE_QUAL"
 echo "Using $THREADS threads..."
 
+############################################################################################################
 # [ Quality and adaptor trimming ]
 # Flexible Adapter Remover, version 2.0
 # example /home/lishe/bin/far --adapters ~/genome/adaptor/pe/pe.fa --source CMM5_1.txt --source2 CMM5_2.txt --target CMM5_F1 --format fastq --cut-off 1 --min-overlap 10 --min-readlength 35 --phred-pre-trim 20 --max-uncalled 2 --adaptive-overlap yes
@@ -161,6 +162,8 @@ echo "Using $THREADS threads..."
 #else
 #        skip "trimming..."
 #fi
+############################################################################################################
+
 
 # [ PolyA/T trimming ]
 prefix1="$outdir/${LIBRARY}_F1"
@@ -188,34 +191,35 @@ else
 fi
 
 # [ ChrM filtering ]
+# Indexes have to be generated beforehand.
 prefix2="$outdir/${LIBRARY}_F2"
-# bowtie version: bowtie version 0.12.3
-#bowtie "$BOWTIE_QUAL" --threads "$THREADS" $CMCCHRM -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_1.fastq.gz") --un "$prefix2"
 bowtie -q --un "$prefix2.fastq" --threads "$THREADS" "$CMCCHRM" -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_1.fastq.gz") &>"$prefix2".log
 gzip "$prefix2"_1.fastq
 gzip "$prefix2"_2.fastq
-rm "$outdir"/*_F1_*
-exit 0
+#rm "$outdir"/*_F1_*
 
 # [ rRNA filtering ]
 # bwa Version: 0.5.9-r16
-
+# Indexes have to be generated beforehand.
+prefix3="$outdir/${LIBRARY}_F3"
 # bwa parameters
 OPTIONS="-n 3 -o 2 -e 1 -k 2 -t "$THREADS""
-bwa aln $OPTIONS $RRNA $V4SCRATCH/${LIBRARY}_F2_1.fastq.gz  > $V4SCRATCH/${LIBRARY}_F3_1.sai
-bwa aln $OPTIONS $RRNA $V4SCRATCH/${LIBRARY}_F2_2.fastq.gz  > $V4SCRATCH/${LIBRARY}_F3_2.sai
-bwa sampe -P $RRNA $V4SCRATCH/${LIBRARY}_F3_1.sai $V4SCRATCH/${LIBRARY}_F3_2.sai $V4SCRATCH/${LIBRARY}_F2_1.fastq.gz $V4SCRATCH/${LIBRARY}_F2_2.fastq.gz  > $V4SCRATCH/${LIBRARY}_F3.sam
-rm $V4SCRATCH/${LIBRARY}_F2_1.fastq.gz
-rm $V4SCRATCH/${LIBRARY}_F2_2.fastq.gz
-rm $V4SCRATCH/${LIBRARY}_F3_1.sai
-rm $V4SCRATCH/${LIBRARY}_F3_2.sai
+bwa aln "$OPTIONS" "$RRNA" "$prefix2"_1.fastq.gz  > "$prefix3"_1.sai &>"$prefix3".log
+bwa aln "$OPTIONS" "$RRNA" "$prefix2"_2.fastq.gz  > "$prefix3"_2.sai &>>"$prefix3".log
+bwa sampe -P "$RRNA" "$prefix3"_1.sai "$prefix3"_2.sai \
+  "$prefix2"_1.fastq.gz "$prefix2"_2.fastq.gz  > "$prefix3".sam &>>"$prefix3".log
+#rm "$outdir"/*.sai
+#rm "$outdir"/*.gz
+
 # after bwa alignment, parse out unmapped reads and convert back to fastq file
-samtools view -S -f 0x04 $V4SCRATCH/${LIBRARY}_F3.sam | java -Xmx2g -jar $SAMTOFASTQ INPUT=/dev/stdin VALIDATION_STRINGENCY=SILENT QUIET=true FASTQ=$V4SCRATCH/${LIBRARY}_F3_1.fastq SECOND_END_FASTQ=$V4SCRATCH/${LIBRARY}_F3_2.fastq
+samtools view -S -f 0x04 "$prefix3".sam | java -Xmx2g -jar $SAMTOFASTQ INPUT=/dev/stdin VALIDATION_STRINGENCY=SILENT QUIET=true FASTQ="$prefix3"_1.fastq SECOND_END_FASTQ="$prefix3"_2.fastq
+
+gzip "$prefix3"_1.fastq
+gzip "$prefix3"_2.fastq
+#rm "$prefix3".sam
+
 # [ pairing sequence ]
 # pair the paired end reads after bwa using Far
 # example: PairedreadFinder -s1 CMM5_F2_1.fastq -s2 CMM5_F2_2.fastq -f fastq -t1 CMM5_1.paired -t2 CMM5_2.paired -is 2
 # PairedreadFinder -s1 ${LIBRARY}_F2_1.fastq -s2 ${LIBRARY}_F2_2.fastq -f fastq -t1 ${LIBRARY}_1.paired -t2 ${LIBRARY}_2.paired -is 2
-gzip $V4SCRATCH/${LIBRARY}_F3_1.fastq
-gzip $V4SCRATCH/${LIBRARY}_F3_2.fastq
-rm $V4SCRATCH/${LIBRARY}_F3.sam
 # [ program end ]

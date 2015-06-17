@@ -1,0 +1,875 @@
+808304 437 11
+0 gi|555853|gb|U13369.1|HSU13369 Human ribosomal DNA complete repeating unit
+0 42999 10
+0 AAEX02032768.1.3083 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Carnivora;Caniformia;Canidae;Canis;;Canis lupus familiaris (dog)
+42999 3083 446
+0 AAHY01755622.1.2975 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+46082 2975 494
+0 AAIY01147381.252.4046 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Afrotheria;Tenrecidae;Tenrecinae;Echinops;;Echinops telfairi (small Madagascar hedgehog)
+49057 3738 524
+0 AAGW02077981.8126.10283 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Leporidae;Oryctolagus;;Oryctolagus cuniculus (rabbit)
+52795 2050 294
+0 AADC01019720.3.2196 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+54845 2187 403
+0 AADA01096217.1.3693 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+57032 3685 665
+0 AAIY01301510.1.2092 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Afrotheria;Tenrecidae;Tenrecinae;Echinops;;Echinops telfairi (small Madagascar hedgehog)
+60717 2092 269
+0 AAGW02082887.571.4458 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Leporidae;Oryctolagus;;Oryctolagus cuniculus (rabbit)
+62809 3805 744
+0 AAGV020842172.24.2409 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Xenarthra;Dasypodidae;Dasypus;;Dasypus novemcinctus (nine-banded armadillo)
+66614 2076 327
+0 AAIY01436766.1.2621 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Afrotheria;Tenrecidae;Tenrecinae;Echinops;;Echinops telfairi (small Madagascar hedgehog)
+68690 2621 506
+0 AANN01759471.6915.9593 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Erinaceidae;Erinaceinae;Erinaceus;;Erinaceus europaeus (western European hedgehog)
+71311 2564 350
+0 AAKN02012213.60317.63186 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Hystricognathi;Caviidae;Cavia;;Cavia porcellus (Domestic guinea pig)
+73875 2868 492
+0 AANU01094733.8.2822 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Cercopithecidae;Cercopithecinae;Macaca;;Macaca mulatta (rhesus monkey)
+76743 2801 525
+0 AAPY01807079.1.3234 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+79544 3234 556
+0 ABRN01262383.956.4861 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Cetacea;Odontoceti;Delphinidae;Tursiops;;Tursiops truncatus (bottlenosed dolphin)
+82778 3554 578
+0 AC091339.875044.878354 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+86332 3304 446
+0 AC197289.113486.117408 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Chiroptera;Microchiroptera;Vespertilionidae;Myotis;;Myotis lucifugus (little brown bat)
+89636 3857 594
+0 AC138525.469505.473174 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+93493 3654 676
+0 AC139250.553416.557085 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+97147 3654 676
+0 AC199649.206154.210111 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Chiroptera;Microchiroptera;Vespertilionidae;Myotis;;Myotis lucifugus (little brown bat)
+100801 3801 577
+0 AK154459.1.2295 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+104602 2278 311
+0 AK133917.1.2507 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+106880 2495 331
+0 BK000964.8123.12852 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+109375 4622 619
+0 AY390526.6312.8240 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Cricetidae;Cricetinae;Cricetulus;;Cricetulus griseus (Chinese hamster)
+113997 1929 245
+0 M30951.1.2467 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Gorilla;;Gorilla gorilla (Western Gorilla)
+115926 2461 295
+0 DQ222453.4134.8675 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Ruminantia;Pecora;Bovidae;Bovinae;Bos;;Bos taurus (cattle)
+118387 4529 800
+0 FB355642.1463.5022 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+122916 3453 449
+0 GM049488.1455.5012 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+126369 3451 449
+0 GN334774.1463.5022 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+129820 3453 449
+0 HI519109.1455.5012 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+133273 3451 449
+0 X00525.1.4712 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+136724 4618 618
+0 V01270.3862.8647 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+141342 4703 604
+0 AABR05132732.1.1428 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+146045 1428 222
+0 AADB02025922.6473.8212 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+147473 1740 307
+0 AADC01164481.5.1695 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+149213 1691 292
+0 AADD01211046.115.1968 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+150904 1854 333
+0 AAEX02007663.1345.3212 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Carnivora;Caniformia;Canidae;Canis;;Canis lupus familiaris (dog)
+152758 1868 291
+0 AAFR03070018.1733.3622 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+154626 1890 298
+0 AAGU03092596.568.2374 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Afrotheria;Proboscidea;Elephantidae;Loxodonta;;Loxodonta africana (African savanna elephant)
+156516 1807 290
+0 AAGW02077989.3578.5445 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Leporidae;Oryctolagus;;Oryctolagus cuniculus (rabbit)
+158323 1868 291
+0 AACN010223494.1.1769 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Carnivora;Caniformia;Canidae;Canis;;Canis lupus familiaris (dog)
+160191 1769 274
+0 AADA01085782.1139.2988 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+161960 1850 332
+0 AADA01325358.292.2165 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+163810 1874 319
+0 AADB02037580.14937.16783 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+165684 1847 326
+0 AADD01205248.5.1595 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+167531 1591 274
+0 AAKN02012213.64178.66019 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Hystricognathi;Caviidae;Cavia;;Cavia porcellus (Domestic guinea pig)
+169122 1842 330
+0 AALT01665807.157.1693 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Soricidae;Soricinae;Sorex;;Sorex araneus (European shrew)
+170964 1537 237
+0 AAFR03068188.7123.9012 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+172501 1890 297
+0 AAFR03071841.2422.4314 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+174391 1893 297
+0 AAGW02076165.15899.17764 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Leporidae;Oryctolagus;;Oryctolagus cuniculus (rabbit)
+176284 1866 297
+0 AANG01520942.24.1438 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Carnivora;Feliformia;Felidae;Felinae;Felis;;Felis catus (domestic cat)
+178150 1415 210
+0 AAIY01386613.1092.2893 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Afrotheria;Tenrecidae;Tenrecinae;Echinops;;Echinops telfairi (small Madagascar hedgehog)
+179565 1802 353
+0 AANN01161813.9.1494 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Erinaceidae;Erinaceinae;Erinaceus;;Erinaceus europaeus (western European hedgehog)
+181367 1486 227
+0 AAPE02054660.131.1675 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Chiroptera;Microchiroptera;Vespertilionidae;Myotis;;Myotis lucifugus (little brown bat)
+182853 1545 238
+0 AAPY01443741.13.1609 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+184398 1597 237
+0 AAPY01772571.725.2264 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+185995 1540 235
+0 AABR05044379.4632.6502 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+187535 1871 293
+0 AAQQ01485390.1.1498 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Sciuridae;Xerinae;Marmotini;Spermophilus;;Spermophilus tridecemlineatus (thirteen-lined ground squirrel)
+189406 1498 223
+0 AAQR01390433.92.1326 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Strepsirrhini;Lorisiformes;Galagidae;Otolemur;;Otolemur garnettii (small-eared galago)
+190904 1235 189
+0 AALT01208865.123.1453 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Soricidae;Soricinae;Sorex;;Sorex araneus (European shrew)
+192139 1331 201
+0 AADA01153094.35.1295 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+193470 1261 210
+0 AADB02014478.14620.16478 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+194731 1859 325
+0 AADC01019709.42.1652 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+196590 1611 289
+0 AADD01207578.114.1964 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+198201 1851 332
+0 AACZ03179904.293.1854 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+200052 1562 292
+0 AADA01204510.3331.5074 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+201614 1744 318
+0 AADB02027115.13.1662 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+203358 1650 285
+0 AADD01204500.13.1664 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+205008 1652 283
+0 AACZ03172576.1828.3684 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+206660 1857 328
+0 AADB02026033.5126.6979 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+208517 1854 329
+0 AADC01167538.571.2438 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+210371 1868 289
+0 AAFR03069067.67.1955 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+212239 1889 297
+0 AAFR03072119.184.2073 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+214128 1890 296
+0 AACZ03184071.431.2172 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+216018 1742 316
+0 AADA01268803.612.2475 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+217760 1864 328
+0 AADB02034831.22481.24231 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+219624 1751 321
+0 AADD01205172.9669.11419 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+221375 1751 321
+0 AACZ03178770.16869.18742 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+223126 1874 319
+0 AADA01187282.1.1438 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+225000 1438 248
+0 AADB02026062.83.1935 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+226438 1853 334
+0 AANN01682016.7509.9377 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Erinaceidae;Erinaceinae;Erinaceus;;Erinaceus europaeus (western European hedgehog)
+228291 1869 291
+0 AADD01022392.2046.3894 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+230160 1849 332
+0 AADA01114885.287.1919 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+232009 1633 310
+0 AAGW02077987.590.2314 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Leporidae;Oryctolagus;;Oryctolagus cuniculus (rabbit)
+233642 1725 262
+0 AADB02002333.14401.16248 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+235367 1848 333
+0 AADB02114877.149.2011 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+237215 1863 323
+0 AADD01206387.14456.16309 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+239078 1854 329
+0 AAIY01778683.189.1726 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Afrotheria;Tenrecidae;Tenrecinae;Echinops;;Echinops telfairi (small Madagascar hedgehog)
+240932 1538 242
+0 AAPY01395710.1.1251 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+242470 1251 189
+0 AAPY01543530.477.2347 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+243721 1871 289
+0 AAWR02050020.102.1974 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Perissodactyla;Equidae;Equus;;Equus caballus (horse)
+245592 1873 291
+0 AAFR03066495.4192.6111 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+247465 1920 303
+0 AAFR03070070.3146.5035 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+249385 1890 297
+0 AAEX02032057.2429.4286 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Carnivora;Caniformia;Canidae;Canis;;Canis lupus familiaris (dog)
+251275 1858 311
+0 AAFR03068214.7006.8895 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+253133 1890 297
+0 AAFR03072087.2993.4488 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+255023 1496 228
+0 AAFR03067850.6936.8825 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+256519 1890 297
+0 AAFR03070865.1992.3881 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+258409 1890 298
+0 AAFR03068111.7611.9501 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+260299 1891 299
+0 AAEX02029431.2991.4858 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Carnivora;Caniformia;Canidae;Canis;;Canis lupus familiaris (dog)
+262190 1868 291
+0 AAFR03071257.3012.4901 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+264058 1890 297
+0 AAFR03067789.9996.11910 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+265948 1915 305
+0 AAFR03070575.3747.5635 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+267863 1889 297
+0 AAGW02077985.2334.4200 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Leporidae;Oryctolagus;;Oryctolagus cuniculus (rabbit)
+269752 1867 291
+0 AAQR01253074.311.2179 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Strepsirrhini;Lorisiformes;Galagidae;Otolemur;;Otolemur garnettii (small-eared galago)
+271619 1869 291
+0 AAGV020761385.186.2053 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Xenarthra;Dasypodidae;Dasypus;;Dasypus novemcinctus (nine-banded armadillo)
+273488 1868 293
+0 AAGV020521404.5369.7236 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Xenarthra;Dasypodidae;Dasypus;;Dasypus novemcinctus (nine-banded armadillo)
+275356 1868 292
+0 AAGW02082887.4676.6475 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Leporidae;Oryctolagus;;Oryctolagus cuniculus (rabbit)
+277224 1800 351
+0 AAGV020708684.328.1866 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Xenarthra;Dasypodidae;Dasypus;;Dasypus novemcinctus (nine-banded armadillo)
+279024 1539 239
+0 AAIY01568589.1.1295 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Afrotheria;Tenrecidae;Tenrecinae;Echinops;;Echinops telfairi (small Madagascar hedgehog)
+280563 1295 187
+0 AAGV020624663.554.1840 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Xenarthra;Dasypodidae;Dasypus;;Dasypus novemcinctus (nine-banded armadillo)
+281858 1287 193
+0 AAIY01343564.95.1966 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Afrotheria;Tenrecidae;Tenrecinae;Echinops;;Echinops telfairi (small Madagascar hedgehog)
+283145 1872 294
+0 AALT01234241.1045.2726 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Soricidae;Soricinae;Sorex;;Sorex araneus (European shrew)
+285017 1682 261
+0 AALT01461145.1033.2703 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Soricidae;Soricinae;Sorex;;Sorex araneus (European shrew)
+286699 1671 246
+0 AANG01511874.510.1714 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Carnivora;Feliformia;Felidae;Felinae;Felis;;Felis catus (domestic cat)
+288370 1205 184
+0 AAKN02033512.23337.25874 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Hystricognathi;Caviidae;Cavia;;Cavia porcellus (Domestic guinea pig)
+289575 1807 276
+0 AALT01033007.83.1417 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Soricidae;Soricinae;Sorex;;Sorex araneus (European shrew)
+291382 1321 193
+0 AAKN02059112.6434.8296 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Hystricognathi;Caviidae;Cavia;;Cavia porcellus (Domestic guinea pig)
+292703 1863 291
+0 AALT01128861.50.1286 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Soricidae;Soricinae;Sorex;;Sorex araneus (European shrew)
+294566 1237 190
+0 AAKN02058237.2157.4024 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Hystricognathi;Caviidae;Cavia;;Cavia porcellus (Domestic guinea pig)
+295803 1868 291
+0 AALT01048750.6.1209 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Soricidae;Soricinae;Sorex;;Sorex araneus (European shrew)
+297671 1204 207
+0 AANG01520938.159.2027 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Carnivora;Feliformia;Felidae;Felinae;Felis;;Felis catus (domestic cat)
+298875 1869 291
+0 AANN01125911.35.1460 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Erinaceidae;Erinaceinae;Erinaceus;;Erinaceus europaeus (western European hedgehog)
+300744 1426 210
+0 AAPY01395728.1.1201 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+302170 1201 175
+0 AAPY01606594.538.1963 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+303371 1426 218
+0 AAKN02054168.52328.54146 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Hystricognathi;Caviidae;Cavia;;Cavia porcellus (Domestic guinea pig)
+304797 1819 323
+0 AANN01653944.1.1862 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Erinaceidae;Erinaceinae;Erinaceus;;Erinaceus europaeus (western European hedgehog)
+306616 1862 284
+0 AAPY01395744.36.1258 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+308478 1223 172
+0 AAPE02056272.9232.11103 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Chiroptera;Microchiroptera;Vespertilionidae;Myotis;;Myotis lucifugus (little brown bat)
+309701 1872 307
+0 AAYZ01364919.692.2437 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+311573 1746 277
+0 AAYZ01483346.453.1698 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+313319 1246 194
+0 AAYZ01602490.80.1424 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+314565 1345 198
+0 AAYZ01662159.12.1370 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+315910 1359 200
+0 AAPY01495018.26.1330 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+317269 1305 188
+0 AAQQ01381945.17.1569 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Sciuridae;Xerinae;Marmotini;Spermophilus;;Spermophilus tridecemlineatus (thirteen-lined ground squirrel)
+318574 1553 223
+0 AAQR01379328.238.2107 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Strepsirrhini;Lorisiformes;Galagidae;Otolemur;;Otolemur garnettii (small-eared galago)
+320127 1870 291
+0 AAQR01407656.63.1561 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Strepsirrhini;Lorisiformes;Galagidae;Otolemur;;Otolemur garnettii (small-eared galago)
+321997 1499 229
+0 AANN01512301.334.2207 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Erinaceidae;Erinaceinae;Erinaceus;;Erinaceus europaeus (western European hedgehog)
+323496 1874 291
+0 AANG01534509.8571.10440 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Carnivora;Feliformia;Felidae;Felinae;Felis;;Felis catus (domestic cat)
+325370 1870 290
+0 AANN01262157.2444.4225 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Erinaceidae;Erinaceinae;Erinaceus;;Erinaceus europaeus (western European hedgehog)
+327240 1782 342
+0 AAWR02049966.13.1867 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Perissodactyla;Equidae;Equus;;Equus caballus (horse)
+329022 1855 289
+0 AAPE02058712.13051.14930 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Chiroptera;Microchiroptera;Vespertilionidae;Myotis;;Myotis lucifugus (little brown bat)
+330877 1880 299
+0 AAPN01423084.1.1224 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Monotremata;Ornithorhynchidae;Ornithorhynchus;;Ornithorhynchus anatinus (platypus)
+332757 1224 205
+0 AAPY01230271.5.1537 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+333981 1533 234
+0 AAPY01477079.135.2004 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+335514 1870 288
+0 AAWR02045026.419.2286 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Perissodactyla;Equidae;Equus;;Equus caballus (horse)
+337384 1868 288
+0 AAPE02057027.4749.6599 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Chiroptera;Microchiroptera;Vespertilionidae;Myotis;;Myotis lucifugus (little brown bat)
+339252 1851 326
+0 AAPN01185083.1.1477 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Monotremata;Ornithorhynchidae;Ornithorhynchus;;Ornithorhynchus anatinus (platypus)
+341103 1477 225
+0 AAPY01019204.108.1707 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+342580 1600 289
+0 AAPY01470047.92.1958 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+344180 1867 288
+0 AAPY01802846.1.1343 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Scandentia;Tupaiidae;Tupaia;;Tupaia belangeri (northern tree shrew)
+346047 1343 203
+0 AAQQ01776356.1235.3115 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Sciuridae;Xerinae;Marmotini;Spermophilus;;Spermophilus tridecemlineatus (thirteen-lined ground squirrel)
+347390 1881 293
+0 AAQR01428444.16.1678 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Strepsirrhini;Lorisiformes;Galagidae;Otolemur;;Otolemur garnettii (small-eared galago)
+349271 1663 246
+0 AAQR01019158.425.2234 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Strepsirrhini;Lorisiformes;Galagidae;Otolemur;;Otolemur garnettii (small-eared galago)
+350934 1810 315
+0 AAWR02055002.1.1854 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Perissodactyla;Equidae;Equus;;Equus caballus (horse)
+352744 1854 287
+0 AAWR02045098.519.2850 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Perissodactyla;Equidae;Equus;;Equus caballus (horse)
+354598 1870 270
+0 AAYZ01272771.22404.24270 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+356468 1867 294
+0 AAYZ01600739.181.1448 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+358335 1268 195
+0 AAYZ01660833.83.1390 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+359603 1308 200
+0 AAXM01000573.19.1637 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+360911 1619 239
+0 AAWR02000390.249.2117 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Perissodactyla;Equidae;Equus;;Equus caballus (horse)
+362530 1869 307
+0 AAYZ01371812.1.1242 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+364399 1242 193
+0 AAYZ01504987.1.1516 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+365641 1516 227
+0 AAYZ01613011.5.1319 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+367157 1315 190
+0 AAYZ01407065.341.1700 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+368472 1360 206
+0 AAYZ01590113.192.1681 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+369832 1490 221
+0 AAYZ01424023.1546.2934 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+371322 1389 217
+0 AAYZ01658110.1.1432 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+372711 1432 221
+0 AAWR02044341.313.2005 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Perissodactyla;Equidae;Equus;;Equus caballus (horse)
+374143 1693 257
+0 AAYZ01378571.87.1847 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+375836 1761 279
+0 AAYZ01616768.1.1337 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+377597 1337 207
+0 AAYZ01390472.11.1545 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+378934 1535 240
+0 AAYZ01558522.75.1416 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+380469 1342 196
+0 AAYZ01402021.1.1249 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+381811 1249 189
+0 AAYZ01561078.11.1423 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Ochotonidae;Ochotona;;Ochotona princeps (American pika)
+383060 1413 215
+0 AB571241.1.1364 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Platyrrhini;Cebidae;Callitrichinae;Callithrix;;Callithrix jacchus (white-tufted-ear marmoset)
+384473 1364 203
+0 ABBA01010928.120.1972 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+385837 1853 333
+0 ABBA01009303.2132.3994 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+387690 1863 323
+0 ABBA01120297.1.1724 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+389553 1724 300
+0 ABBA01015968.35853.37706 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+391277 1854 329
+0 ABBA01031658.26472.28330 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+393131 1859 326
+0 ABGA01169276.28648.30495 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+394990 1848 330
+0 ABGA01389274.22.1733 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+396838 1712 302
+0 ABGA01173767.6.1572 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+398550 1567 269
+0 ABGA01165195.44112.45964 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+400117 1853 338
+0 ABGA01381928.101.1761 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+401970 1661 307
+0 ABGA01149971.20888.22742 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+403631 1855 334
+0 ABGA01244676.2594.4308 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+405486 1715 326
+0 ABBA01037345.42698.44565 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+407201 1868 333
+0 ABBA01017804.496.2359 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+409069 1864 327
+0 ABQO010178646.107.1669 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+410933 1563 244
+0 ABQO010722208.2.1399 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+412496 1398 212
+0 ABRN01047961.4.1310 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Cetacea;Odontoceti;Delphinidae;Tursiops;;Tursiops truncatus (bottlenosed dolphin)
+413894 1307 205
+0 ABRO01001609.1109.2978 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+415201 1870 293
+0 ABRO01007661.1.1282 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+417071 1282 192
+0 ABRO01507474.75.1616 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+418353 1542 239
+0 ABRO01529568.2.1319 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+419895 1318 195
+0 ABRR01464334.736.2595 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Tylopoda;Camelidae;Lama;;Lama pacos (alpaca)
+421213 1860 272
+0 ABSL01008245.1.1724 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+423073 1724 303
+0 ABSL01061600.42696.44563 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+424797 1868 332
+0 ABQO010064468.7.1494 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+426665 1488 226
+0 ABQO010562593.96.1530 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+428153 1435 218
+0 ABQO010203319.1471.3359 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+429588 1889 300
+0 ABQO010957772.15.1342 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+431477 1328 203
+0 ABRN01029658.56.1475 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Cetacea;Odontoceti;Delphinidae;Tursiops;;Tursiops truncatus (bottlenosed dolphin)
+432805 1420 209
+0 ABRO01001602.1855.3599 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+434225 1745 265
+0 ABRO01007649.46.1461 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+435970 1416 211
+0 ABRO01494714.1.1542 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+437386 1542 232
+0 ABRO01525681.2.1374 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+438928 1373 220
+0 ABRQ01096681.598.2462 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Afrotheria;Hyracoidea;Procaviidae;Procavia;;Procavia capensis (cape rock hyrax)
+440301 1865 290
+0 ABRN01049953.1.1282 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Cetacea;Odontoceti;Delphinidae;Tursiops;;Tursiops truncatus (bottlenosed dolphin)
+442166 1282 191
+0 ABRO01005848.1381.3250 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+443448 1870 293
+0 ABRO01007677.3703.5572 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+445318 1870 293
+0 ABRO01515339.46.1462 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+447188 1417 212
+0 ABRR01499410.23.1591 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Tylopoda;Camelidae;Lama;;Lama pacos (alpaca)
+448605 1569 229
+0 ABSL01023168.496.2359 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+450174 1864 327
+0 ABSL01055961.3926.5773 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+452038 1848 332
+0 AC068192.31897.33764 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+453886 1868 289
+0 ABGA01149972.1.1739 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+455754 1739 318
+0 ABGA01273066.556.2403 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+457493 1848 330
+0 AC010970.22082.23928 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+459341 1847 326
+0 ABGA01187477.10589.12655 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+461188 1864 351
+0 AC025968.31369.33223 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+463052 1855 329
+0 ABQO010003341.102.1992 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+464907 1891 300
+0 ABQO010218803.1.1456 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+466798 1456 224
+0 ABRN01051582.1.1262 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Cetacea;Odontoceti;Delphinidae;Tursiops;;Tursiops truncatus (bottlenosed dolphin)
+468254 1262 190
+0 AC115674.24499.26369 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+469516 1871 294
+0 ABRO01007642.902.2774 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+471387 1873 294
+0 ABRO01007688.534.2403 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+473260 1870 293
+0 ABRO01518868.18.1455 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+475130 1438 212
+0 ABRR01537068.9.1599 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Tylopoda;Camelidae;Lama;;Lama pacos (alpaca)
+476568 1591 236
+0 AC133662.109644.111515 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+478159 1872 294
+0 AC148473.25961.27805 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+480031 1845 327
+0 AC182765.21320.23188 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+481876 1869 289
+0 ABSL01042879.2132.3994 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+483745 1863 323
+0 ABBA01027396.131.1982 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+485608 1852 331
+0 AC211391.113122.115209 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+487460 1864 349
+0 AC197289.37428.39301 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Chiroptera;Microchiroptera;Vespertilionidae;Myotis;;Myotis lucifugus (little brown bat)
+489324 1874 292
+0 AC068881.83922.85792 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+491198 1871 291
+0 ABBA01028222.3925.5772 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+493069 1848 332
+0 AC196282.156666.158537 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+494917 1872 290
+0 ABDC01332884.33076.34943 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Strepsirrhini;Lemuriformes;Cheirogaleidae;Microcebus;;Microcebus murinus (gray mouse lemur)
+496789 1868 291
+0 ABGA01192759.127.1976 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+498657 1850 328
+0 AC232306.2825.4690 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+500507 1866 289
+0 ABGA01139176.36.1298 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+502373 1263 230
+0 ABGA01220264.5.1682 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pongo;;Pongo abelii (Sumatran orangutan)
+503636 1678 290
+0 ABQO010162192.34.1387 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+505314 1354 203
+0 ABRN01047381.9.1316 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Cetacea;Odontoceti;Delphinidae;Tursiops;;Tursiops truncatus (bottlenosed dolphin)
+506668 1308 186
+0 ABRO01001605.1.1721 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+507976 1721 261
+0 ABRO01505308.1.1624 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+509697 1624 246
+0 ABRO01528594.1.1339 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+511321 1339 201
+0 ABRR01192509.268.2135 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Tylopoda;Camelidae;Lama;;Lama pacos (alpaca)
+512660 1868 289
+0 ABSL01057700.26475.28333 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+514528 1859 325
+0 AC027174.36250.38108 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+516387 1859 325
+0 AC118305.133080.134957 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+518246 1878 301
+0 ABQO010049398.2.1841 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+520124 1840 288
+0 ABQO010393118.50.1389 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+521964 1340 203
+0 ABRN01004177.1.1852 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Cetacea;Odontoceti;Delphinidae;Tursiops;;Tursiops truncatus (bottlenosed dolphin)
+523304 1852 287
+0 ABRN01262382.2191.3945 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Cetacea;Odontoceti;Delphinidae;Tursiops;;Tursiops truncatus (bottlenosed dolphin)
+525156 1755 308
+0 ABRO01007645.65.1603 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+526911 1539 239
+0 ABRO01007735.784.2653 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+528450 1870 294
+0 ABRO01519093.1.1453 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+530320 1453 228
+0 ABSL01043343.120.1972 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+531773 1853 333
+0 ACBE01179499.2403.4290 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Carnivora;Feliformia;Felidae;Felinae;Felis;;Felis catus (domestic cat)
+533626 1888 290
+0 ABQO010062021.1.1546 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+535514 1546 243
+0 ABQO010458413.64.1383 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+537060 1320 198
+0 ABRN01015409.1.1816 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Cetacea;Odontoceti;Delphinidae;Tursiops;;Tursiops truncatus (bottlenosed dolphin)
+538380 1816 282
+0 ABRN01353792.6248.8115 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Cetacea;Odontoceti;Delphinidae;Tursiops;;Tursiops truncatus (bottlenosed dolphin)
+540196 1868 290
+0 ABRO01007646.1.1863 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+542064 1863 292
+0 ABRO01007861.714.2583 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+543927 1870 293
+0 ABRO01522856.1.1410 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+545797 1410 220
+0 ABRP01252198.2262.4129 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Chiroptera;Megachiroptera;Pteropodidae;Pteropodinae;Pteropus;;Pteropus vampyrus (large flying fox)
+547207 1868 292
+0 ABSL01044998.35853.37706 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+549075 1854 329
+0 ADFV01131837.1719.3574 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hylobatidae;Nomascus;;Nomascus leucogenys (Northern white-cheeked gibbon)
+550929 1856 290
+0 AC023572.63796.65664 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+552785 1869 289
+0 AC111415.219222.221092 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+554654 1871 293
+0 AC145707.27084.28936 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+556525 1853 334
+0 AC025654.111037.112904 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+558378 1868 327
+0 AC091339.168292.170162 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+560246 1871 294
+0 ABQO010062095.4.1781 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+562117 1778 281
+0 ABQO010479319.37.1596 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Macropodidae;Macropus;;Macropus eugenii (tammar wallaby)
+563895 1560 246
+0 ABRN01016260.255.1786 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Cetacea;Odontoceti;Delphinidae;Tursiops;;Tursiops truncatus (bottlenosed dolphin)
+565455 1532 229
+0 ABRO01001601.64.1603 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+566987 1540 240
+0 AC113757.211828.213698 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+568527 1871 296
+0 ABRO01007648.781.2650 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+570398 1870 296
+0 ABRO01493477.63.1805 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+572268 1743 264
+0 ABRO01525629.2.1350 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Heteromyidae;Dipodomyinae;Dipodomys;;Dipodomys ordii (Ord's kangaroo rat)
+574011 1349 201
+0 ABRQ01096672.515.2382 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Afrotheria;Hyracoidea;Procaviidae;Procavia;;Procavia capensis (cape rock hyrax)
+575360 1868 291
+0 AC127385.17120.18987 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+577228 1868 326
+0 AC138524.219037.220834 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+579096 1798 342
+0 AC170254.35410.37285 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+580894 1876 293
+0 ABSL01055381.131.1982 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+582770 1852 331
+0 AC091632.4937.6810 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+584622 1874 288
+0 AC115351.194085.195955 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+586496 1871 293
+0 AC139250.551257.553055 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+588367 1799 341
+0 AC222303.17420.19289 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Ruminantia;Pecora;Bovidae;Bovinae;Bos;;Bos taurus (cattle)
+590166 1870 291
+0 AC170254.77458.79330 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+592036 1873 294
+0 AC199649.43845.45718 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Chiroptera;Microchiroptera;Vespertilionidae;Myotis;;Myotis lucifugus (little brown bat)
+593909 1874 291
+0 ACZF01000155.73.1940 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Ruminantia;Pecora;Bovidae;Bovinae;Bubalus;;Bubalus bubalis (water buffalo)
+595783 1868 291
+0 ACTA01092993.2645.4512 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Carnivora;Caniformia;Ursidae;Ailuropoda;;Ailuropoda melanoleuca (giant panda)
+597651 1868 291
+0 AJ311674.1.1824 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Xenarthra;Dasypodidae;Dasypus;;Dasypus novemcinctus (nine-banded armadillo)
+599519 1824 283
+0 AJ311676.1.1847 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Monodelphis;;Monodelphis domestica (gray short-tailed opossum)
+601343 1847 288
+0 AK158003.3.1274 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+603190 1272 186
+0 AK239829.13.1879 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Suina;Suidae;Sus;;Sus scrofa (pig)
+604462 1867 291
+0 AL590990.43094.44961 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+606329 1868 289
+0 AJ311675.1.1825 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Insectivora;Erinaceidae;Erinaceinae;Erinaceus;;Erinaceus europaeus (western European hedgehog)
+608197 1825 282
+0 AJ311673.1.1824 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Perissodactyla;Equidae;Equus;;Equus caballus (horse)
+610022 1824 282
+0 AK162158.43.1863 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+611846 1639 234
+0 AL158197.1844.3711 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+613485 1868 289
+0 AJ311678.1.1845 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Vombatidae;Vombatus;;Vombatus ursinus (common wombat)
+615353 1845 289
+0 AJ311677.1.1847 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Didelphimorphia;Didelphidae;Didelphis;;Didelphis virginiana (North American opossum)
+617198 1847 289
+0 AJ311679.1.1850 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Monotremata;Ornithorhynchidae;Ornithorhynchus;;Ornithorhynchus anatinus (platypus)
+619045 1850 290
+0 AK173067.1.1732 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+620895 1732 265
+0 AK171941.2.1664 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+622627 1663 259
+0 AK347462.48.1462 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Suina;Suidae;Sus;;Sus scrofa (pig)
+624290 1415 209
+0 AL353644.171013.172880 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+625705 1868 289
+0 AL592188.153051.154918 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+627573 1868 289
+0 AL355134.77297.79164 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+629441 1868 295
+0 AX205304.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+631309 1868 293
+0 AY265350.1.2302 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Suina;Suidae;Sus;;Sus scrofa (pig)
+633177 1880 296
+0 AY390526.2028.3904 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Cricetidae;Cricetinae;Cricetulus;;Cricetulus griseus (Chinese hamster)
+635057 1877 295
+0 AX205305.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+636934 1868 288
+0 AX409584.103.1969 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+638802 1867 289
+0 AY225108.1.1207 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Ruminantia;Pecora;Cervidae;Cervinae;Cervus;;Cervus nippon hortulorum
+640669 1207 184
+0 CAAA01205307.938.2341 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+641876 1404 269
+0 CABD02202241.31.1701 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Gorilla;;Gorilla gorilla gorilla (Western lowland gorilla)
+643280 1671 294
+0 CABD02136547.9.1576 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Gorilla;;Gorilla gorilla gorilla (Western lowland gorilla)
+644951 1568 229
+0 BK000964.4008.5877 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+646519 1870 293
+0 CABD02136542.614.2472 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Gorilla;;Gorilla gorilla gorilla (Western lowland gorilla)
+648389 1859 327
+0 AY223903.1.1202 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Ruminantia;Pecora;Cervidae;Cervinae;Cervus;;Cervus elaphus xanthopygus (Manchurian Wapiti)
+650248 1202 184
+0 AX207386.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+651450 1868 293
+0 AX207387.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+653318 1868 288
+0 AX951618.9643.11511 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+655186 1869 293
+0 CAAA01223464.1.1510 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+657055 1510 232
+0 CABD02136541.886.2750 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Gorilla;;Gorilla gorilla gorilla (Western lowland gorilla)
+658565 1865 319
+0 CABD02202242.51.1722 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Gorilla;;Gorilla gorilla gorilla (Western lowland gorilla)
+660430 1672 303
+0 CABD02136548.1.1438 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Gorilla;;Gorilla gorilla gorilla (Western lowland gorilla)
+662102 1438 210
+0 BS000664.34007.35851 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Pan;;Pan troglodytes (chimpanzee)
+663540 1845 330
+0 CAAA01088223.40104.41953 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+665385 1850 290
+0 CABD02136544.81.1762 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Gorilla;;Gorilla gorilla gorilla (Western lowland gorilla)
+667235 1682 258
+0 CABD02136545.135.1673 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Gorilla;;Gorilla gorilla gorilla (Western lowland gorilla)
+668917 1539 240
+0 CAAA01106328.1.1288 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+670456 1288 215
+0 CABD02136546.64.1761 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Gorilla;;Gorilla gorilla gorilla (Western lowland gorilla)
+671744 1698 252
+0 CS113015.103.1969 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+673442 1867 289
+0 CS394305.12.1880 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+675309 1869 293
+0 CS214258.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+677178 1868 293
+0 CS394307.12.1880 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+679046 1869 293
+0 CS214260.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+680915 1868 293
+0 DD289557.2.1873 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Platyrrhini;Cebidae;Callitrichinae;Callithrix;;Callithrix jacchus (white-tufted-ear marmoset)
+682783 1872 289
+0 DM131183.9643.11511 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+684655 1869 293
+0 DM486508.4754.6504 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+686524 1751 328
+0 DD284117.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+688275 1868 288
+0 DJ089593.103.1969 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+690143 1867 289
+0 DQ235090.11629.13499 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Cricetidae;Cricetinae;Cricetulus;;Cricetulus griseus (Chinese hamster)
+692010 1871 294
+0 CS214259.12.1880 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+693881 1869 293
+0 EU823286.1.1864 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Ruminantia;Pecora;Cervidae;Odocoileinae;Odocoileus;;Odocoileus virginianus (white-tailed deer)
+695750 1864 290
+0 CS113039.103.1969 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+697614 1867 289
+0 CS394306.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+699481 1868 293
+0 CU928541.69668.71525 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Suina;Suidae;Sus;;Sus scrofa (pig)
+701349 1858 349
+0 DD152195.103.1969 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+703207 1867 289
+0 CS214261.12.1880 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+705074 1869 293
+0 CS394302.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+706943 1868 293
+0 CS214262.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+708811 1868 293
+0 CS394303.12.1880 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+710679 1869 293
+0 CT978678.18172.19913 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+712548 1742 305
+0 FB715535.103.1969 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+714290 1867 289
+0 CQ861577.103.1969 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+716157 1867 289
+0 CS214263.12.1880 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+718024 1869 293
+0 CS394304.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+719893 1868 293
+0 DD141196.9643.11511 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+721761 1869 293
+0 DJ089617.103.1969 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+723630 1867 289
+0 DM486681.11318.13068 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+725497 1751 321
+0 DQ222453.1.1873 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Laurasiatheria;Cetartiodactyla;Ruminantia;Pecora;Bovidae;Bovinae;Bos;;Bos taurus (cattle)
+727248 1873 292
+0 DD408157.1.1242 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+729121 1242 176
+0 FP236351.234489.236356 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+730363 1868 289
+0 FP325307.170724.172575 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+732231 1852 331
+0 FP236378.18060.19927 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+734083 1868 289
+0 GM049487.103.1969 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+735951 1867 289
+0 FB355641.2.1871 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+737818 1870 289
+0 HH794630.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+739688 1868 288
+0 HA953679.12.1880 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+741556 1869 293
+0 FJ809787.1.1850 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Metatheria;Diprotodontia;Phalangeridae;Trichosurus;;Trichosurus vulpecula (silver-gray brushtail possum)
+743425 1850 291
+0 HA953681.12.1880 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+745275 1869 293
+0 GM046302.103.1969 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+747144 1867 289
+0 GN013629.2.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+749011 1868 288
+0 M11188.11.1880 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+750879 1870 294
+0 X03205.1.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+752749 1869 289
+0 X82564.9643.11511 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+754618 1869 293
+0 K03432.141.2010 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+756487 1870 290
+0 X01117.1.1874 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+758357 1874 295
+0 HA953680.12.1880 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+760231 1869 293
+0 HC001427.2.1871 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+762100 1870 289
+0 HC023671.2.1871 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+763970 1870 289
+0 HA782847.2.1874 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+765840 1873 294
+0 HI519108.103.1969 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+767713 1867 289
+0 M10098.102.1969 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+769580 1868 290
+0 X00640.1.1858 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Leporidae;Oryctolagus;;Oryctolagus cuniculus (rabbit)
+771448 1858 291
+0 X06778.1.1863 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Lagomorpha;Leporidae;Oryctolagus;;Oryctolagus cuniculus (rabbit)
+773306 1863 299
+0 U13369.3657.5527 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Primates;Haplorrhini;Catarrhini;Hominidae;Homo;;Homo sapiens (human)
+775169 1871 290
+0 V01270.1.1874 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Rattus;;Rattus norvegicus (Norway rat)
+777040 1874 295
+0 X00686.1.1869 Eukaryota;Metazoa;Chordata;Craniata;Vertebrata;Euteleostomi;Mammalia;Eutheria;Euarchontoglires;Glires;Rodentia;Sciurognathi;Muroidea;Muridae;Murinae;Mus;Mus;;Mus musculus (house mouse)
+778914 1869 294
+0 gi|281599329|ref|NR_033176.1| Rattus norvegicus 5S RNA (Rn5s), ribosomal RNA
+780783 121 0
+0 gi|328447215|ref|NR_003278.2| Mus musculus 18S ribosomal RNA (Rn18s), ribosomal RNA
+780904 1849 0
+0 gi|86620446|ref|NR_002170.3| Sus scrofa 18S ribosomal RNA (LOC448984), ribosomal RNA
+782753 2302 0
+0 gi|307691244|ref|NR_036644.1| Bos taurus 28S ribosomal RNA (RN28S1), ribosomal RNA
+785055 4542 0
+0 gi|307691243|ref|NR_036643.1| Bos taurus 5.8S ribosomal RNA (RN5-8S1), ribosomal RNA
+789597 150 0
+0 gi|307691242|ref|NR_036642.1| Bos taurus 18S ribosomal RNA (RN18S1), ribosomal RNA
+789747 1873 0
+0 gi|84872130|ref|NR_002841.1| Mus musculus 4.5S RNA (Rn4.5s), ribosomal RNA
+791620 175 0
+0 gi|225637499|ref|NR_003287.2| Homo sapiens RNA, 28S ribosomal 1 (RN28S1), ribosomal RNA
+791795 5070 0
+0 gi|225637497|ref|NR_003286.2| Homo sapiens RNA, 18S ribosomal 1 (RN18S1), ribosomal RNA
+796865 1869 0
+0 gi|290650143|ref|NR_033366.1| Cavia porcellus 5S ribosomal RNA (LOC100379616), ribosomal RNA
+798734 121 0
+0 gi|290650066|ref|NR_033365.1| Cavia porcellus 5S ribosomal RNA (LOC100379617), ribosomal RNA
+798855 121 0
+0 gi|290649727|ref|NR_033364.1| Cavia porcellus 5S ribosomal RNA (LOC100379618), ribosomal RNA
+798976 121 0
+0 gi|283837873|ref|NR_033239.1| Oryctolagus cuniculus 5S ribosomal RNA (LOC100328977), ribosomal RNA
+799097 122 6
+0 gi|283837872|ref|NR_033238.1| Oryctolagus cuniculus 18S ribosomal RNA (LOC100328976), ribosomal RNA
+799219 1863 0
+0 gi|142372596|ref|NR_003285.2| Homo sapiens RNA, 5.8S ribosomal 1 (RN5-8S1), ribosomal RNA
+801082 156 0
+0 gi|262231778|ref|NR_030686.1| Mus musculus 5S RNA (Rn5s), ribosomal RNA
+801238 121 0
+0 gi|189571632|ref|NR_023379.1| Homo sapiens RNA, 5S ribosomal 17 (RN5S17), ribosomal RNA
+801359 121 0
+0 gi|189571631|ref|NR_023378.1| Homo sapiens RNA, 5S ribosomal 16 (RN5S16), ribosomal RNA
+801480 121 0
+0 gi|189571630|ref|NR_023377.1| Homo sapiens RNA, 5S ribosomal 15 (RN5S15), ribosomal RNA
+801601 121 0
+0 gi|189571627|ref|NR_023376.1| Homo sapiens RNA, 5S ribosomal 14 (RN5S14), ribosomal RNA
+801722 121 0
+0 gi|189571626|ref|NR_023375.1| Homo sapiens RNA, 5S ribosomal 13 (RN5S13), ribosomal RNA
+801843 121 0
+0 gi|189571625|ref|NR_023374.1| Homo sapiens RNA, 5S ribosomal 12 (RN5S12), ribosomal RNA
+801964 121 0
+0 gi|189571624|ref|NR_023373.1| Homo sapiens RNA, 5S ribosomal 11 (RN5S11), ribosomal RNA
+802085 121 0
+0 gi|189571623|ref|NR_023372.1| Homo sapiens RNA, 5S ribosomal 10 (RN5S10), ribosomal RNA
+802206 121 0
+0 gi|189571622|ref|NR_023371.1| Homo sapiens RNA, 5S ribosomal 9 (RN5S9), ribosomal RNA
+802327 121 0
+0 gi|189571619|ref|NR_023370.1| Homo sapiens RNA, 5S ribosomal 8 (RN5S8), ribosomal RNA
+802448 121 0
+0 gi|189571616|ref|NR_023369.1| Homo sapiens RNA, 5S ribosomal 7 (RN5S7), ribosomal RNA
+802569 121 0
+0 gi|189571615|ref|NR_023368.1| Homo sapiens RNA, 5S ribosomal 6 (RN5S6), ribosomal RNA
+802690 121 0
+0 gi|189571614|ref|NR_023367.1| Homo sapiens RNA, 5S ribosomal 5 (RN5S5), ribosomal RNA
+802811 121 0
+0 gi|189571613|ref|NR_023366.1| Homo sapiens RNA, 5S ribosomal 4 (RN5S4), ribosomal RNA
+802932 121 0
+0 gi|189571612|ref|NR_023365.1| Homo sapiens RNA, 5S ribosomal 3 (RN5S3), ribosomal RNA
+803053 121 0
+0 gi|189571611|ref|NR_023364.1| Homo sapiens RNA, 5S ribosomal 2 (RN5S2), ribosomal RNA
+803174 121 0
+0 gi|189571609|ref|NR_023363.1| Homo sapiens RNA, 5S ribosomal 1 (RN5S1), ribosomal RNA
+803295 121 0
+0 gi|120444901|ref|NR_003280.1| Mus musculus 5.8S ribosomal RNA (LOC790956), ribosomal RNA
+803416 158 0
+0 gi|120444900|ref|NR_003279.1| Mus musculus 28S ribosomal RNA (LOC236598), ribosomal RNA
+803574 4730 0
