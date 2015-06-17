@@ -190,10 +190,11 @@ else
 	skip "PolyA removeing"
 fi
 
+
 # [ ChrM filtering ]
 # Indexes have to be generated beforehand.
 prefix2="$outdir/${LIBRARY}_F2"
-bowtie -q --un "$prefix2.fastq" --threads "$THREADS" "$CMCCHRM" -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_1.fastq.gz") &>"$prefix2".log
+bowtie -q --un "$prefix2.fastq" --threads "$THREADS" "$CMCCHRM" -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") &>"$prefix2".log
 gzip "$prefix2"_1.fastq
 gzip "$prefix2"_2.fastq
 #rm "$outdir"/*_F1_*
@@ -204,8 +205,8 @@ gzip "$prefix2"_2.fastq
 prefix3="$outdir/${LIBRARY}_F3"
 # bwa parameters
 OPTIONS="-n 3 -o 2 -e 1 -k 2 -t "$THREADS""
-bwa aln "$OPTIONS" "$RRNA" "$prefix2"_1.fastq.gz  > "$prefix3"_1.sai &>"$prefix3".log
-bwa aln "$OPTIONS" "$RRNA" "$prefix2"_2.fastq.gz  > "$prefix3"_2.sai &>>"$prefix3".log
+bwa aln "$OPTIONS" "$RRNA" "$prefix2"_1.fastq.gz > "$prefix3"_1.sai &>"$prefix3".log
+bwa aln "$OPTIONS" "$RRNA" "$prefix2"_2.fastq.gz > "$prefix3"_2.sai &>>"$prefix3".log
 bwa sampe -P "$RRNA" "$prefix3"_1.sai "$prefix3"_2.sai \
   "$prefix2"_1.fastq.gz "$prefix2"_2.fastq.gz  > "$prefix3".sam &>>"$prefix3".log
 #rm "$outdir"/*.sai
