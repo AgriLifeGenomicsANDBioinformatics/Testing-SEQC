@@ -8,7 +8,7 @@
 Flexbar - flexible barcode and adapter removal, version 2.5
 
 
-Local time:            Wed Jun 17 22:46:03 2015
+Local time:            Thu Jun 18 12:34:25 2015
 
 Target name:           ./out/out_F1
 File type:             fastq
@@ -41,34 +41,34 @@ Computation time:  < 1 sec
 Adapter removal statistics
 ==========================
 Adapter:            Overlap removal:    Full length:
-polyA               1                   0
-polyT               0                   0
+polyA               2                   0
+polyT               2                   0
 
-Min, max, mean and median adapter overlap: 6 / 6 / 6 / 0
+Min, max, mean and median adapter overlap: 30 / 50 / 40 / 30
 
 
 Output file statistics
 ======================
 Read file:               ./out/out_F1_1.fastq
-  written reads          4
+  written reads          3
   skipped short reads    0
 Read file 2:             ./out/out_F1_2.fastq
-  written reads          4
+  written reads          3
   too short reads        0
 
 
 Filtering statistics
 ====================
-Processed reads                   20
-  skipped due to uncalled bases   12   (6 uncalled in 6 pairs)
+Processed reads                   12
+  skipped due to uncalled bases    6   (3 uncalled in 3 pairs)
   short prior adapter removal      0
   finally skipped short reads      0
   skipped single paired reads      0
-Discarded reads overall           12
-Remaining reads                    8   (40% of input)
+Discarded reads overall            6
+Remaining reads                    6   (50% of input)
 
-Processed bases:   2000
-Remaining bases:    794   (39% of input)
+Processed bases:   1200
+Remaining bases:    440   (36% of input)
 
 
 Flexbar completed adapter removal.

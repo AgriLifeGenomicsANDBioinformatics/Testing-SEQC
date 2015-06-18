@@ -1,4 +1,6 @@
-# reads processed: 4
-# reads with at least one reported alignment: 0 (0.00%)
-# reads that failed to align: 4 (100.00%)
-No alignments
+read_chrM 1:N:0:ATCACG/2	+	chrM	0	GATCACAGGTCTATCACCCTATTAACCACTCACGGGAGCTCTCCATGCAT	CCCFFFFFHHHHHJJGHIJJJJJJJIJJJJJJJJJJJJJIJJJJJJJJJJ	0	
+read_chrM 1:N:0:ATCACG/1	-	chrM	50	TTGGTATTTTCGTCTGGGGGGTGTGCACGCGATAGCATTGCGAGAAGCTG	JJJJJJJJJJIJJJJJJJJJJJJJIJJJJJJJIHGJJHHHHHFFFFFCCC	0	4:C>A
+# reads processed: 3
+# reads with at least one reported alignment: 1 (33.33%)
+# reads that failed to align: 2 (66.67%)
+Reported 1 paired-end alignments to 1 output stream(s)

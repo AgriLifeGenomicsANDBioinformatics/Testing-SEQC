@@ -75,11 +75,11 @@ INPUT2=$1; shift
 LIBRARY=$1; shift
 V4SCRATCH="$(dirname "$INPUT1")"    # Store the output in a subdirectory where the reads are
 outdir="$V4SCRATCH/$LIBRARY"
-mkdir -p $outdir
+mkdir -p "$outdir"
 
 # important: quality score type for far and bowtie. 
 # hard code defined variable:
-FAR_FORMAT="fastq-sanger"
+FAR_FORMAT="sanger"
 BOWTIE_QUAL="--phred33-quals"
 # for CMM data, which is phred 64, 
 # FAR_FORMAT="fastq"
@@ -94,7 +94,7 @@ getQual (){
 	;;
         "phred64")  
 	  FAR_FORMAT="sanger"
-	  BOWTIE_QUAL="--phred64-quals"
+	  BOWTIE_QUAL="--phred64-quals" 
 	  TRIMMOMATIC_FORMAT="phred64"
 	;;
    esac
@@ -116,9 +116,9 @@ section (){
 
 # quality score type:
 getQual $QUALSCORE
-echo "For far: $FAR_FORMAT"
-echo "For bowtie: $BOWTIE_QUAL"
-echo "Using $THREADS threads..."
+#echo "For far: $FAR_FORMAT"
+#echo "For bowtie: $BOWTIE_QUAL"
+#echo "Using $THREADS threads..."
 
 ############################################################################################################
 # [ Quality and adaptor trimming ]
@@ -161,10 +161,20 @@ echo "Using $THREADS threads..."
 #fi
 ############################################################################################################
 
+# Output prefixes
+prefix1="$outdir/${LIBRARY}_F1"   # After flexbar
+prefix2="$outdir/${LIBRARY}_F2"   # After chrM
+prefix3="$outdir/${LIBRARY}_F3"   # After rRNA
+
+total_lines1="$(zcat "$INPUT1"| wc -l)"
+total_lines2="$(zcat "$INPUT2"| wc -l)"
+total_reads1="$(($total_lines1/4))"
+total_reads2="$(($total_lines2/4))"
+
+echo "Processing total of $total_reads1 reads"
+echo "Poly dA/dT trimming..."
 
 # [ PolyA/T trimming ]
-prefix1="$outdir/${LIBRARY}_F1"
-
 if [[ $RAN_POLYA || ! -s $POLYA_OUTPUT_FILE ]]; then
 flexbar --adapters "$ADAPTER2" -r "$INPUT1" -p "$INPUT2" \
 --target "$prefix1" \
@@ -181,21 +191,50 @@ else
 	skip "PolyA removeing"
 fi
 
+total_lines1="$(zcat "$prefix1"_1.fastq.gz | wc -l)"
+total_lines2="$(zcat "$prefix1"_2.fastq.gz | wc -l)"
+after_trimming_reads1="$(($total_lines1*25))"
+after_trimming_reads2="$(($total_lines2*25))"
+left_after_trimming_reads1="$(($after_trimming_reads1/$total_reads1))"
+left_after_trimming_reads2="$(($after_trimming_reads2/$total_reads2))"
+
+echo ""$left_after_trimming_reads1"% of reads left after trimming"
+echo "chrM filtering..."
+
 # [ ChrM filtering ]
 # Indexes have to be generated beforehand.
-prefix2="$outdir/${LIBRARY}_F2"
-bowtie -q --un "$prefix2.fastq" --threads "$THREADS" "$CMCCHRM" -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") &>"$prefix2".log
+bowtie "$BOWTIE_QUAL" -q -v 2 -m 1 -X 500 --un "$prefix2.fastq" -p "$THREADS" "$CMCCHRM" \
+  -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") &>"$prefix2".log
 gzip "$prefix2"_1.fastq
 gzip "$prefix2"_2.fastq
-#rm "$outdir"/*_F1_*
+rm "$outdir"/*_F1_*
+
+total_lines1="$(zcat "$prefix2"_1.fastq.gz | wc -l)"
+total_lines2="$(zcat "$prefix2"_2.fastq.gz | wc -l)"
+after_chrM_reads1="$(($total_lines1*25))"
+after_chrM_reads2="$(($total_lines2*25))"
+left_after_chrM_reads1="$(($after_chrM_reads1/$total_reads1))"
+left_after_chrM_reads2="$(($after_chrM_reads2/$total_reads2))"
+
+echo ""$left_after_chrM_reads1"% of reads left after chrM filtering"
+echo "rRNA filtering..."
 
 # [ rRNA filtering ]
 # Indexes have to be generated beforehand.
-prefix3="$outdir/${LIBRARY}_F3"
-bowtie -q --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") &>"$prefix3".log
+bowtie "$BOWTIE_QUAL" -q -v 2 -m 1 -X 500 --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" \
+  -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") &>"$prefix3".log
 gzip "$prefix3"_1.fastq
 gzip "$prefix3"_2.fastq
-#rm "$outdir"/*_F1_*
+rm "$outdir"/*_F2_*
+
+total_lines1="$(zcat "$prefix3"_1.fastq.gz | wc -l)"
+total_lines2="$(zcat "$prefix3"_2.fastq.gz | wc -l)"
+after_rRNA_reads1="$(($total_lines1*25))"
+after_rRNA_reads2="$(($total_lines2*25))"
+left_after_rRNA_reads1="$(($after_rRNA_reads1/$total_reads1))"
+left_after_rRNA_reads2="$(($after_rRNA_reads2/$total_reads2))"
+
+echo ""$left_after_rRNA_reads1"% of reads left after rRNA filtering"
 
 # [ rRNA filtering ]
 # bwa Version: 0.5.9-r16
