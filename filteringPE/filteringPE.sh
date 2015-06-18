@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 
-# This shebang make the code more portable.
-# Sometimes you don't know where bash, perl or python is...
-
 set -e
+shopt -s extglob # Recommended to work with regex
 
-# Recommended to work with regex
-shopt -s extglob
-
-# Maybe the code is being called from a symbolic link (e.g. bin folder insted of src)
 abspath_script="$(readlink -f -e "$0")"
 script_absdir="$(dirname "$abspath_script")"
 script_name="$(basename "$0")"
