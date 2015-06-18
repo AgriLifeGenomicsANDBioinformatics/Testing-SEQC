@@ -35,6 +35,8 @@ Description:
 \n\tThe script is aimed to clean paired-end reads by adaptor, quality, polyA, rRNA and chrM.\n
 \nUsage:
 \n\t"$script_name" QUALSCORE THREADS INPUTPAIR1 INPUTPAIR2 LIBRARY\n
+\nE.g.
+\n\tfilteringPE.sh phred33 2 read_1.fastq.gz read_2.fastq.gz out\n
 \nParmeters:
 		\n\t1. Library is the prefix for the output of cleaned data.
 		\n\t2. QualityScoreType could be phred33 or phred64.\n
