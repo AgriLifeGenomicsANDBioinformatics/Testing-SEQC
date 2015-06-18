@@ -1,31 +1,20 @@
 #!/usr/bin/env bash
 
 set -e
-shopt -s extglob # Recommended to work with regex
+shopt -s extglob # To work with regex
 
 abspath_script="$(readlink -f -e "$0")"
 script_absdir="$(dirname "$abspath_script")"
 script_name="$(basename "$0")"
 
 #============== pathway based on the system ==================
-# picard samtofastq.jar file path
-#SAMTOFASTQ="/v4scratch/lp364/SamToFastq.jar"
-SAMTOFASTQ="$script_absdir/SamToFastq.jar"
-
-# paired-end data adaptor file
-#ADAPTER=/v4scratch/lp364/adaptorpe.fa    # Not necessary
-
 # polyA/T reference file 
-#ADAPTER2=/v4scratch/lp364/polyA.fa
 ADAPTER2="$script_absdir/main/polyA.fa"
 
 # chrM fasta file
-#CMCCHRM=/v4scratch/lp364/bowtie-0.12.8/indexes/CMC_chrMidx
 CMCCHRM="chrM.fa"   # Add the path to $BOWTIE_INDEXES
 
 # total RNA fasta file including rhesus RRNA and mammamlian RRNA
-#RRNA=/v4scratch/lp364/bwa-0.6.2/Rfambwaidx
-#V4SCRATCH=/v4scratch/lp364
 RRNA="rrna_total.fa"    # Add the path to $BOWTIE_INDEXES   
 #============== EOF pathway based on the system ==================
 
@@ -45,8 +34,7 @@ Description:
 		\n\t\t1) flexbar
 		\n\t\t2) bowtie
 \n\t2. Please change the variable of the scripts based on the pathway of the system:
-		\n\t\t1) SAMTOFASTQ
-		\n\t\t2) ADAPTER2
+		\n\t\t1) ADAPTER2
 		\n\t\t3) CHRM
 		\n\t\t4) RRNA	
 \nOutput:
@@ -54,12 +42,10 @@ Description:
 		\n\t2) F2: reads that pass chrM filtering
 		\n\t3) F3: reads that pass rRNA filtering
 		\n
-		"
-# cmd: ./filteringpe.sh phred64 8 s_1.fastq s_2.fastq output/s_pair
+"
 
 if [ $# -ne 5 ]
     then
-#        echo -e $usage >&4
         echo -e $usage >&2
         exit 1
 fi
@@ -77,9 +63,6 @@ mkdir -p "$outdir"
 # hard code defined variable:
 FAR_FORMAT="sanger"
 BOWTIE_QUAL="--phred33-quals"
-# for CMM data, which is phred 64, 
-# FAR_FORMAT="fastq"
-# BOWTIE_QUAL="--phred64-quals"
 
 getQual (){
    case $1 in
@@ -96,7 +79,7 @@ getQual (){
    esac
 }
 
-# function
+# functions
 fail () {
   echo "$1 step failed"
   exit 1
@@ -106,154 +89,91 @@ skip () {
   echo "$1 step skipped because already done."
 }
 
-section (){
-  echo "[======$(date)======$1======]"
-}
-
 # quality score type:
 getQual $QUALSCORE
-#echo "For far: $FAR_FORMAT"
-#echo "For bowtie: $BOWTIE_QUAL"
-#echo "Using $THREADS threads..."
-
-############################################################################################################
-# [ Quality and adaptor trimming ]
-# Flexible Adapter Remover, version 2.0
-# example /home/lishe/bin/far --adapters ~/genome/adaptor/pe/pe.fa --source CMM5_1.txt --source2 CMM5_2.txt --target CMM5_F1 --format fastq --cut-off 1 --min-overlap 10 --min-readlength 35 --phred-pre-trim 20 --max-uncalled 2 --adaptive-overlap yes
-# section 1
-# first filrter output file
-#ADAPTER_OUTPUT_FILE="$V4SCRATCH/${LIBRARY}_F1_2.fastq.gz"
-#if [[ ! -s $ADAPTER_OUTPUT_FILE ]]; then
-#flexbar --adapters $ADAPTER \
-#--source <( gunzip -c $INPUT1 ) \
-#--source2 <( gunzip -c $INPUT2 ) \
-#--target $V4SCRATCH/${LIBRARY}_F1 \
-#--format $FAR_FORMAT \
-#--threads $THREADS \
-#--adapter-threshold 1 \
-#--adapter-min-overlap 10 \
-#--min-readlength 35 \
-#--max-uncalled 5 \ || { rm -f $V4SCRATCH/${LIBRARY}_F1_{1,2}.fastq ;fail "Adaptor removing"; }
-#RAN_ADAPTER=1
-#gzip $V4SCRATCH/${LIBRARY}_F1_1*.fastq
-#gzip $V4SCRATCH/${LIBRARY}_F1_2*.fastq
-#
-#else
-#	skip "Adaptor removing"
-#fi
-
-# [Filter Quality Reads]
-#second filter output file
-#TRIM_OUTPUT_FILE="$V4SCRATCH/${LIBRARY}_F2_1.fastq.gz"
-#if [[ $RAN_TRIM || ! -s $TRIM_OUTPUT_FILE ]]; then
-#java -classpath trimmomatic-0.22.jar org.usadellab.trimmomatic.TrimmomaticPE -threads $THREADS -$TRIMMOMATIC_FORMAT $V4SCRATCH/${LIBRARY}_F1_1.fastq.gz $V4SCRATCH/${LIBRARY}_F1_2.fastq.gz $V4SCRATCH/${LIBRARY}_F2_1.fastq.gz $V4SCRATCH/${LIBRARY}_F2_1_single.fastq.gz $V4SCRATCH/${LIBRARY}_F2_2.fastq.gz $V4SCRATCH/${LIBRARY}_F2_2_single.fastq.gz LEADING:20 TRAILING:20 MINLEN:35 || { rm -f $V4SCRATCH/${LIBRARY}_F2_{1,2}.fastq ; fail "trimming";}
-#RAN_TRIM=1
-#rm $V4SCRATCH/${LIBRARY}_F1_1.fastq.gz
-#rm $V4SCRATCH/${LIBRARY}_F1_2.fastq.gz
-#rm $V4SCRATCH/${LIBRARY}_F1_1.fastq.lengthdist
-#rm $V4SCRATCH/${LIBRARY}_F1_2.fastq.lengthdist
-#else
-#        skip "trimming..."
-#fi
-############################################################################################################
 
 # Output prefixes
-prefix1="$outdir/${LIBRARY}_F1"   # After flexbar
-prefix2="$outdir/${LIBRARY}_F2"   # After chrM
-prefix3="$outdir/${LIBRARY}_F3"   # After rRNA
+prefix1="$outdir/${LIBRARY}_F1"   # Files after flexbar
+prefix2="$outdir/${LIBRARY}_F2"   # Files after chrM
+prefix3="$outdir/${LIBRARY}_F3"   # Files after rRNA
 
+# Count number of reads
 total_lines1="$(zcat "$INPUT1"| wc -l)"
 total_lines2="$(zcat "$INPUT2"| wc -l)"
+
 total_reads1="$(($total_lines1/4))"
 total_reads2="$(($total_lines2/4))"
-
 echo "Processing total of $total_reads1 reads"
-echo "Poly dA/dT trimming..."
 
 # [ PolyA/T trimming ]
+echo "Poly dA/dT trimming..."
+
 if [[ $RAN_POLYA || ! -s $POLYA_OUTPUT_FILE ]]; then
-flexbar --adapters "$ADAPTER2" -r "$INPUT1" -p "$INPUT2" \
---target "$prefix1" \
---format "$FAR_FORMAT" \
---threads "$THREADS" &>"$prefix1.log" \
---max-uncalled 5 \
---min-read-length 35 \
---adapter-min-overlap 6 \
-|| { rm -f "$prefix1"_{1,2}.fastq ; fail "PolyA removeing"; } 
-RAN_POLYA=1
-gzip "$prefix1"_1.fastq
-gzip "$prefix1"_2.fastq
+	flexbar --adapters "$ADAPTER2" -r "$INPUT1" -p "$INPUT2" \
+	--target "$prefix1" \
+	--format "$FAR_FORMAT" \
+	--threads "$THREADS" \
+	--max-uncalled 5 \
+	--min-read-length 35 \
+	--adapter-min-overlap 6 &>"$prefix1.log"\
+	|| { rm -f "$prefix1"_{1,2}.fastq ; fail "PolyA removeing"; } 
+	RAN_POLYA=1
+	parallel gzip ::: "$prefix1"_1.fastq "$prefix1"_2.fastq
 else
 	skip "PolyA removeing"
 fi
 
+# Count actual number of reads
 total_lines1="$(zcat "$prefix1"_1.fastq.gz | wc -l)"
 total_lines2="$(zcat "$prefix1"_2.fastq.gz | wc -l)"
+
 after_trimming_reads1="$(($total_lines1*25))"
 after_trimming_reads2="$(($total_lines2*25))"
 left_after_trimming_reads1="$(($after_trimming_reads1/$total_reads1))"
 left_after_trimming_reads2="$(($after_trimming_reads2/$total_reads2))"
-
 echo ""$left_after_trimming_reads1"% of reads left after trimming"
-echo "chrM filtering..."
+
 
 # [ ChrM filtering ]
 # Indexes have to be generated beforehand.
-bowtie "$BOWTIE_QUAL" -q -v 2 -m 1 -X 500 --un "$prefix2.fastq" -p "$THREADS" "$CMCCHRM" \
-  -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") &>"$prefix2".log
-gzip "$prefix2"_1.fastq
-gzip "$prefix2"_2.fastq
-rm "$outdir"/*_F1_*
+echo "chrM filtering..."
 
+bowtie "$BOWTIE_QUAL" -q -v 2 -m 1 -X 500 --un "$prefix2.fastq" -p "$THREADS" "$CMCCHRM" \
+  -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") 2>"$prefix2".log >  "$prefix2".sam
+parallel gzip ::: "$prefix2"_1.fastq "$prefix2"_2.fastq
+
+# Get rid of intermediate files
+rm "$outdir"/*_F1_*fastq.gz
+
+# Count actual number of reads
 total_lines1="$(zcat "$prefix2"_1.fastq.gz | wc -l)"
 total_lines2="$(zcat "$prefix2"_2.fastq.gz | wc -l)"
+
 after_chrM_reads1="$(($total_lines1*25))"
 after_chrM_reads2="$(($total_lines2*25))"
 left_after_chrM_reads1="$(($after_chrM_reads1/$total_reads1))"
 left_after_chrM_reads2="$(($after_chrM_reads2/$total_reads2))"
-
 echo ""$left_after_chrM_reads1"% of reads left after chrM filtering"
-echo "rRNA filtering..."
 
 # [ rRNA filtering ]
 # Indexes have to be generated beforehand.
-bowtie "$BOWTIE_QUAL" -q -v 2 -m 1 -X 500 --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" \
-  -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") &>"$prefix3".log
-gzip "$prefix3"_1.fastq
-gzip "$prefix3"_2.fastq
-rm "$outdir"/*_F2_*
+echo "rRNA filtering..."
 
+bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 1 -X 500 --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" \
+  -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") 2>"$prefix3".log >  "$prefix3".sam
+parallel gzip ::: "$prefix3"_1.fastq "$prefix3"_2.fastq
+
+# Get rid of intermediate files
+rm "$outdir"/*_F2_*.fastq.gz
+
+# Count actual number of reads
 total_lines1="$(zcat "$prefix3"_1.fastq.gz | wc -l)"
 total_lines2="$(zcat "$prefix3"_2.fastq.gz | wc -l)"
+
 after_rRNA_reads1="$(($total_lines1*25))"
 after_rRNA_reads2="$(($total_lines2*25))"
 left_after_rRNA_reads1="$(($after_rRNA_reads1/$total_reads1))"
 left_after_rRNA_reads2="$(($after_rRNA_reads2/$total_reads2))"
-
 echo ""$left_after_rRNA_reads1"% of reads left after rRNA filtering"
 
-# [ rRNA filtering ]
-# bwa Version: 0.5.9-r16
-# Indexes have to be generated beforehand.
-#prefix3="$outdir/${LIBRARY}_F3"
-# bwa parameters
-#OPTIONS="-n 3 -o 2 -e 1 -k 2 -t "$THREADS""
-#bwa aln "$OPTIONS" "$RRNA" "$prefix2"_1.fastq.gz > "$prefix3"_1.sai &>"$prefix3".log
-#bwa aln "$OPTIONS" "$RRNA" "$prefix2"_2.fastq.gz > "$prefix3"_2.sai &>>"$prefix3".log
-#bwa sampe -P "$RRNA" "$prefix3"_1.sai "$prefix3"_2.sai \
-#  "$prefix2"_1.fastq.gz "$prefix2"_2.fastq.gz  > "$prefix3".sam &>>"$prefix3".log
-#rm "$outdir"/*.sai
-#rm "$outdir"/*.gz
-
-# after bwa alignment, parse out unmapped reads and convert back to fastq file
-#samtools view -S -f 0x04 "$prefix3".sam | java -Xmx2g -jar $SAMTOFASTQ INPUT=/dev/stdin VALIDATION_STRINGENCY=SILENT QUIET=true FASTQ="$prefix3"_1.fastq SECOND_END_FASTQ="$prefix3"_2.fastq
-
-#gzip "$prefix3"_1.fastq
-#gzip "$prefix3"_2.fastq
-#rm "$prefix3".sam
-
-# [ pairing sequence ]
-# pair the paired end reads after bwa using Far
-# example: PairedreadFinder -s1 CMM5_F2_1.fastq -s2 CMM5_F2_2.fastq -f fastq -t1 CMM5_1.paired -t2 CMM5_2.paired -is 2
-# PairedreadFinder -s1 ${LIBRARY}_F2_1.fastq -s2 ${LIBRARY}_F2_2.fastq -f fastq -t1 ${LIBRARY}_1.paired -t2 ${LIBRARY}_2.paired -is 2
 # [ program end ]
