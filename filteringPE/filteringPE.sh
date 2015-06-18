@@ -32,7 +32,7 @@ CMCCHRM="chrM.fa"   # Add the path to $BOWTIE_INDEXES
 # total RNA fasta file including rhesus RRNA and mammamlian RRNA
 #RRNA=/v4scratch/lp364/bwa-0.6.2/Rfambwaidx
 #V4SCRATCH=/v4scratch/lp364
-RRNA="$script_absdir/main/rrna_total.fa"    
+RRNA="rrna_total.fa"    # Add the path to $BOWTIE_INDEXES   
 #============== EOF pathway based on the system ==================
 
 
@@ -47,10 +47,7 @@ Description:
 \nBefore usage:
 \n\t1. The script assume that the following softwares are in the path:
 		\n\t\t1) flexbar
-		\n\t\t2) bwa
-		\n\t\t3) bowtie
-		\n\t\t4) samtools
-		\n\t\t5) Trimmomatic
+		\n\t\t2) bowtie
 \n\t2. Please change the variable of the scripts based on the pathway of the system:
 		\n\t\t1) SAMTOFASTQ
 		\n\t\t2) ADAPTER2
@@ -167,29 +164,22 @@ echo "Using $THREADS threads..."
 
 # [ PolyA/T trimming ]
 prefix1="$outdir/${LIBRARY}_F1"
-# polyA/T information
-# second filter output file
-#POLYA_OUTPUT_FILE="$V4SCRATCH/${LIBRARY}_F1.fastq.gz"
-# output prefix
-# example: far --adapters $ADAPTER2 --source CMM5_F1_1.fastq --source2 CMM5_F1_2.fastq --target CMM5_F2 --format fastq --cut-off 0 --min-overlap 6 --min-readlength
-#35 --max-uncalled 5 --adaptive-overlap no
 
 if [[ $RAN_POLYA || ! -s $POLYA_OUTPUT_FILE ]]; then
 flexbar --adapters "$ADAPTER2" -r "$INPUT1" -p "$INPUT2" \
 --target "$prefix1" \
 --format "$FAR_FORMAT" \
 --threads "$THREADS" &>"$prefix1.log" \
+--max-uncalled 5 \
+--min-read-length 35 \
+--adapter-min-overlap 6 \
 || { rm -f "$prefix1"_{1,2}.fastq ; fail "PolyA removeing"; } 
-#--adapter-min-overlap 6 
-#--min-read-length 35 
-#--max-uncalled 5  
 RAN_POLYA=1
 gzip "$prefix1"_1.fastq
 gzip "$prefix1"_2.fastq
 else
 	skip "PolyA removeing"
 fi
-
 
 # [ ChrM filtering ]
 # Indexes have to be generated beforehand.
@@ -200,23 +190,31 @@ gzip "$prefix2"_2.fastq
 #rm "$outdir"/*_F1_*
 
 # [ rRNA filtering ]
-# bwa Version: 0.5.9-r16
 # Indexes have to be generated beforehand.
 prefix3="$outdir/${LIBRARY}_F3"
+bowtie -q --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") &>"$prefix3".log
+gzip "$prefix3"_1.fastq
+gzip "$prefix3"_2.fastq
+#rm "$outdir"/*_F1_*
+
+# [ rRNA filtering ]
+# bwa Version: 0.5.9-r16
+# Indexes have to be generated beforehand.
+#prefix3="$outdir/${LIBRARY}_F3"
 # bwa parameters
-OPTIONS="-n 3 -o 2 -e 1 -k 2 -t "$THREADS""
-bwa aln "$OPTIONS" "$RRNA" "$prefix2"_1.fastq.gz > "$prefix3"_1.sai &>"$prefix3".log
-bwa aln "$OPTIONS" "$RRNA" "$prefix2"_2.fastq.gz > "$prefix3"_2.sai &>>"$prefix3".log
-bwa sampe -P "$RRNA" "$prefix3"_1.sai "$prefix3"_2.sai \
-  "$prefix2"_1.fastq.gz "$prefix2"_2.fastq.gz  > "$prefix3".sam &>>"$prefix3".log
+#OPTIONS="-n 3 -o 2 -e 1 -k 2 -t "$THREADS""
+#bwa aln "$OPTIONS" "$RRNA" "$prefix2"_1.fastq.gz > "$prefix3"_1.sai &>"$prefix3".log
+#bwa aln "$OPTIONS" "$RRNA" "$prefix2"_2.fastq.gz > "$prefix3"_2.sai &>>"$prefix3".log
+#bwa sampe -P "$RRNA" "$prefix3"_1.sai "$prefix3"_2.sai \
+#  "$prefix2"_1.fastq.gz "$prefix2"_2.fastq.gz  > "$prefix3".sam &>>"$prefix3".log
 #rm "$outdir"/*.sai
 #rm "$outdir"/*.gz
 
 # after bwa alignment, parse out unmapped reads and convert back to fastq file
-samtools view -S -f 0x04 "$prefix3".sam | java -Xmx2g -jar $SAMTOFASTQ INPUT=/dev/stdin VALIDATION_STRINGENCY=SILENT QUIET=true FASTQ="$prefix3"_1.fastq SECOND_END_FASTQ="$prefix3"_2.fastq
+#samtools view -S -f 0x04 "$prefix3".sam | java -Xmx2g -jar $SAMTOFASTQ INPUT=/dev/stdin VALIDATION_STRINGENCY=SILENT QUIET=true FASTQ="$prefix3"_1.fastq SECOND_END_FASTQ="$prefix3"_2.fastq
 
-gzip "$prefix3"_1.fastq
-gzip "$prefix3"_2.fastq
+#gzip "$prefix3"_1.fastq
+#gzip "$prefix3"_2.fastq
 #rm "$prefix3".sam
 
 # [ pairing sequence ]

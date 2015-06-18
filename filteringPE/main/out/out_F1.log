@@ -8,21 +8,21 @@
 Flexbar - flexible barcode and adapter removal, version 2.5
 
 
-Local time:            Wed Jun 17 12:37:29 2015
+Local time:            Wed Jun 17 22:46:03 2015
 
 Target name:           ./out/out_F1
 File type:             fastq
 Quality format:        sanger
-Reads file:            s_1.fastq.gz
-Reads file 2:          s_2.fastq.gz   (paired run)
+Reads file:            read_1.fastq.gz
+Reads file 2:          read_2.fastq.gz   (paired run)
 Adapter file:          /Users/jordi/code/linux/bin/rnaSeq/src/filteringPE/main/polyA.fa
 
 threads:               2
-max-uncalled:          0
-min-read-length:       18
+max-uncalled:          5
+min-read-length:       35
 
 adapter-trim-end:      RIGHT
-adapter-min-overlap:   3
+adapter-min-overlap:   6
 adapter-threshold:     3
 adapter-match:         1
 adapter-mismatch:     -1
@@ -42,33 +42,33 @@ Adapter removal statistics
 ==========================
 Adapter:            Overlap removal:    Full length:
 polyA               1                   0
-polyT               1                   0
+polyT               0                   0
 
-Min, max, mean and median adapter overlap: 7 / 54 / 30 / 7
+Min, max, mean and median adapter overlap: 6 / 6 / 6 / 0
 
 
 Output file statistics
 ======================
 Read file:               ./out/out_F1_1.fastq
-  written reads          1
+  written reads          4
   skipped short reads    0
 Read file 2:             ./out/out_F1_2.fastq
-  written reads          1
+  written reads          4
   too short reads        0
 
 
 Filtering statistics
 ====================
-Processed reads                   2
-  skipped due to uncalled bases   0
-  short prior adapter removal     0
-  finally skipped short reads     0
-  skipped single paired reads     0
-Discarded reads overall           0
-Remaining reads                   2   (100% of input)
+Processed reads                   20
+  skipped due to uncalled bases   12   (6 uncalled in 6 pairs)
+  short prior adapter removal      0
+  finally skipped short reads      0
+  skipped single paired reads      0
+Discarded reads overall           12
+Remaining reads                    8   (40% of input)
 
-Processed bases:   200
-Remaining bases:   139   (69% of input)
+Processed bases:   2000
+Remaining bases:    794   (39% of input)
 
 
 Flexbar completed adapter removal.
