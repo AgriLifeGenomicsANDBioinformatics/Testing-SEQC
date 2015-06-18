@@ -33,6 +33,7 @@ Description:
 \n\t1. The script assume that the following softwares are in the path:
 		\n\t\t1) flexbar
 		\n\t\t2) bowtie
+		\n\t\t3) samtools
 \n\t2. Please change the variable of the scripts based on the pathway of the system:
 		\n\t\t1) ADAPTER2
 		\n\t\t3) CHRM
@@ -118,7 +119,9 @@ if [[ $RAN_POLYA || ! -s $POLYA_OUTPUT_FILE ]]; then
 	--adapter-min-overlap 6 &>"$prefix1.log"\
 	|| { rm -f "$prefix1"_{1,2}.fastq ; fail "PolyA removeing"; } 
 	RAN_POLYA=1
-	parallel gzip ::: "$prefix1"_1.fastq "$prefix1"_2.fastq
+	gzip "$prefix1"_1.fastq &
+	gzip "$prefix1"_2.fastq &
+	wait $! || exit $?
 else
 	skip "PolyA removeing"
 fi
@@ -138,9 +141,11 @@ echo ""$left_after_trimming_reads1"% of reads left after trimming"
 # Indexes have to be generated beforehand.
 echo "chrM filtering..."
 
-bowtie "$BOWTIE_QUAL" -q -v 2 -m 1 -X 500 --un "$prefix2.fastq" -p "$THREADS" "$CMCCHRM" \
-  -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") 2>"$prefix2".log >  "$prefix2".sam
-parallel gzip ::: "$prefix2"_1.fastq "$prefix2"_2.fastq
+bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 1 -X 500 --un "$prefix2.fastq" -p "$THREADS" "$CMCCHRM" \
+  -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") 2>"$prefix2".log | samtools view -S -b /dev/stdin >  "$prefix2".bam
+gzip "$prefix2"_1.fastq &
+gzip "$prefix2"_2.fastq &
+wait $! || exit $?
 
 # Get rid of intermediate files
 rm "$outdir"/*_F1_*fastq.gz
@@ -160,8 +165,10 @@ echo ""$left_after_chrM_reads1"% of reads left after chrM filtering"
 echo "rRNA filtering..."
 
 bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 1 -X 500 --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" \
-  -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") 2>"$prefix3".log >  "$prefix3".sam
-parallel gzip ::: "$prefix3"_1.fastq "$prefix3"_2.fastq
+  -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") 2>"$prefix3".log | samtools view -S -b /dev/stdin > "$prefix3".bam
+gzip "$prefix3"_1.fastq &
+gzip "$prefix3"_2.fastq &
+wait $! || exit $?
 
 # Get rid of intermediate files
 rm "$outdir"/*_F2_*.fastq.gz
