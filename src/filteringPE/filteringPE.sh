@@ -60,6 +60,11 @@ V4SCRATCH="$(dirname "$INPUT1")"    # Store the output in a subdirectory where t
 outdir="$V4SCRATCH/$LIBRARY"
 mkdir -p "$outdir"
 
+# Log file with timestamp
+script_name_prefix="$(basename "$0" .sh)"
+LOGFILE="$outdir"/"$script_name_prefix"_"$LIBRARY".log
+touch "$LOGFILE"        # For general .log file 
+
 # important: quality score type for far and bowtie. 
 # hard code defined variable:
 FAR_FORMAT="sanger"
@@ -93,6 +98,8 @@ skip () {
 # quality score type:
 getQual $QUALSCORE
 
+echo "$(date)" | tee -a "$LOGFILE"
+
 # Output prefixes
 prefix1="$outdir/${LIBRARY}_F1"   # Files after flexbar
 prefix2="$outdir/${LIBRARY}_F2"   # Files after chrM
@@ -104,10 +111,11 @@ total_lines2="$(zcat "$INPUT2"| wc -l)"
 
 total_reads1="$(($total_lines1/4))"
 total_reads2="$(($total_lines2/4))"
-echo "Processing total of $total_reads1 reads"
+echo "Processing total of $total_reads1 reads" | tee -a "$LOGFILE"
+echo "$(date)" | tee -a "$LOGFILE"
 
 # [ PolyA/T trimming ]
-echo "Poly dA/dT trimming..."
+echo "Poly dA/dT trimming..." | tee -a "$LOGFILE"
 
 if [[ $RAN_POLYA || ! -s $POLYA_OUTPUT_FILE ]]; then
 	flexbar --adapters "$ADAPTER2" -r "$INPUT1" -p "$INPUT2" \
@@ -134,12 +142,13 @@ after_trimming_reads1="$(($total_lines1*25))"
 after_trimming_reads2="$(($total_lines2*25))"
 left_after_trimming_reads1="$(($after_trimming_reads1/$total_reads1))"
 left_after_trimming_reads2="$(($after_trimming_reads2/$total_reads2))"
-echo ""$left_after_trimming_reads1"% of reads left after trimming"
+echo ""$left_after_trimming_reads1"% of reads left after trimming" | tee -a "$LOGFILE"
+echo "$(date)" | tee -a "$LOGFILE"
 
 
 # [ ChrM filtering ]
 # Indexes have to be generated beforehand.
-echo "chrM filtering..."
+echo "chrM filtering..."| tee -a "$LOGFILE" 
 
 bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 10 -X 1000 --un "$prefix2.fastq" -p "$THREADS" "$CMCCHRM" \
   -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") 2>"$prefix2".log | samtools view -S -b /dev/stdin >  "$prefix2".bam
@@ -158,11 +167,12 @@ after_chrM_reads1="$(($total_lines1*25))"
 after_chrM_reads2="$(($total_lines2*25))"
 left_after_chrM_reads1="$(($after_chrM_reads1/$total_reads1))"
 left_after_chrM_reads2="$(($after_chrM_reads2/$total_reads2))"
-echo ""$left_after_chrM_reads1"% of reads left after chrM filtering"
+echo ""$left_after_chrM_reads1"% of reads left after chrM filtering" | tee -a "$LOGFILE"
+echo "$(date)" | tee -a "$LOGFILE"
 
 # [ rRNA filtering ]
 # Indexes have to be generated beforehand.
-echo "rRNA filtering..."
+echo "rRNA filtering..." | tee -a "$LOGFILE"
 
 bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 10 -X 1000 --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" \
   -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") 2>"$prefix3".log | samtools view -S -b /dev/stdin > "$prefix3".bam
@@ -181,6 +191,7 @@ after_rRNA_reads1="$(($total_lines1*25))"
 after_rRNA_reads2="$(($total_lines2*25))"
 left_after_rRNA_reads1="$(($after_rRNA_reads1/$total_reads1))"
 left_after_rRNA_reads2="$(($after_rRNA_reads2/$total_reads2))"
-echo ""$left_after_rRNA_reads1"% of reads left after rRNA filtering"
+echo ""$left_after_rRNA_reads1"% of reads left after rRNA filtering" | tee -a "$LOGFILE"
+echo "$(date)" | tee -a "$LOGFILE"
 
 # [ program end ]
