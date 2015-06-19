@@ -14,9 +14,9 @@ Installation
 
 2. The folder ./fastaFiles contains reference genomes, chrM and rRNA fasta files. This folder should be added to the environment variable $BOWTIE_INDEXES. This can be done by adding the following line to the .bashrc file:
 
-    export BOWTIE_INDEXES="$HOME/code/linux/bin/bowtiepkg/src/refGenomes"  
+            export BOWTIE_INDEXES="$HOME/code/linux/bin/bowtiepkg/src/refGenomes"  
 
-Indexes are already generated, i.e. there is no need to run bowtie index.
+    Indexes are already generated, i.e. there is no need to run bowtie index.
 
 3. It is required to have:
   1. R
