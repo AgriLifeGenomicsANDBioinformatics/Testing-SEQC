@@ -39,7 +39,9 @@ Installation
 Usage
 -----------------
 
-# filtering.sh
+filtering.sh
+-----------------
+-----------------
 
           filtering.sh QUALSCORE THREADS INPUTPAIR1 INPUTPAIR2 LIBRARY
 
