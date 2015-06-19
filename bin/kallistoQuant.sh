@@ -1,0 +1,1 @@
+../src/kallistoQuant/kallistoQuant.sh
