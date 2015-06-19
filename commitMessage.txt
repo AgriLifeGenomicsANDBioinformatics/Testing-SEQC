@@ -1,1 +1,0 @@
-- Added: bowtie output in BAM format.
