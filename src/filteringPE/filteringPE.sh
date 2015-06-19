@@ -23,12 +23,11 @@ usage="
 Description:
 \n\tThe script is aimed to clean paired-end reads by adaptor, quality, polyA, rRNA and chrM.\n
 \nUsage:
-\n\t"$script_name" QUALSCORE THREADS INPUTPAIR1 INPUTPAIR2 LIBRARY\n
+\n\t"$script_name" QUALSCORE THREADS INPUTPAIR1 INPUTPAIR2\n
 \nE.g.
 \n\tfilteringPE.sh phred33 2 read_1.fastq.gz read_2.fastq.gz out\n
 \nParmeters:
-		\n\t1. Library is the prefix for the output of cleaned data.
-		\n\t2. QualityScoreType could be phred33 or phred64.\n
+		\n\t1. QualityScoreType could be phred33 or phred64.\n
 \nBefore usage:
 \n\t1. The script assume that the following softwares are in the path:
 		\n\t\t1) flexbar
@@ -45,19 +44,23 @@ Description:
 		\n
 "
 
-if [ $# -ne 5 ]
+if [ $# -ne 4 ]
     then
         echo -e $usage >&2
         exit 1
 fi
 
+# Read inputs
 QUALSCORE=$1; shift
 THREADS=$1; shift
 INPUT1=$1; shift
 INPUT2=$1; shift
-LIBRARY=$1; shift
-V4SCRATCH="$(dirname "$INPUT1")"    # Store the output in a subdirectory where the reads are
-outdir="$V4SCRATCH/$LIBRARY"
+
+# Get the library name and create the output directory
+DIR="$(dirname "$INPUT1")"    
+lcprefix="$(printf "%s\n" "$INPUT1" "$INPUT2" | sed -e 'N;s/^\(.*\).*\n\1.*$/\1/')"
+LIBRARY=${lcprefix%_[rR]}
+outdir="$DIR/$LIBRARY"
 mkdir -p "$outdir"
 
 # Log file with timestamp

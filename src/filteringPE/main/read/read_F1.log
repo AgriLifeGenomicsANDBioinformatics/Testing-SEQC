@@ -8,13 +8,13 @@
 Flexbar - flexible barcode and adapter removal, version 2.5
 
 
-Local time:            Fri Jun 19 16:17:49 2015
+Local time:            Fri Jun 19 17:15:47 2015
 
-Target name:           ./out/out_F1
+Target name:           ./read/read_F1
 File type:             fastq
 Quality format:        sanger
-Reads file:            read_1.fastq.gz
-Reads file 2:          read_2.fastq.gz   (paired run)
+Reads file:            read_r1.fastq.gz
+Reads file 2:          read_r2.fastq.gz   (paired run)
 Adapter file:          /Users/jordi/code/linux/bin/rnaSeq/src/filteringPE/main/polyA.fa
 
 threads:               2
@@ -49,10 +49,10 @@ Min, max, mean and median adapter overlap: 30 / 50 / 40 / 30
 
 Output file statistics
 ======================
-Read file:               ./out/out_F1_1.fastq
+Read file:               ./read/read_F1_1.fastq
   written reads          3
   skipped short reads    0
-Read file 2:             ./out/out_F1_2.fastq
+Read file 2:             ./read/read_F1_2.fastq
   written reads          3
   too short reads        0
 
