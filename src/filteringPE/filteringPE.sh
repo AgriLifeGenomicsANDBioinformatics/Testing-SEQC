@@ -121,7 +121,7 @@ if [[ $RAN_POLYA || ! -s $POLYA_OUTPUT_FILE ]]; then
 	RAN_POLYA=1
 	gzip "$prefix1"_1.fastq &
 	gzip "$prefix1"_2.fastq &
-	wait $! || exit $?
+	wait %1 %2 || exit $?
 else
 	skip "PolyA removeing"
 fi
@@ -145,7 +145,7 @@ bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 10 -X 1000 --un "$prefix2.fastq" -p "$THREADS"
   -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") 2>"$prefix2".log | samtools view -S -b /dev/stdin >  "$prefix2".bam
 gzip "$prefix2"_1.fastq &
 gzip "$prefix2"_2.fastq &
-wait $! || exit $?
+wait %1 %2 || exit $?
 
 # Get rid of intermediate files
 rm "$outdir"/*_F1_*fastq.gz
@@ -168,7 +168,7 @@ bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 10 -X 1000 --un "$prefix3.fastq" --threads "$T
   -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") 2>"$prefix3".log | samtools view -S -b /dev/stdin > "$prefix3".bam
 gzip "$prefix3"_1.fastq &
 gzip "$prefix3"_2.fastq &
-wait $! || exit $?
+wait %1 %2 || exit $?
 
 # Get rid of intermediate files
 rm "$outdir"/*_F2_*.fastq.gz
