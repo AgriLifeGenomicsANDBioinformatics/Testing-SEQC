@@ -14,7 +14,7 @@ Installation
 
         export PATH="path/to/bin:$PATH"
 
-3. The folder `./fastaFiles` contains reference genomes, chrM and rRNA fasta files. This folder should be added to the environment variable `$BOWTIE_INDEXES`. This can be done by adding the following line to the `.bashrc` file:
+3. The folder `./fastaFiles/` contains reference genomes, chrM and rRNA fasta files. This folder should be added to the environment variable `$BOWTIE_INDEXES`. This can be done by adding the following line to the `~/.bashrc` file:
 
         export BOWTIE_INDEXES="path/to/fastaFiles"
 
@@ -42,9 +42,9 @@ Usage
 -----------------
 
 1. Every folder (`./script_name`) will contain the following files and folder:
-  1. `sript_name.sh`: bash script
-  2. `./main`
-    * `main.sh`: bash script to try the command with toy example.
+  1. `./sript_name.sh`: bash script
+  2. `./main/`
+    * `./main.sh`: bash script to try the command with toy example.
     * Files required for the toy example.
 
 ####filteringPE.sh
