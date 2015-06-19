@@ -25,7 +25,7 @@ Description:
 \nUsage:
 \n\t"$script_name" QUALSCORE THREADS INPUTPAIR1 INPUTPAIR2\n
 \nE.g.
-\n\tfilteringPE.sh phred33 2 read_1.fastq.gz read_2.fastq.gz out\n
+\n\tfilteringPE.sh phred33 2 read_1.fastq.gz read_2.fastq.gz\n
 \nParmeters:
 		\n\t1. QualityScoreType could be phred33 or phred64.\n
 \nBefore usage:
