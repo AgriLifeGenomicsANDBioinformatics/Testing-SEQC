@@ -16,7 +16,7 @@ Installation
 
 3. The folder `./fastaFiles` contains reference genomes, chrM and rRNA fasta files. This folder should be added to the environment variable `$BOWTIE_INDEXES`. This can be done by adding the following line to the `.bashrc` file:
 
-        export BOWTIE_INDEXES="path/to/refGenomes"
+        export BOWTIE_INDEXES="path/to/fastaFiles"
 
     Indexes are already generated, i.e. there is no need to run bowtie index.
 
@@ -47,7 +47,7 @@ Usage
     * `main.sh`: bash script to try the command with toy example.
     * Files required for the toy example.
 
-###filteringPE.sh
+####filteringPE.sh
 
           filteringPE.sh QUALSCORE THREADS INPUTPAIR1 INPUTPAIR2 LIBRARY
 
