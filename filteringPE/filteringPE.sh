@@ -141,7 +141,7 @@ echo ""$left_after_trimming_reads1"% of reads left after trimming"
 # Indexes have to be generated beforehand.
 echo "chrM filtering..."
 
-bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 1 -X 500 --un "$prefix2.fastq" -p "$THREADS" "$CMCCHRM" \
+bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 10 -X 1000 --un "$prefix2.fastq" -p "$THREADS" "$CMCCHRM" \
   -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") 2>"$prefix2".log | samtools view -S -b /dev/stdin >  "$prefix2".bam
 gzip "$prefix2"_1.fastq &
 gzip "$prefix2"_2.fastq &
@@ -164,7 +164,7 @@ echo ""$left_after_chrM_reads1"% of reads left after chrM filtering"
 # Indexes have to be generated beforehand.
 echo "rRNA filtering..."
 
-bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 1 -X 500 --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" \
+bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 10 -X 1000 --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" \
   -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") 2>"$prefix3".log | samtools view -S -b /dev/stdin > "$prefix3".bam
 gzip "$prefix3"_1.fastq &
 gzip "$prefix3"_2.fastq &
