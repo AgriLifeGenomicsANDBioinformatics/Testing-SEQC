@@ -23,7 +23,7 @@ usage="
 Description:
 \n\tThe script is aimed to clean paired-end reads by adaptor, quality, polyA, rRNA and chrM.\n
 \nUsage:
-\n\t"$script_name" QUALSCORE THREADS INPUTPAIR1 INPUTPAIR2\n
+\n\t"$script_name" QUALSCORE THREADS INPUTPAI_R1 INPUTPAI_R2\n
 \nE.g.
 \n\tfilteringPE.sh phred33 2 read_1.fastq.gz read_2.fastq.gz\n
 \nParmeters:

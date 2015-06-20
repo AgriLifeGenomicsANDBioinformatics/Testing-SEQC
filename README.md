@@ -49,7 +49,7 @@ Usage
 
 ####filteringPE.sh
 
-          filteringPE.sh QUALSCORE THREADS INPUTPAIR1 INPUTPAIR2 LIBRARY
+          filteringPE.sh QUALSCORE THREADS INPUTPAIR1 INPUTPAIR2
 
 Contributing
 ----------------
