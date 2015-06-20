@@ -75,4 +75,4 @@ License
 
 TODO: Write license
 
-![Minion](http://octodex.github.com/images/minion.png)
+![Minion](http://octodex.github.com/images/stormtrooper.png)
