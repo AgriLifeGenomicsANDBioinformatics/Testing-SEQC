@@ -73,7 +73,7 @@ fqFile1="$(basename $read1 .gz)"
 fqFile2="$(basename $read2 .gz)"
 
 # Run
-Trinity --output "$trinityOut" --seqType fq --max_memory "$maxMem" --left "$fqFile1" --right "$fqFile2" --CPU "$threads" 2>"$trinityOut/$prefix.log"
+Trinity --normalize_reads --output "$trinityOut" --seqType fq --max_memory "$maxMem" --left "$fqFile1" --right "$fqFile2" --CPU "$threads" 2>"$trinityOut/$prefix.log"
 
 # Re-compress fq files
 gzip "$fqFile1" &

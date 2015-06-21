@@ -21,22 +21,30 @@ Installation
     Indexes are already generated, i.e. there is no need to run bowtie index.
 
 4. It is required to have:
-  1. R
-  2. perl
-  3. python (not v3)
+  1. R (v3.X.X)
+  2. perl (v5)
+  3. python (v2)
+  4. java (v1.7.X)
 
 5. If the machine running the code is Machintosh install coreutils (sudo port install coreutils) as well as:
   1. gzip
   2. grep
   3. getopt
+  4. mysql
+  5. openssl
+  6. readline
+  7. boost
+  8. zlib
+  9. gcc4.9
 
 6. The following packages should be available in the path variable in the machine running the code:
-  1. bowtie
-  2. bowtie2
-  3. flexbar
-  4. samtools
-  5. tophat2
-  6. cutadapt
+  1. bowtie (1.1.0 recommended)
+  2. bowtie2 (2.2.3 recommended)
+  3. flexbar (2.5 recommended)
+  4. samtools (1.2 recommended)
+  5. tophat2 (v2.0.14 recommended)
+  6. cutadapt (1.8.1 recommended)
+  7. trinity (v2.0.6 recommended)
 
 Usage
 -----------------
@@ -50,6 +58,10 @@ Usage
 ####filteringPE.sh
 
           filteringPE.sh QUALSCORE THREADS INPUTPAIR1 INPUTPAIR2
+
+####trinityPE.sh
+
+          trinityPE.sh [OPTIONS] -- read_r1.fastq.gz read_r2.fastq.gz
 
 Contributing
 ----------------
