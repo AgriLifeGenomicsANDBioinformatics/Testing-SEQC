@@ -1,0 +1,25 @@
+Description:
+  Wrapper for paired end de novo assembly with Trinity2.
+
+Usage:
+	trinityPE.sh  [OPTIONS]  -- read_r1.fastq.gz read_r2.fastq.gz
+
+Options:
+	-h--help                Help.
+	-d--outdir              Output directory (trinity_${outdir}).
+  -m--maxMem              Suggested max memory to use. Default: '1G'
+  -t--threads             Threads used. Default: '1'
+
+Examples:               
+  trinityPE.sh -t 2 -m '2G' -- read_r1.fastq.gz read_r2.fastq.gz
+
+Upstream:
+  filteringPE.sh
+
+Notes:
+
+Date:
+  2015/06/21
+
+Author:
+Jordi Abante <abante.jordi@gmail.com>

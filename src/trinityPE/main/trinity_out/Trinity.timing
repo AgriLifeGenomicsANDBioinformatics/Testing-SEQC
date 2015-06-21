@@ -1,0 +1,5 @@
+Statistics:
+===========
+Trinity Version:      v2.0.6
+Compiler:             Intel
+Trinity Parameters:   --output trinity_out --seqType fq --max_memory 4G --left reads_r1.fastq --right reads_r2.fastq --CPU 2
