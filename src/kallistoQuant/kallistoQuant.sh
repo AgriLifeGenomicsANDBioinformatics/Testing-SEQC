@@ -3,8 +3,18 @@
 set -f #Disable pathname expansion.  
 shopt -s extglob
 
-script_name=$(basename "$0" .sh)	
+abspath_script="$(readlink -f -e "$0")"
+script_absdir="$(dirname "$abspath_script")"
+script_name="$(basename "$0" .sh)"
 
+# Cat the help file if no arguments
+if [ $# -eq 0 ]
+    then
+        cat "$script_absdir/${script_name}_help.txt"
+        exit 1
+fi
+
+# Get options
 TEMP=$(getopt -o hb:s:el:p:d: -l help,bootstrap:,seed:,singleEnd,length:,trimPrefix:,outdir: -n "$script_name.sh" -- "$@")
 
 if [ $? -ne 0 ]
@@ -15,8 +25,7 @@ fi
 
 eval set -- "$TEMP"
 
-abspath_script=$(readlink -f -e "$0")	
-script_absdir=$(dirname "$abspath_script")
+# Defaults
 bootstrap=100
 seed=42
 length=180

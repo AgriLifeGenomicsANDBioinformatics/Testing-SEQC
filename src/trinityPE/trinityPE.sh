@@ -3,7 +3,15 @@
 set -f #Disable pathname expansion.  
 shopt -s extglob
 
+abspath_script="$(readlink -f -e "$0")"
+script_absdir="$(dirname "$abspath_script")"
 script_name="$(basename "$0" .sh)"
+
+if [ $# -eq 0 ]
+    then
+        cat "$script_absdir/${script_name}_help.txt"
+        exit 1
+fi
 
 TEMP=$(getopt -o hd:m:t: -l help,outdir:,maxMem:,threads: -n "$script_name.sh" -- "$@")
 
@@ -15,8 +23,6 @@ fi
 
 eval set -- "$TEMP"
 
-abspath_script="$(readlink -f -e "$0")"
-script_absdir="$(dirname "$abspath_script")"
 outdir="out"
 
 # Defaults
@@ -66,6 +72,7 @@ prefix=${lcprefix%_[rR]}
 mkdir -p "$trinityOut"
 
 # Gunzip in parallel
+# Process substitution doesn't work with Trinity, i.e. <(zcat read)
 gunzip "$read1" &
 gunzip "$read2" &
 wait %1 %2 || exit $?
@@ -73,7 +80,8 @@ fqFile1="$(basename $read1 .gz)"
 fqFile2="$(basename $read2 .gz)"
 
 # Run
-Trinity --normalize_reads --output "$trinityOut" --seqType fq --max_memory "$maxMem" --left "$fqFile1" --right "$fqFile2" --CPU "$threads" 2>"$trinityOut/$prefix.log"
+Trinity --normalize_reads --output "$trinityOut" --seqType fq --max_memory \
+  "$maxMem" --left "$fqFile1" --right "$fqFile2" --CPU "$threads" 2>"$trinityOut/$prefix.log"
 
 # Re-compress fq files
 gzip "$fqFile1" &
