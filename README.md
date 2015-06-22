@@ -57,7 +57,7 @@ Usage
 
 ####filteringPE.sh
 
-          filteringPE.sh QUALSCORE THREADS INPUTPAIR1 INPUTPAIR2
+          filteringPE.sh QUAL THREADS INPUTPAIR1 INPUTPAIR2
 
 ####trinityPE.sh
 

@@ -9,7 +9,7 @@ script_name="$(basename "$0")"
 
 #============== pathway based on the system ==================
 # polyA/T reference file 
-ADAPTER2="$script_absdir/main/polyA.fa"
+polyAT="$script_absdir/main/polyA.fa"
 
 # chrM fasta file
 CMCCHRM="chrM.fa"   # Add the path to $BOWTIE_INDEXES
@@ -23,18 +23,17 @@ usage="
 Description:
 \n\tThe script is aimed to clean paired-end reads by adaptor, quality, polyA, rRNA and chrM.\n
 \nUsage:
-\n\t"$script_name" QUALSCORE THREADS INPUTPAI_R1 INPUTPAI_R2\n
+\n\t"$script_name" QUAL THREADS INPUTPAI_R1 INPUTPAI_R2\n
 \nE.g.
-\n\tfilteringPE.sh phred33 2 read_1.fastq.gz read_2.fastq.gz\n
-\nParmeters:
-		\n\t1. QualityScoreType could be phred33 or phred64.\n
+\n\tfilteringPE.sh sanger 2 read_1.fastq.gz read_2.fastq.gz\n
+\n\tfilteringPE.sh i.18 3 read_1.fastq.gz read_2.fastq.gz\n
 \nBefore usage:
 \n\t1. The script assume that the following softwares are in the path:
 		\n\t\t1) flexbar
 		\n\t\t2) bowtie
 		\n\t\t3) samtools
 \n\t2. Please change the variable of the scripts based on the pathway of the system:
-		\n\t\t1) ADAPTER2
+		\n\t\t1) polyAT
 		\n\t\t3) CHRM
 		\n\t\t4) RRNA	
 \nOutput:
@@ -51,7 +50,7 @@ if [ $# -ne 4 ]
 fi
 
 # Read inputs
-QUALSCORE=$1; shift
+QUAL=$1; shift
 THREADS=$1; shift
 INPUT1=$1; shift
 INPUT2=$1; shift
@@ -68,26 +67,6 @@ script_name_prefix="$(basename "$0" .sh)"
 LOGFILE="$outdir"/"$script_name_prefix"_"$LIBRARY".log
 touch "$LOGFILE"        # For general .log file 
 
-# important: quality score type for far and bowtie. 
-# hard code defined variable:
-FAR_FORMAT="sanger"
-BOWTIE_QUAL="--phred33-quals"
-
-getQual (){
-   case $1 in
-        "phred33") 
-	  FAR_FORMAT="sanger"
-	  BOWTIE_QUAL="--phred33-quals"
-	  TRIMMOMATIC_FORMAT="phred33"
-	;;
-        "phred64")  
-	  FAR_FORMAT="sanger"
-	  BOWTIE_QUAL="--phred64-quals" 
-	  TRIMMOMATIC_FORMAT="phred64"
-	;;
-   esac
-}
-
 # functions
 fail () {
   echo "$1 step failed"
@@ -98,9 +77,7 @@ skip () {
   echo "$1 step skipped because already done."
 }
 
-# quality score type:
-getQual $QUALSCORE
-
+# Run
 echo "$(date): Starting..." | tee -a "$LOGFILE"
 
 # Output prefixes
@@ -119,22 +96,18 @@ echo "Processing total of $total_reads1 reads" | tee -a "$LOGFILE"
 # [ PolyA/T trimming ]
 echo "$(date): Poly dA/dT trimming..." | tee -a "$LOGFILE"
 
-if [[ $RAN_POLYA || ! -s $POLYA_OUTPUT_FILE ]]; then
-	flexbar --adapters "$ADAPTER2" -r "$INPUT1" -p "$INPUT2" \
-	--target "$prefix1" \
-	--format "$FAR_FORMAT" \
-	--threads "$THREADS" \
-	--max-uncalled 5 \
-	--min-read-length 35 \
-	--adapter-min-overlap 6 &>"$prefix1.log"\
-	|| { rm -f "$prefix1"_{1,2}.fastq ; fail "PolyA removeing"; } 
-	RAN_POLYA=1
-	gzip "$prefix1"_1.fastq &
-	gzip "$prefix1"_2.fastq &
-	wait %1 %2 || exit $?
-else
-	skip "PolyA removeing"
-fi
+flexbar --adapters "$polyAT" -r "$INPUT1" -p "$INPUT2" \
+--target "$prefix1" \
+--format "$QUAL" \
+--threads "$THREADS" \
+--max-uncalled 5 \
+--min-read-length 35 \
+--adapter-min-overlap 6 &>"$prefix1.log"\
+|| { rm -f "$prefix1"_{1,2}.fastq ; fail "PolyA removeing"; } 
+
+gzip "$prefix1"_1.fastq &
+gzip "$prefix1"_2.fastq &
+wait %1 %2 || exit $?
 
 # Count actual number of reads
 total_lines1="$(zcat "$prefix1"_1.fastq.gz | wc -l)"
@@ -144,13 +117,13 @@ after_trimming_reads1="$(($total_lines1*25))"
 after_trimming_reads2="$(($total_lines2*25))"
 left_after_trimming_reads1="$(($after_trimming_reads1/$total_reads1))"
 left_after_trimming_reads2="$(($after_trimming_reads2/$total_reads2))"
-echo ""$left_after_trimming_reads1"% of reads left after trimming" | tee -a "$LOGFILE"
+echo ""$left_after_trimming_reads1"% of original reads left after trimming" | tee -a "$LOGFILE"
 
 # [ ChrM filtering ]
 # Indexes have to be generated beforehand.
 echo "$(date): chrM filtering..."| tee -a "$LOGFILE" 
 
-bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 10 -X 1000 --un "$prefix2.fastq" -p "$THREADS" "$CMCCHRM" \
+bowtie -Sq -v 2 -m 10 -X 1000 --un "$prefix2.fastq" -p "$THREADS" "$CMCCHRM" \
   -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") 2>"$prefix2".log | samtools view -S -b /dev/stdin >  "$prefix2".bam
 gzip "$prefix2"_1.fastq &
 gzip "$prefix2"_2.fastq &
@@ -167,13 +140,13 @@ after_chrM_reads1="$(($total_lines1*25))"
 after_chrM_reads2="$(($total_lines2*25))"
 left_after_chrM_reads1="$(($after_chrM_reads1/$total_reads1))"
 left_after_chrM_reads2="$(($after_chrM_reads2/$total_reads2))"
-echo ""$left_after_chrM_reads1"% of reads left after chrM filtering" | tee -a "$LOGFILE"
+echo ""$left_after_chrM_reads1"% of original reads left after chrM filtering" | tee -a "$LOGFILE"
 
 # [ rRNA filtering ]
 # Indexes have to be generated beforehand.
 echo "$(date): rRNA filtering..." | tee -a "$LOGFILE"
 
-bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 10 -X 1000 --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" \
+bowtie -Sq -v 2 -m 10 -X 1000 --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" \
   -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") 2>"$prefix3".log | samtools view -S -b /dev/stdin > "$prefix3".bam
 gzip "$prefix3"_1.fastq &
 gzip "$prefix3"_2.fastq &
@@ -190,7 +163,7 @@ after_rRNA_reads1="$(($total_lines1*25))"
 after_rRNA_reads2="$(($total_lines2*25))"
 left_after_rRNA_reads1="$(($after_rRNA_reads1/$total_reads1))"
 left_after_rRNA_reads2="$(($after_rRNA_reads2/$total_reads2))"
-echo ""$left_after_rRNA_reads1"% left after rRNA filtering" | tee -a "$LOGFILE"
+echo ""$left_after_rRNA_reads1"% of original reads left after rRNA filtering" | tee -a "$LOGFILE"
 echo "$(date): Done, $(($total_lines1/4)) reads passed all the filters." | tee -a "$LOGFILE"
 
 # [ program end ]
