@@ -8,14 +8,14 @@
 Flexbar - flexible barcode and adapter removal, version 2.5
 
 
-Local time:            Sat Jun 20 11:28:15 2015
+Local time:            Mon Jun 22 10:49:50 2015
 
 Target name:           ./read/read_F1
 File type:             fastq
 Quality format:        sanger
 Reads file:            read_R1.fastq.gz
 Reads file 2:          read_R2.fastq.gz   (paired run)
-Adapter file:          /Users/jordi/code/linux/bin/rnaSeq/src/filteringPE/main/polyA.fa
+Adapter file:          /Users/jordiabante/code/linux/bin/rnaSeq/src/filteringPE/main/polyA.fa
 
 threads:               2
 max-uncalled:          5

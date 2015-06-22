@@ -101,7 +101,7 @@ skip () {
 # quality score type:
 getQual $QUALSCORE
 
-echo "$(date)" | tee -a "$LOGFILE"
+echo "$(date): Starting..." | tee -a "$LOGFILE"
 
 # Output prefixes
 prefix1="$outdir/${LIBRARY}_F1"   # Files after flexbar
@@ -115,10 +115,9 @@ total_lines2="$(zcat "$INPUT2"| wc -l)"
 total_reads1="$(($total_lines1/4))"
 total_reads2="$(($total_lines2/4))"
 echo "Processing total of $total_reads1 reads" | tee -a "$LOGFILE"
-echo "$(date)" | tee -a "$LOGFILE"
 
 # [ PolyA/T trimming ]
-echo "Poly dA/dT trimming..." | tee -a "$LOGFILE"
+echo "$(date): Poly dA/dT trimming..." | tee -a "$LOGFILE"
 
 if [[ $RAN_POLYA || ! -s $POLYA_OUTPUT_FILE ]]; then
 	flexbar --adapters "$ADAPTER2" -r "$INPUT1" -p "$INPUT2" \
@@ -146,12 +145,10 @@ after_trimming_reads2="$(($total_lines2*25))"
 left_after_trimming_reads1="$(($after_trimming_reads1/$total_reads1))"
 left_after_trimming_reads2="$(($after_trimming_reads2/$total_reads2))"
 echo ""$left_after_trimming_reads1"% of reads left after trimming" | tee -a "$LOGFILE"
-echo "$(date)" | tee -a "$LOGFILE"
-
 
 # [ ChrM filtering ]
 # Indexes have to be generated beforehand.
-echo "chrM filtering..."| tee -a "$LOGFILE" 
+echo "$(date): chrM filtering..."| tee -a "$LOGFILE" 
 
 bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 10 -X 1000 --un "$prefix2.fastq" -p "$THREADS" "$CMCCHRM" \
   -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") 2>"$prefix2".log | samtools view -S -b /dev/stdin >  "$prefix2".bam
@@ -171,11 +168,10 @@ after_chrM_reads2="$(($total_lines2*25))"
 left_after_chrM_reads1="$(($after_chrM_reads1/$total_reads1))"
 left_after_chrM_reads2="$(($after_chrM_reads2/$total_reads2))"
 echo ""$left_after_chrM_reads1"% of reads left after chrM filtering" | tee -a "$LOGFILE"
-echo "$(date)" | tee -a "$LOGFILE"
 
 # [ rRNA filtering ]
 # Indexes have to be generated beforehand.
-echo "rRNA filtering..." | tee -a "$LOGFILE"
+echo "$(date): rRNA filtering..." | tee -a "$LOGFILE"
 
 bowtie "$BOWTIE_QUAL" -Sq -v 2 -m 10 -X 1000 --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" \
   -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") 2>"$prefix3".log | samtools view -S -b /dev/stdin > "$prefix3".bam
@@ -195,6 +191,6 @@ after_rRNA_reads2="$(($total_lines2*25))"
 left_after_rRNA_reads1="$(($after_rRNA_reads1/$total_reads1))"
 left_after_rRNA_reads2="$(($after_rRNA_reads2/$total_reads2))"
 echo ""$left_after_rRNA_reads1"% of reads left after rRNA filtering" | tee -a "$LOGFILE"
-echo "$(date)" | tee -a "$LOGFILE"
+echo "$(date): Done." | tee -a "$LOGFILE"
 
 # [ program end ]
