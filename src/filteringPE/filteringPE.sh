@@ -190,7 +190,7 @@ after_rRNA_reads1="$(($total_lines1*25))"
 after_rRNA_reads2="$(($total_lines2*25))"
 left_after_rRNA_reads1="$(($after_rRNA_reads1/$total_reads1))"
 left_after_rRNA_reads2="$(($after_rRNA_reads2/$total_reads2))"
-echo ""$left_after_rRNA_reads1"% of reads left after rRNA filtering" | tee -a "$LOGFILE"
-echo "$(date): Done." | tee -a "$LOGFILE"
+echo ""$left_after_rRNA_reads1"% left after rRNA filtering" | tee -a "$LOGFILE"
+echo "$(date): Done, $(($total_lines1/4)) reads passed all the filters." | tee -a "$LOGFILE"
 
 # [ program end ]
