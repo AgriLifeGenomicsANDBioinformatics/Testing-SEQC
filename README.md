@@ -18,7 +18,7 @@ Installation
 
         export BOWTIE_INDEXES="path/to/fastaFiles"
 
-    Indexes are already generated, i.e. there is no need to run bowtie index.
+    Indexes are already generated, i.e. there is no need to run `bowtie index`.
 
 4. It is required to have:
   1. R (v3.X.X)
