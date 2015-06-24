@@ -1,8 +1,0 @@
-{
-	"n_targets": 15,
-	"n_bootstraps": 200,
-	"kallisto_version": "0.42.1",
-	"index_version": 9,
-	"start_time": "Tue Jun  9 12:18:47 2015",
-	"call": "kallisto quant -i transcripts.idx -o out2 -b 200 --seed 42 /dev/fd/63 /dev/fd/62"
-}
