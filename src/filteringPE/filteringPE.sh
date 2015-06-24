@@ -101,7 +101,7 @@ flexbar --adapters "$polyAT" -r "$INPUT1" -p "$INPUT2" \
 --format "$QUAL" \
 --threads "$THREADS" \
 --max-uncalled 5 \
---min-read-length 35 \
+--min-read-length 50 \
 --adapter-min-overlap 6 &>"$prefix1.log"\
 || { rm -f "$prefix1"_{1,2}.fastq ; fail "PolyA removeing"; } 
 
