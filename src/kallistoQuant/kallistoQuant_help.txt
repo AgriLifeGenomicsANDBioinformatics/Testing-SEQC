@@ -1,0 +1,31 @@
+Description:
+  Wrapper to run Kallisto quantification.
+
+Usage:
+	kallistoQuant.sh  [OPTIONS]  -- index.idx read_R1.fq.gz read_R2.fq.gz
+
+Options:
+	-h--help                Help.
+	-b--bootstrap           Number of bootstrap samples. Default: 0.
+	-s--seed                Seed for the bootstrap sampling. Default: 42.
+	-e--singleEnd           Quantify single-end reads.
+	-l--length              When single-end, estimated average fragment length. Default: 180.
+	-p--trimPrefix          Prefix trimming. Default: 'r'
+	-d--outdir              Output directory.
+
+Examples:               
+  kallistoQuant.sh -d out1 transcripts.idx reads_1.fastq.gz reads_2.fastq.gz
+  kallistoQuant.sh -d out2 -b 200 -p "_" transcripts.idx reads_1.fastq.gz reads_2.fastq.gz
+  kallistoQuant.sh -d out3 -s 30 -b 200 -p "_" transcripts.idx reads_1.fastq.gz reads_2.fastq.gz
+  kallistoQuant.sh -d out4 -s 30 -b 200 -p "_1" --singleEnd transcripts.idx reads_1.fastq.gz
+
+See also:
+	kallistoIndex.sh
+
+Notes:
+
+Date:
+  2015/06/09
+
+Author:
+Jordi Abante <abante.jordi@gmail.com>
