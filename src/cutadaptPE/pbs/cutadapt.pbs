@@ -13,7 +13,7 @@ module load python/2.7.9
 cd /bl2/ogce/workflow/scripts/testrun/
 
 while read line;
-do dplace /bl2/ogce/workflow/scripts/Discarding-AdeptersV2.sh /bl2/ogce/Data/ILM_AGR_SampleA /bl2/ogce/Data/ILM_AGR_SampleATrimmed $line &
+do dplace /bl2/ogce/workflow/scripts/cutadaptPE.sh /bl2/ogce/Data/ILM_AGR_SampleA /bl2/ogce/Data/ILM_AGR_SampleATrimmed $line &
 echo -e "Launched job for $line";
 done < /bl2/ogce/workflow/scripts/list.txt
 wait
