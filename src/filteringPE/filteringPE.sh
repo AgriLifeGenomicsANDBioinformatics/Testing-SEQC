@@ -21,7 +21,7 @@ RRNA="rrna_total.fa"    # Add the path to $BOWTIE_INDEXES
 
 usage="
 Description:
-\n\tThe script is aimed to clean paired-end reads by adaptor, quality, polyA, rRNA and chrM.\n
+\n\tThe script is aimed to clean paired-end reads by poly dA/dT tails, rRNA and chrM.\n
 \nUsage:
 \n\t"$script_name" QUAL THREADS INPUTPAI_R1 INPUTPAI_R2\n
 \nE.g.
