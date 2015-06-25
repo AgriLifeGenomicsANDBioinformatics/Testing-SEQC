@@ -1,10 +1,32 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Discarding_Adapters.sh
 # MAC_Xcode
 #
 # Created by Noushin Ghaffari on 5/5/15.
 # Copyright 2015 __MyCompanyName__. All rights reserved.
+
+set -e
+shopt -s extglob # To work with regex
+
+abspath_script="$(readlink -f -e "$0")"
+script_absdir="$(dirname "$abspath_script")"
+script_name="$(basename "$0")"
+
+usage="
+Description:
+\n\tThe script is aimed to clean paired-end reads by adaptor.\n
+\nUsage:
+\n\t"$script_name" INPUT_DIR OUTPUT_DIR FILE_PREFIX\n
+\nE.g.
+\n\tcutadaptPE.sh ./ ./output read\n
+"
+
+if [ $# -ne 3 ]
+    then
+        echo $usage >&2
+        exit 1
+fi
 
 
 #Testing the cutadpat on max, using 1 paired data from AGR (SEQC_ILM_AGR_A_1_L01_ATCACG_AC0C1TACXX)
