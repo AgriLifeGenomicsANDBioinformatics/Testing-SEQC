@@ -1,0 +1,19 @@
+#!/bin/bash
+#PBS -l ncpus=16
+#PBS -l walltime=01:00:00
+#PBS -o /bl2/ogce/workflow/scripts/testrun/stdout.qsub
+#PBS -e /bl2/ogce/workflow/scripts/testrun/stderr.qsub
+#PBS -q xfer_bl2
+#PBS -M ramifnu@iu.edu
+#PBS -m abe
+
+source /usr/share/modules/init/bash
+module load python/2.7.9
+
+cd /bl2/ogce/workflow/scripts/testrun/
+
+while read line;
+do dplace /bl2/ogce/workflow/scripts/Discarding-AdeptersV2.sh /bl2/ogce/Data/ILM_AGR_SampleA /bl2/ogce/Data/ILM_AGR_SampleATrimmed $line &
+echo -e "Launched job for $line";
+done < /bl2/ogce/workflow/scripts/list.txt
+wait
