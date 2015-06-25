@@ -20,13 +20,15 @@ Installation
 
     Indexes are already generated, i.e. there is no need to run `bowtie index`.
 
-4. It is required to have:
+Dependancies
+------------------
+1. It is required to have:
   1. R (v3.X.X)
   2. perl (v5)
   3. python (v2)
   4. java (v1.7.X)
 
-5. If the machine running the code is Machintosh install coreutils (sudo port install coreutils) as well as:
+2. If the machine running the code is Machintosh install coreutils (sudo port install coreutils) as well as:
   1. gzip
   2. grep
   3. getopt
@@ -37,14 +39,13 @@ Installation
   8. zlib
   9. gcc4.9
 
-6. The following packages should be available in the path variable in the machine running the code:
-  1. bowtie (1.1.0 recommended)
-  2. bowtie2 (2.2.3 recommended)
-  3. flexbar (2.5 recommended)
-  4. samtools (1.2 recommended)
-  5. tophat2 (v2.0.14 recommended)
-  6. cutadapt (1.8.1 recommended)
-  7. trinity (v2.0.6 recommended)
+3. The following packages should be available in the path variable in the machine running the code:
+  1. cutadaptPE.sh
+    1. cutadapt
+  2. filteringPE.sh
+    1. bowtie (1.1.0 recommended)
+    2. flexbar (2.5 recommended)
+    3. samtools (1.2 recommended)
 
 Usage
 -----------------
@@ -55,13 +56,13 @@ Usage
     * `./main.sh`: bash script to try the command with toy example.
     * Files required for the toy example.
 
+####cutadapt.sh
+
+          cutadaptPE.sh INPUT_DIR OUTPUT_DIR  READS_PREFIX
+          
 ####filteringPE.sh
 
           filteringPE.sh QUAL THREADS INPUTPAIR1 INPUTPAIR2
-
-####trinityPE.sh
-
-          trinityPE.sh [OPTIONS] -- read_r1.fastq.gz read_r2.fastq.gz
 
 Contributing
 ----------------
