@@ -133,8 +133,8 @@ wait %1 %2 || exit $?
 rm "$outdir"/*_F1_*fastq.gz
 
 # Count actual number of reads
-total_lines1="$(zcat "$prefix2"_1.fastq.gz | wc -l)"
-total_lines2="$(zcat "$prefix2"_2.fastq.gz | wc -l)"
+total_lines1="$(zcat ${prefix2}_1.fastq.gz | wc -l)"
+total_lines2="$(zcat ${prefix2}_2.fastq.gz | wc -l)"
 
 after_chrM_reads1="$(($total_lines1*25))"
 after_chrM_reads2="$(($total_lines2*25))"
