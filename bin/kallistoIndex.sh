@@ -1,1 +1,0 @@
-../src/kallistoIndex/kallistoIndex.sh

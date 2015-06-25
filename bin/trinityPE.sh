@@ -1,1 +1,0 @@
-../src/trinityPE/trinityPE.sh

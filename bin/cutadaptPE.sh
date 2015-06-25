@@ -1,0 +1,1 @@
+../src/cutadaptPE/cutadaptPE.sh
