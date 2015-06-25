@@ -59,7 +59,7 @@ INPUT2=$1; shift
 DIR="$(dirname "$INPUT1")"    
 lcprefix="$(printf "%s\n" "$INPUT1" "$INPUT2" | sed -e 'N;s/^\(.*\).*\n\1.*$/\1/')"
 LIBRARY=${lcprefix%_[rR]}
-outdir="$DIR/$LIBRARY"
+outdir="${DIR}/${LIBRARY}"
 mkdir -p "$outdir"
 
 # Log file with timestamp
@@ -81,9 +81,9 @@ skip () {
 echo "$(date): Starting..." | tee -a "$LOGFILE"
 
 # Output prefixes
-prefix1="$outdir/${LIBRARY}_F1"   # Files after flexbar
-prefix2="$outdir/${LIBRARY}_F2"   # Files after chrM
-prefix3="$outdir/${LIBRARY}_F3"   # Files after rRNA
+prefix1="${outdir}/${LIBRARY}_F1"   # Files after flexbar
+prefix2="${outdir}/${LIBRARY}_F2"   # Files after chrM
+prefix3="${outdir}/${LIBRARY}_F3"   # Files after rRNA
 
 # Count number of reads
 total_lines1="$(zcat "$INPUT1"| wc -l)"
@@ -105,36 +105,36 @@ flexbar --adapters "$polyAT" -r "$INPUT1" -p "$INPUT2" \
 --adapter-min-overlap 6 &>"${prefix1}.log"\
 || { rm -f ${prefix1}_{1,2}.fastq ; fail "PolyA removeing"; } 
 
-gzip ${prefix1}_1.fastq &
-gzip ${prefix1}_2.fastq &
+gzip "${prefix1}_1.fastq" &
+gzip "${prefix1}_2.fastq" &
 wait %1 %2 || exit $?
 
 # Count actual number of reads
-total_lines1="$(zcat ${prefix1}_1.fastq.gz | wc -l)"
-total_lines2="$(zcat ${prefix1}_2.fastq.gz | wc -l)"
+total_lines1="$(zcat "${prefix1}_1.fastq.gz" | wc -l)"
+total_lines2="$(zcat "${prefix1}_2.fastq.gz" | wc -l)"
 
 after_trimming_reads1="$(($total_lines1*25))"
 after_trimming_reads2="$(($total_lines2*25))"
 left_after_trimming_reads1="$(($after_trimming_reads1/$total_reads1))"
 left_after_trimming_reads2="$(($after_trimming_reads2/$total_reads2))"
-echo ""$left_after_trimming_reads1"% of original reads left after trimming" | tee -a "$LOGFILE"
+echo "${left_after_trimming_reads1}% of original reads left after trimming" | tee -a "$LOGFILE"
 
 # [ ChrM filtering ]
 # Indexes have to be generated beforehand.
 echo "$(date): chrM filtering..."| tee -a "$LOGFILE" 
 
-bowtie -Sq -v 2 -m 10 -X 1000 --un "$prefix2.fastq" -p "$THREADS" "$CMCCHRM" \
-  -1 <(zcat ""$prefix1"_1.fastq.gz") -2 <(zcat ""$prefix1"_2.fastq.gz") 2>"$prefix2".log | samtools view -S -b /dev/stdin >  "$prefix2".bam
-gzip "$prefix2"_1.fastq &
-gzip "$prefix2"_2.fastq &
+bowtie -Sq -v 2 -m 10 -X 1000 --un "${prefix2}.fastq" -p "$THREADS" "$CMCCHRM" \
+  -1 <(zcat "${prefix1}_1.fastq.gz") -2 <(zcat "${prefix1}_2.fastq.gz") 2>"${prefix2}.log" | samtools view -S -b /dev/stdin > "${prefix2}.bam"
+gzip "${prefix2}_1.fastq" &
+gzip "${prefix2}_2.fastq" &
 wait %1 %2 || exit $?
 
 # Get rid of intermediate files
-rm "$outdir"/*_F1_*fastq.gz
+rm "${outdir}"/*_F1_*fastq.gz
 
 # Count actual number of reads
-total_lines1="$(zcat ${prefix2}_1.fastq.gz | wc -l)"
-total_lines2="$(zcat ${prefix2}_2.fastq.gz | wc -l)"
+total_lines1="$(zcat "${prefix2}_1.fastq.gz" | wc -l)"
+total_lines2="$(zcat "${prefix2}_2.fastq.gz" | wc -l)"
 
 after_chrM_reads1="$(($total_lines1*25))"
 after_chrM_reads2="$(($total_lines2*25))"
@@ -148,12 +148,12 @@ echo "$(date): rRNA filtering..." | tee -a "$LOGFILE"
 
 bowtie -Sq -v 2 -m 10 -X 1000 --un "${prefix3}.fastq" --threads "$THREADS" "$RRNA" \
   -1 <(zcat "${prefix2}_1.fastq.gz") -2 <(zcat "${prefix2}_2.fastq.gz") 2>"${prefix3}.log" | samtools view -S -b /dev/stdin > "${prefix3}.bam"
-gzip ${prefix3}_1.fastq &
-gzip ${prefix3}_2.fastq &
+gzip "${prefix3}_1.fastq" &
+gzip "${prefix3}_2.fastq" &
 wait %1 %2 || exit $?
 
 # Get rid of intermediate files
-rm ${outdir}/*_F2_*.fastq.gz
+rm "${outdir}"/*_F2_*.fastq.gz
 
 # Count actual number of reads
 total_lines1="$(zcat ${prefix3}_1.fastq.gz | wc -l)"
