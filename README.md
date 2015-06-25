@@ -50,16 +50,18 @@ Dependancies
 Usage
 -----------------
 
-1. Every folder (`./script_name`) will contain the following files and folder:
-  1. `./sript_name.sh`: bash script
-  2. `./main/`
-    * `./main.sh`: bash script to try the command with toy example.
+1. Every folder (`script_name`) will contain the following files and directories:
+  1. `sript_name.sh`: bash script
+  2. `main/`
+    * `main.sh`: bash script to try the command with toy example.
     * Files required for the toy example.
+  3. `pbs/`
+    * `script_name.pbs`: pbs script to run the command on blacklight.
 
 ####cutadapt.sh
 
           cutadaptPE.sh INPUT_DIR OUTPUT_DIR  READS_PREFIX
-          
+
 ####filteringPE.sh
 
           filteringPE.sh QUAL THREADS INPUTPAIR1 INPUTPAIR2
