@@ -8,7 +8,7 @@
 Flexbar - flexible barcode and adapter removal, version 2.5
 
 
-Local time:            Mon Jun 22 11:39:51 2015
+Local time:            Thu Jun 25 12:44:58 2015
 
 Target name:           ./read/read_F1
 File type:             fastq
@@ -19,7 +19,7 @@ Adapter file:          /Users/jordi/code/linux/bin/rnaSeq/src/filteringPE/main/p
 
 threads:               2
 max-uncalled:          5
-min-read-length:       35
+min-read-length:       50
 
 adapter-trim-end:      RIGHT
 adapter-min-overlap:   6

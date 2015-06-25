@@ -64,7 +64,7 @@ mkdir -p "$outdir"
 
 # Log file with timestamp
 script_name_prefix="$(basename "$0" .sh)"
-LOGFILE="$outdir"/"$script_name_prefix"_"$LIBRARY".log
+LOGFILE="${outdir}/${script_name_prefix}_${LIBRARY}.log"
 touch "$LOGFILE"        # For general .log file 
 
 # functions
@@ -91,7 +91,7 @@ total_lines2="$(zcat "$INPUT2"| wc -l)"
 
 total_reads1="$(($total_lines1/4))"
 total_reads2="$(($total_lines2/4))"
-echo "Processing total of $total_reads1 reads" | tee -a "$LOGFILE"
+echo "Processing total of ${total_reads1} reads" | tee -a "$LOGFILE"
 
 # [ PolyA/T trimming ]
 echo "$(date): Poly dA/dT trimming..." | tee -a "$LOGFILE"
@@ -102,16 +102,16 @@ flexbar --adapters "$polyAT" -r "$INPUT1" -p "$INPUT2" \
 --threads "$THREADS" \
 --max-uncalled 5 \
 --min-read-length 50 \
---adapter-min-overlap 6 &>"$prefix1.log"\
-|| { rm -f "$prefix1"_{1,2}.fastq ; fail "PolyA removeing"; } 
+--adapter-min-overlap 6 &>"${prefix1}.log"\
+|| { rm -f ${prefix1}_{1,2}.fastq ; fail "PolyA removeing"; } 
 
-gzip "$prefix1"_1.fastq &
-gzip "$prefix1"_2.fastq &
+gzip ${prefix1}_1.fastq &
+gzip ${prefix1}_2.fastq &
 wait %1 %2 || exit $?
 
 # Count actual number of reads
-total_lines1="$(zcat "$prefix1"_1.fastq.gz | wc -l)"
-total_lines2="$(zcat "$prefix1"_2.fastq.gz | wc -l)"
+total_lines1="$(zcat ${prefix1}_1.fastq.gz | wc -l)"
+total_lines2="$(zcat ${prefix1}_2.fastq.gz | wc -l)"
 
 after_trimming_reads1="$(($total_lines1*25))"
 after_trimming_reads2="$(($total_lines2*25))"
@@ -140,30 +140,30 @@ after_chrM_reads1="$(($total_lines1*25))"
 after_chrM_reads2="$(($total_lines2*25))"
 left_after_chrM_reads1="$(($after_chrM_reads1/$total_reads1))"
 left_after_chrM_reads2="$(($after_chrM_reads2/$total_reads2))"
-echo ""$left_after_chrM_reads1"% of original reads left after chrM filtering" | tee -a "$LOGFILE"
+echo "${left_after_chrM_reads1}% of original reads left after chrM filtering" | tee -a "$LOGFILE"
 
 # [ rRNA filtering ]
 # Indexes have to be generated beforehand.
 echo "$(date): rRNA filtering..." | tee -a "$LOGFILE"
 
-bowtie -Sq -v 2 -m 10 -X 1000 --un "$prefix3.fastq" --threads "$THREADS" "$RRNA" \
-  -1 <(zcat ""$prefix2"_1.fastq.gz") -2 <(zcat ""$prefix2"_2.fastq.gz") 2>"$prefix3".log | samtools view -S -b /dev/stdin > "$prefix3".bam
-gzip "$prefix3"_1.fastq &
-gzip "$prefix3"_2.fastq &
+bowtie -Sq -v 2 -m 10 -X 1000 --un "${prefix3}.fastq" --threads "$THREADS" "$RRNA" \
+  -1 <(zcat "${prefix2}_1.fastq.gz") -2 <(zcat "${prefix2}_2.fastq.gz") 2>"${prefix3}.log" | samtools view -S -b /dev/stdin > "${prefix3}.bam"
+gzip ${prefix3}_1.fastq &
+gzip ${prefix3}_2.fastq &
 wait %1 %2 || exit $?
 
 # Get rid of intermediate files
-rm "$outdir"/*_F2_*.fastq.gz
+rm ${outdir}/*_F2_*.fastq.gz
 
 # Count actual number of reads
-total_lines1="$(zcat "$prefix3"_1.fastq.gz | wc -l)"
-total_lines2="$(zcat "$prefix3"_2.fastq.gz | wc -l)"
+total_lines1="$(zcat ${prefix3}_1.fastq.gz | wc -l)"
+total_lines2="$(zcat ${prefix3}_2.fastq.gz | wc -l)"
 
 after_rRNA_reads1="$(($total_lines1*25))"
 after_rRNA_reads2="$(($total_lines2*25))"
 left_after_rRNA_reads1="$(($after_rRNA_reads1/$total_reads1))"
 left_after_rRNA_reads2="$(($after_rRNA_reads2/$total_reads2))"
-echo ""$left_after_rRNA_reads1"% of original reads left after rRNA filtering" | tee -a "$LOGFILE"
+echo "${left_after_rRNA_reads1}% of original reads left after rRNA filtering" | tee -a "$LOGFILE"
 echo "$(date): Done, $(($total_lines1/4)) reads passed all the filters." | tee -a "$LOGFILE"
 
 # [ program end ]
