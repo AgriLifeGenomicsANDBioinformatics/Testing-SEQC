@@ -1,0 +1,24 @@
+Description:
+  Wrapper for SEECER with paired end reads.
+
+Usage:
+	seecerPE.sh  [OPTIONS]  -- read_r1.fastq.gz read_r2.fastq.gz
+
+Options:
+  -h--help                Help.
+  -d--outdir              Output directory. Default: seecerOut.
+  -k--kmerSize            Kmer size. Default: 17.
+
+Examples:
+  seecerPE.sh -d seecer20 -k 20 -- read_r1.fastq.gz read_r2.fastq.gz
+
+Upstream:
+  filteringPE.sh
+
+Notes:
+
+Date:
+  2015/06/26
+
+Author:
+Jordi Abante <abante.jordi@gmail.com>
