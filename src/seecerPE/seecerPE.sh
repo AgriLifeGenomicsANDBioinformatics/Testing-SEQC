@@ -24,7 +24,6 @@ eval set -- "$TEMP"
 
 
 # Defaults
-outdir=seecerOut
 kmerSize=17
 
 while true
@@ -33,10 +32,6 @@ do
     -h|--help)			
       cat "$script_absdir/${script_name}_help.txt"
       exit
-      ;;
-    -d|--outdir)	
-      outdir="$2"
-      shift 2
       ;;
     -k|--kmerSize)	
       kmerSize="$2"
@@ -58,11 +53,15 @@ read1="$1"
 read2="$2"
 
 # Less common prefix
-lcprefix="$(printf "%s\n" "$read1" "$read2" | sed -e 'N;s/^\(.*\).*\n\1.*$/\1/')"
+lcprefix="$(printf "%s\n" "$(basename "$read1")" "$(basename "$read2")" | sed -e 'N;s/^\(.*\).*\n\1.*$/\1/')"
 prefix="${lcprefix%_[rR]}"
 
 # Create tmp and output directories
-temp="$prefix"
+readsDir="$(dirname "$read1")"
+outdir="${readsDir}/seecerOut"
+temp="${readsDir}/${prefix}"
+logfile="${outdir}/${prefix}_seecer${kmerSize}.log"
+
 mkdir -p "$temp"
 mkdir -p "$outdir"
 
@@ -71,14 +70,14 @@ mkdir -p "$outdir"
 gunzip "$read1" &
 gunzip "$read2" &
 wait %1 %2 || exit $?
-fqFile1="$(basename "$read1" .gz)"
-fqFile2="$(basename "$read2" .gz)"
+fqFile1="${read1%".gz"}"
+fqFile2="${read2%".gz"}"
 
 # Run
-run_seecer.sh -t "$temp" -k "$kmerSize" "$fqFile1" "$fqFile2"  &>"${outdir}/${prefix}_seecer${kmerSize}.log"
+run_seecer.sh -t "$temp" -k "$kmerSize" "$fqFile1" "$fqFile2"  &>"$logfile"
 
 # Re-compress fq files
-for f in "$prefix"*; do
+for f in "${readsDir}/${prefix}"*; do
   if [ -f "$f" ];then
     gzip "$f" &
   fi
@@ -86,7 +85,7 @@ done
 wait || exit $?
 
 # Move files to outdir
-for f in "$prefix"*fastq_*.gz; do
+for f in "${readsDir}/${prefix}"*fastq_*.gz; do
   if [ -f "$f" ];then
     mv "$f" "$outdir" &
   fi
