@@ -50,6 +50,8 @@ Dependancies
     1. SEECER
     2. jellyfish
     3. seqan
+  4. detonatePE.sh
+    1. DETONATE
 
 Usage
 -----------------
@@ -73,6 +75,10 @@ Usage
 ####seecerPE.sh
 
           seecerPE.sh [OPTIONS] -- INPUTPAIR1 INPUTPAIR2
+
+####detonatePE.sh
+
+          detonatePE.sh [OPTIONS] -- INPUTPAIR1 INPUTPAIR2  ASSEMBLY
 
 License
 ---------------
