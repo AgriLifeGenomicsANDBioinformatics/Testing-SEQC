@@ -12,7 +12,7 @@ if [ $# -eq 0 ]
         exit 1
 fi
 
-TEMP=$(getopt -o hd:er -l help,outdir:,eval,ref -n "$script_name.sh" -- "$@")
+TEMP=$(getopt -o ht:er -l help,threads:,eval,ref -n "$script_name.sh" -- "$@")
 
 if [ $? -ne 0 ]
 then
@@ -23,7 +23,6 @@ fi
 eval set -- "$TEMP"
 
 # Defaults
-outdir=./
 threads=1
 averageLength=75
 
@@ -34,8 +33,8 @@ do
       cat "$script_absdir/${script_name}_help.txt"
       exit
       ;;
-    -d|--outdir)	
-      outdir="$2"
+    -t|--threads)	
+      threads="$2"
       shift 2
       ;;
     -e|--eval)	
@@ -60,37 +59,44 @@ done
 # Read input files
 read1="$1"
 read2="$2"
-fastaFile="$3"
+fastaPath="$3"
+fastaFile="$(basename "$fastaPath")"
+fastaDir="$(dirname "$fastaPath")"
 
 # Setting some file/dirnames
+outdir="${fastaDir}/detonateOut"
 prefix="${fastaFile%".fasta"}"
-transcriptLengthParameters="${prefix}_length_distribution"
+transcriptLengthParameters="${fastaDir}/${prefix}_length_distribution/${prefix}.txt"
+logfile="${outdir}/${prefix}_detonateRsem.log"
 
 # Gunzip in parallel
 # Process substitution doesn't work with Seecer, i.e. <(zcat read)
 gunzip "$read1" &
 gunzip "$read2" &
 wait %1 %2 || exit $?
-fqFile1="$(basename "$read1" .gz)"
-fqFile2="$(basename "$read2" .gz)"
+fqFile1="${read1%".gz"}"
+fqFile2="${read2%".gz"}"
 
 # Find contig length distribution if still doesn't exist
 if [ ! -f "$transcriptLengthParameters" ]
 then
-  mkdir -p "$transcriptLengthParameters"
-  rsem-eval-estimate-transcript-length-distribution "$fastaFile" "$transcriptLengthParameters/${prefix}.txt"
+  mkdir -p "$(dirname "$transcriptLengthParameters")"
+  rsem-eval-estimate-transcript-length-distribution "$fastaPath" "$transcriptLengthParameters"
 fi
 
 # Evaluation
 if [ "$eval" ]
 then
-  # Create output directories
-  mkdir -p "$prefix"
-  rsem-eval-calculate-score --no-qualities -p "$threads" --transcript-length-parameters "$transcriptLengthParameters/${prefix}.txt" \
-    --paired-end "$fqFile1" "$fqFile2" "$fastaFile" "$prefix" "$averageLength" &>"${prefix}/${prefix}_detonateRsem.log"
+  # Create output directory
+  mkdir -p "$outdir"
+  # Run
+  rsem-eval-calculate-score -p "$threads" --transcript-length-parameters "$transcriptLengthParameters" \
+    --paired-end "$fqFile1" "$fqFile2" "$fastaPath" "${outdir}/${prefix}" "$averageLength"  &>"$logfile"
 fi
 
 # Compress the fastq files again
 gzip "$fqFile1" &
 gzip "$fqFile2" &
 wait %1 %2 || exit $?
+
+

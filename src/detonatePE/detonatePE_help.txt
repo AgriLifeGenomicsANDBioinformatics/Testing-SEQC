@@ -1,19 +1,19 @@
 Description:
-  Wrapper for SEECER with paired end reads.
+  Wrapper for DETONATE with paired end reads.
 
 Usage:
-	seecerPE.sh  [OPTIONS]  -- read_r1.fastq.gz read_r2.fastq.gz
+	detonatePE.sh  [OPTIONS]  -- read_r1.fastq.gz read_r2.fastq.gz  assembly.fasta
 
 Options:
   -h--help                Help.
-  -d--outdir              Output directory. Default: seecerOut.
-  -k--kmerSize            Kmer size. Default: 17.
+  -t--threads             Threads used by DETONATE. Default: 1.
 
 Examples:
-  seecerPE.sh -d seecer20 -k 20 -- read_r1.fastq.gz read_r2.fastq.gz
+  detonatePE.sh -e -t 2 -- reads/reads_r1.fastq.gz reads/reads_r2.fastq.gz assembly/trinityOut.fasta 
+
 
 Upstream:
-  filteringPE.sh
+  seecerPE.sh
 
 Notes:
 
@@ -21,4 +21,4 @@ Date:
   2015/06/26
 
 Author:
-Jordi Abante <abante.jordi@gmail.com>
+  Jordi Abante <abante.jordi@gmail.com>
