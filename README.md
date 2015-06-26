@@ -43,9 +43,13 @@ Dependancies
   1. cutadaptPE.sh
     1. cutadapt
   2. filteringPE.sh
-    1. bowtie (1.1.0 recommended)
-    2. flexbar (2.5 recommended)
-    3. samtools (1.2 recommended)
+    1. bowtie
+    2. flexbar
+    3. samtools
+  3. seecerPE.sh
+    1. SEECER
+    2. jellyfish
+    3. seqan
 
 Usage
 -----------------
@@ -65,6 +69,10 @@ Usage
 ####filteringPE.sh
 
           filteringPE.sh QUAL THREADS INPUTPAIR1 INPUTPAIR2
+
+####seecerPE.sh
+
+          seecerPE.sh [OPTIONS] -- INPUTPAIR1 INPUTPAIR2
 
 License
 ---------------
