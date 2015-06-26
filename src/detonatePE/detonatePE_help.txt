@@ -7,6 +7,7 @@ Usage:
 Options:
   -h--help                Help.
   -t--threads             Threads used by DETONATE. Default: 1.
+  -e--eval                Compute the reference-less score.
 
 Examples:
   detonatePE.sh -e -t 2 -- reads/reads_r1.fastq.gz reads/reads_r2.fastq.gz assembly/trinityOut.fasta 
