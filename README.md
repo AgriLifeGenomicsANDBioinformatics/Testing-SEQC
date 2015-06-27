@@ -28,16 +28,7 @@ Dependancies
   3. python (v2)
   4. java (v1.7.X)
 
-2. If the machine running the code is Machintosh install coreutils (sudo port install coreutils) as well as:
-  1. gzip
-  2. grep
-  3. getopt
-  4. mysql
-  5. openssl
-  6. readline
-  7. boost
-  8. zlib
-  9. gcc4.9
+2. If the machine running the code is Machintosh install coreutils (sudo port install coreutils) as well as: gzip, grep, getopt, mysql, openssl, readline, boost, zlib.
 
 3. The following packages should be available in the path variable in the machine running the code:
   1. cutadaptPE.sh
