@@ -1,6 +1,6 @@
-Score	-1646264.97
+Score	-1646254.11
 BIC_penalty	-371.81
-Prior_score_on_contig_lengths_(f_function_canceled)	-246.36
+Prior_score_on_contig_lengths_(f_function_canceled)	-235.50
 Prior_score_on_contig_sequences	-191042.45
 Data_likelihood_in_log_space_without_correction	-1454871.95
 Correction_term_(f_function_canceled)	-267.61

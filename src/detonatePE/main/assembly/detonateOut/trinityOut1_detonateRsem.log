@@ -1,17 +1,17 @@
-rsem-synthesis-reference-transcripts assembly/detonateOut/trinityOut.temp/trinityOut 0 0 0 assembly/trinityOut.fasta
+rsem-synthesis-reference-transcripts assembly/detonateOut/trinityOut1.temp/trinityOut1 0 0 0 assembly/trinityOut1.fasta
 Transcript Information File is generated!
 Group File is generated!
 Extracted Sequences File is generated!
 
-rsem-preref assembly/detonateOut/trinityOut.temp/trinityOut.transcripts.fa 1 assembly/detonateOut/trinityOut.temp/trinityOut
+rsem-preref assembly/detonateOut/trinityOut1.temp/trinityOut1.transcripts.fa 1 assembly/detonateOut/trinityOut1.temp/trinityOut1
 Refs.makeRefs finished!
 Refs.saveRefs finished!
-assembly/detonateOut/trinityOut.temp/trinityOut.idx.fa is generated!
-assembly/detonateOut/trinityOut.temp/trinityOut.n2g.idx.fa is generated!
+assembly/detonateOut/trinityOut1.temp/trinityOut1.idx.fa is generated!
+assembly/detonateOut/trinityOut1.temp/trinityOut1.n2g.idx.fa is generated!
 
-bowtie-build -f assembly/detonateOut/trinityOut.temp/trinityOut.n2g.idx.fa assembly/detonateOut/trinityOut.temp/trinityOut
+bowtie-build -f assembly/detonateOut/trinityOut1.temp/trinityOut1.n2g.idx.fa assembly/detonateOut/trinityOut1.temp/trinityOut1
 Settings:
-  Output files: "assembly/detonateOut/trinityOut.temp/trinityOut.*.ebwt"
+  Output files: "assembly/detonateOut/trinityOut1.temp/trinityOut1.*.ebwt"
   Line rate: 6 (line is 64 bytes)
   Lines per side: 1 (side is 64 bytes)
   Offset rate: 5 (one in 32)
@@ -28,7 +28,7 @@ Settings:
   Random seed: 0
   Sizeofs: void*:8, int:4, long:8, size_t:8
 Input files DNA, FASTA:
-  assembly/detonateOut/trinityOut.temp/trinityOut.n2g.idx.fa
+  assembly/detonateOut/trinityOut1.temp/trinityOut1.n2g.idx.fa
 Reading reference sizes
   Time reading reference sizes: 00:00:00
 Calculating joined length
@@ -132,7 +132,7 @@ Getting block 2 of 7
   Block accumulator loop time: 00:00:00
   Sorting block of length 18314
   (Using difference cover)
-  Sorting block time: 00:00:00
+  Sorting block time: 00:00:01
 Returning block of 18315
 Getting block 3 of 7
   Reserving size (25839) for bucket
@@ -242,8 +242,8 @@ fchr[T]: 103958
 fchr[$]: 137808
 Exiting Ebwt::buildToDisk()
 Returning from initFromVector
-Wrote 4235991 bytes to primary EBWT file: assembly/detonateOut/trinityOut.temp/trinityOut.1.ebwt
-Wrote 17232 bytes to secondary EBWT file: assembly/detonateOut/trinityOut.temp/trinityOut.2.ebwt
+Wrote 4235991 bytes to primary EBWT file: assembly/detonateOut/trinityOut1.temp/trinityOut1.1.ebwt
+Wrote 17232 bytes to secondary EBWT file: assembly/detonateOut/trinityOut1.temp/trinityOut1.2.ebwt
 Re-opening _in1 and _in2 as input streams
 Returning from Ebwt constructor
 Headers:
@@ -276,7 +276,7 @@ Headers:
     ebwtTotLen: 39424
     ebwtTotSz: 39424
     reverse: 0
-Total time for call to driver() for forward index: 00:00:00
+Total time for call to driver() for forward index: 00:00:01
 Reading reference sizes
   Time reading reference sizes: 00:00:00
 Calculating joined length
@@ -405,7 +405,7 @@ Getting block 1 of 8
   Block accumulator loop time: 00:00:00
   Sorting block of length 23406
   (Using difference cover)
-  Sorting block time: 00:00:01
+  Sorting block time: 00:00:00
 Returning block of 23407
 Getting block 2 of 8
   Reserving size (25839) for bucket
@@ -555,8 +555,8 @@ fchr[T]: 103958
 fchr[$]: 137808
 Exiting Ebwt::buildToDisk()
 Returning from initFromVector
-Wrote 4235991 bytes to primary EBWT file: assembly/detonateOut/trinityOut.temp/trinityOut.rev.1.ebwt
-Wrote 17232 bytes to secondary EBWT file: assembly/detonateOut/trinityOut.temp/trinityOut.rev.2.ebwt
+Wrote 4235991 bytes to primary EBWT file: assembly/detonateOut/trinityOut1.temp/trinityOut1.rev.1.ebwt
+Wrote 17232 bytes to secondary EBWT file: assembly/detonateOut/trinityOut1.temp/trinityOut1.rev.2.ebwt
 Re-opening _in1 and _in2 as input streams
 Returning from Ebwt constructor
 Headers:
@@ -591,21 +591,21 @@ Headers:
     reverse: 0
 Total time for backward call to driver() for mirror index: 00:00:01
 
-bowtie -q --phred33-quals -n 2 -e 99999999 -l 25 -I 1 -X 1000 -p 2 -a -m 200 -S assembly/detonateOut/trinityOut.temp/trinityOut -1 reads/reads_r1.fastq -2 reads/reads_r2.fastq | samtools view -S -b -o assembly/detonateOut/trinityOut.temp/trinityOut.bam -
+bowtie -q --phred33-quals -n 2 -e 99999999 -l 25 -I 1 -X 1000 -p 2 -a -m 200 -S assembly/detonateOut/trinityOut1.temp/trinityOut1 -1 reads/reads1_r1.fastq -2 reads/reads1_r2.fastq | samtools view -S -b -o assembly/detonateOut/trinityOut1.temp/trinityOut1.bam -
 [samopen] SAM header is present: 71 sequences.
 # reads processed: 30575
 # reads with at least one reported alignment: 27108 (88.66%)
 # reads that failed to align: 3467 (11.34%)
 Reported 64812 paired-end alignments to 1 output stream(s)
 
-rsem-parse-alignments assembly/detonateOut/trinityOut.temp/trinityOut assembly/detonateOut/trinityOut.temp/trinityOut assembly/detonateOut/trinityOut.stat/trinityOut b assembly/detonateOut/trinityOut.temp/trinityOut.bam -t 3 -tag XM
+rsem-parse-alignments assembly/detonateOut/trinityOut1.temp/trinityOut1 assembly/detonateOut/trinityOut1.temp/trinityOut1 assembly/detonateOut/trinityOut1.stat/trinityOut1 b assembly/detonateOut/trinityOut1.temp/trinityOut1.bam -t 3 -tag XM
 Done!
 
-rsem-build-read-index 32 1 0 assembly/detonateOut/trinityOut.temp/trinityOut_alignable_1.fq assembly/detonateOut/trinityOut.temp/trinityOut_alignable_2.fq
-Build Index assembly/detonateOut/trinityOut.temp/trinityOut_alignable_1.fq is Done!
-Build Index assembly/detonateOut/trinityOut.temp/trinityOut_alignable_2.fq is Done!
+rsem-build-read-index 32 1 0 assembly/detonateOut/trinityOut1.temp/trinityOut1_alignable_1.fq assembly/detonateOut/trinityOut1.temp/trinityOut1_alignable_2.fq
+Build Index assembly/detonateOut/trinityOut1.temp/trinityOut1_alignable_1.fq is Done!
+Build Index assembly/detonateOut/trinityOut1.temp/trinityOut1_alignable_2.fq is Done!
 
-rsem-eval-run-em assembly/detonateOut/trinityOut.temp/trinityOut 3 assembly/detonateOut/trinityOut assembly/detonateOut/trinityOut.temp/trinityOut assembly/detonateOut/trinityOut.stat/trinityOut 0.660424231913155 0.000450153681088881 75 0 -p 2
+rsem-eval-run-em assembly/detonateOut/trinityOut1.temp/trinityOut1 3 assembly/detonateOut/trinityOut1 assembly/detonateOut/trinityOut1.temp/trinityOut1 assembly/detonateOut/trinityOut1.stat/trinityOut1 0.650731242119049 0.00033515059786042 75 0 -p 2
 Refs.loadRefs finished!
 Thread 0 : N = 13230, NHit = 32406
 DAT 0 reads left
@@ -636,7 +636,7 @@ ROUND = 20, SUM = 30575, bChange = 0.24834, totNum = 26
 ROUND = 21, SUM = 30575, bChange = 0.248204, totNum = 26
 ROUND = 22, SUM = 30575, bChange = 0.248102, totNum = 26
 ROUND = 23, SUM = 30575, bChange = 0.248026, totNum = 25
-ROUND = 24, SUM = 30575.0000000001, bChange = 0.247969, totNum = 25
+ROUND = 24, SUM = 30575, bChange = 0.247969, totNum = 25
 ROUND = 25, SUM = 30575, bChange = 0.247927, totNum = 24
 ROUND = 26, SUM = 30575, bChange = 0.247895, totNum = 24
 ROUND = 27, SUM = 30575, bChange = 0.247871, totNum = 22
@@ -663,7 +663,7 @@ ROUND = 47, SUM = 30574.9999999999, bChange = 0.0211253, totNum = 13
 ROUND = 48, SUM = 30575, bChange = 0.0203945, totNum = 13
 ROUND = 49, SUM = 30575, bChange = 0.0196774, totNum = 13
 ROUND = 50, SUM = 30575, bChange = 0.0189745, totNum = 13
-ROUND = 51, SUM = 30575.0000000001, bChange = 0.0182863, totNum = 13
+ROUND = 51, SUM = 30575, bChange = 0.0182863, totNum = 13
 ROUND = 52, SUM = 30575, bChange = 0.0176132, totNum = 13
 ROUND = 53, SUM = 30575, bChange = 0.0169555, totNum = 13
 ROUND = 54, SUM = 30575, bChange = 0.0167281, totNum = 13
@@ -748,7 +748,7 @@ ROUND = 132, SUM = 30575.0000000001, bChange = 0.0166731, totNum = 3
 ROUND = 133, SUM = 30575, bChange = 0.0166875, totNum = 3
 ROUND = 134, SUM = 30575, bChange = 0.016702, totNum = 3
 ROUND = 135, SUM = 30575, bChange = 0.0167164, totNum = 3
-ROUND = 136, SUM = 30574.9999999999, bChange = 0.0167309, totNum = 3
+ROUND = 136, SUM = 30575, bChange = 0.0167309, totNum = 3
 ROUND = 137, SUM = 30575, bChange = 0.0167454, totNum = 3
 ROUND = 138, SUM = 30575, bChange = 0.0167599, totNum = 3
 ROUND = 139, SUM = 30575, bChange = 0.0167744, totNum = 3
@@ -770,7 +770,7 @@ ROUND = 154, SUM = 30575, bChange = 0.0169893, totNum = 2
 ROUND = 155, SUM = 30575, bChange = 0.0170032, totNum = 2
 ROUND = 156, SUM = 30575, bChange = 0.0170172, totNum = 1
 ROUND = 157, SUM = 30575, bChange = 0.017031, totNum = 1
-ROUND = 158, SUM = 30575, bChange = 0.0170448, totNum = 1
+ROUND = 158, SUM = 30575.0000000001, bChange = 0.0170448, totNum = 1
 ROUND = 159, SUM = 30575, bChange = 0.0170585, totNum = 1
 ROUND = 160, SUM = 30575, bChange = 0.0170721, totNum = 1
 ROUND = 161, SUM = 30575, bChange = 0.0170857, totNum = 1
@@ -1000,7 +1000,7 @@ ROUND = 384, SUM = 30575, bChange = 0.0182349, totNum = 1
 ROUND = 385, SUM = 30575, bChange = 0.0182356, totNum = 1
 ROUND = 386, SUM = 30575, bChange = 0.0182363, totNum = 1
 ROUND = 387, SUM = 30575, bChange = 0.0182369, totNum = 1
-ROUND = 388, SUM = 30575, bChange = 0.0182376, totNum = 1
+ROUND = 388, SUM = 30575.0000000001, bChange = 0.0182376, totNum = 1
 ROUND = 389, SUM = 30575, bChange = 0.0182382, totNum = 1
 ROUND = 390, SUM = 30575, bChange = 0.0182389, totNum = 1
 ROUND = 391, SUM = 30575, bChange = 0.0182395, totNum = 1
@@ -1122,7 +1122,7 @@ ROUND = 506, SUM = 30575, bChange = 0.0182706, totNum = 1
 ROUND = 507, SUM = 30575, bChange = 0.0182707, totNum = 1
 ROUND = 508, SUM = 30575, bChange = 0.0182707, totNum = 1
 ROUND = 509, SUM = 30575, bChange = 0.0182708, totNum = 1
-ROUND = 510, SUM = 30575, bChange = 0.0182709, totNum = 1
+ROUND = 510, SUM = 30574.9999999999, bChange = 0.0182709, totNum = 1
 ROUND = 511, SUM = 30575, bChange = 0.018271, totNum = 1
 ROUND = 512, SUM = 30575, bChange = 0.0182711, totNum = 1
 ROUND = 513, SUM = 30575, bChange = 0.0182711, totNum = 1
@@ -1137,7 +1137,7 @@ ROUND = 521, SUM = 30575, bChange = 0.0182717, totNum = 1
 ROUND = 522, SUM = 30575, bChange = 0.0182718, totNum = 1
 ROUND = 523, SUM = 30575, bChange = 0.0182718, totNum = 1
 ROUND = 524, SUM = 30575, bChange = 0.0182719, totNum = 1
-ROUND = 525, SUM = 30575, bChange = 0.0182719, totNum = 1
+ROUND = 525, SUM = 30574.9999999999, bChange = 0.0182719, totNum = 1
 ROUND = 526, SUM = 30575, bChange = 0.018272, totNum = 1
 ROUND = 527, SUM = 30575, bChange = 0.0182721, totNum = 1
 ROUND = 528, SUM = 30575, bChange = 0.0182721, totNum = 1
@@ -1307,5 +1307,5 @@ Calculating correction score.
 Correction score is calculated!
 Time Used for EM.cpp : 0 h 00 m 02 s
 
-rm -rf assembly/detonateOut/trinityOut.temp
+rm -rf assembly/detonateOut/trinityOut1.temp
 
