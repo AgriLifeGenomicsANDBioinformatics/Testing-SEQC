@@ -24,7 +24,7 @@ eval set -- "$TEMP"
 
 
 # Defaults
-kmerSize=17
+kmerSize=24
 
 while true
 do
