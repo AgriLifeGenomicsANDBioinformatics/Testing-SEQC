@@ -12,7 +12,7 @@ if [ $# -eq 0 ]
         exit 1
 fi
 
-TEMP=$(getopt -o ht:er -l help,threads:,eval,ref -n "$script_name.sh" -- "$@")
+TEMP=$(getopt -o ht: -l help,threads: -n "$script_name.sh" -- "$@")
 
 if [ $? -ne 0 ]
 then
@@ -36,14 +36,6 @@ do
     -t|--threads)	
       threads="$2"
       shift 2
-      ;;
-    -e|--eval)	
-      eval=x
-      shift 1
-      ;;
-    -r|--ref)	
-      ref=x
-      shift 1
       ;;
    --)
       shift
@@ -85,14 +77,11 @@ then
 fi
 
 # Evaluation
-if [ "$eval" ]
-then
-  # Create output directory
-  mkdir -p "$outdir"
-  # Run
-  rsem-eval-calculate-score -p "$threads" --transcript-length-parameters "$transcriptLengthParameters" \
-    --paired-end "$fqFile1" "$fqFile2" "$fastaPath" "${outdir}/${prefix}" "$averageLength"  &>"$logfile"
-fi
+# Create output directory
+mkdir -p "$outdir"
+# Run
+rsem-eval-calculate-score -p "$threads" --transcript-length-parameters "$transcriptLengthParameters" \
+  --paired-end "$fqFile1" "$fqFile2" "$fastaPath" "${outdir}/${prefix}" "$averageLength"  &>"$logfile"
 
 # Compress the fastq files again
 gzip "$fqFile1" &

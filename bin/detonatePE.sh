@@ -1,1 +1,0 @@
-../src/detonatePE/detonatePE.sh
