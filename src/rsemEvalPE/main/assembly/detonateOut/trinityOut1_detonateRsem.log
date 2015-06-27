@@ -192,7 +192,7 @@ Getting block 5 of 7
   Block accumulator loop time: 00:00:00
   Sorting block of length 18885
   (Using difference cover)
-  Sorting block time: 00:00:00
+  Sorting block time: 00:00:01
 Returning block of 18886
 Getting block 6 of 7
   Reserving size (25839) for bucket
@@ -276,7 +276,7 @@ Headers:
     ebwtTotLen: 39424
     ebwtTotSz: 39424
     reverse: 0
-Total time for call to driver() for forward index: 00:00:00
+Total time for call to driver() for forward index: 00:00:01
 Reading reference sizes
   Time reading reference sizes: 00:00:00
 Calculating joined length
@@ -350,7 +350,7 @@ Split 1, merged 1; iterating...
   80%
   90%
   100%
-  Binary sorting into buckets time: 00:00:01
+  Binary sorting into buckets time: 00:00:00
 Splitting and merging
   Splitting and merging time: 00:00:00
 Split 1, merged 1; iterating...
@@ -589,7 +589,7 @@ Headers:
     ebwtTotLen: 39424
     ebwtTotSz: 39424
     reverse: 0
-Total time for backward call to driver() for mirror index: 00:00:01
+Total time for backward call to driver() for mirror index: 00:00:00
 
 bowtie -q --phred33-quals -n 2 -e 99999999 -l 25 -I 1 -X 1000 -p 2 -a -m 200 -S assembly/detonateOut/trinityOut1.temp/trinityOut1 -1 reads/reads1_r1.fastq -2 reads/reads1_r2.fastq | samtools view -S -b -o assembly/detonateOut/trinityOut1.temp/trinityOut1.bam -
 [samopen] SAM header is present: 71 sequences.
@@ -725,7 +725,7 @@ ROUND = 109, SUM = 30575, bChange = 0.0163671, totNum = 5
 ROUND = 110, SUM = 30575, bChange = 0.0163787, totNum = 5
 ROUND = 111, SUM = 30575, bChange = 0.0163904, totNum = 5
 ROUND = 112, SUM = 30575, bChange = 0.0164024, totNum = 5
-ROUND = 113, SUM = 30575, bChange = 0.0164146, totNum = 4
+ROUND = 113, SUM = 30575.0000000001, bChange = 0.0164146, totNum = 4
 ROUND = 114, SUM = 30575, bChange = 0.016427, totNum = 4
 ROUND = 115, SUM = 30575, bChange = 0.0164396, totNum = 4
 ROUND = 116, SUM = 30575, bChange = 0.0164524, totNum = 4
@@ -734,7 +734,7 @@ ROUND = 118, SUM = 30575, bChange = 0.0164784, totNum = 4
 ROUND = 119, SUM = 30575, bChange = 0.0164917, totNum = 4
 ROUND = 120, SUM = 30575, bChange = 0.016505, totNum = 4
 ROUND = 121, SUM = 30575, bChange = 0.0165185, totNum = 4
-ROUND = 122, SUM = 30575, bChange = 0.0165322, totNum = 4
+ROUND = 122, SUM = 30575.0000000001, bChange = 0.0165322, totNum = 4
 ROUND = 123, SUM = 30575, bChange = 0.0165459, totNum = 4
 ROUND = 124, SUM = 30575, bChange = 0.0165597, totNum = 4
 ROUND = 125, SUM = 30575, bChange = 0.0165737, totNum = 4
@@ -755,7 +755,7 @@ ROUND = 139, SUM = 30575, bChange = 0.0167744, totNum = 3
 ROUND = 140, SUM = 30575, bChange = 0.0167889, totNum = 3
 ROUND = 141, SUM = 30575, bChange = 0.0168034, totNum = 3
 ROUND = 142, SUM = 30575, bChange = 0.0168179, totNum = 3
-ROUND = 143, SUM = 30575, bChange = 0.0168324, totNum = 3
+ROUND = 143, SUM = 30575.0000000001, bChange = 0.0168324, totNum = 3
 ROUND = 144, SUM = 30575, bChange = 0.0168468, totNum = 3
 ROUND = 145, SUM = 30575, bChange = 0.0168612, totNum = 3
 ROUND = 146, SUM = 30575, bChange = 0.0168756, totNum = 3
@@ -770,7 +770,7 @@ ROUND = 154, SUM = 30575, bChange = 0.0169893, totNum = 2
 ROUND = 155, SUM = 30575, bChange = 0.0170032, totNum = 2
 ROUND = 156, SUM = 30575, bChange = 0.0170172, totNum = 1
 ROUND = 157, SUM = 30575, bChange = 0.017031, totNum = 1
-ROUND = 158, SUM = 30575.0000000001, bChange = 0.0170448, totNum = 1
+ROUND = 158, SUM = 30575, bChange = 0.0170448, totNum = 1
 ROUND = 159, SUM = 30575, bChange = 0.0170585, totNum = 1
 ROUND = 160, SUM = 30575, bChange = 0.0170721, totNum = 1
 ROUND = 161, SUM = 30575, bChange = 0.0170857, totNum = 1
@@ -928,16 +928,16 @@ ROUND = 312, SUM = 30575, bChange = 0.0181402, totNum = 1
 ROUND = 313, SUM = 30575, bChange = 0.0181424, totNum = 1
 ROUND = 314, SUM = 30575, bChange = 0.0181446, totNum = 1
 ROUND = 315, SUM = 30575, bChange = 0.0181467, totNum = 1
-ROUND = 316, SUM = 30575, bChange = 0.0181488, totNum = 1
+ROUND = 316, SUM = 30575.0000000001, bChange = 0.0181488, totNum = 1
 ROUND = 317, SUM = 30575, bChange = 0.0181508, totNum = 1
-ROUND = 318, SUM = 30574.9999999999, bChange = 0.0181529, totNum = 1
+ROUND = 318, SUM = 30575, bChange = 0.0181529, totNum = 1
 ROUND = 319, SUM = 30575, bChange = 0.0181548, totNum = 1
 ROUND = 320, SUM = 30575, bChange = 0.0181568, totNum = 1
 ROUND = 321, SUM = 30575, bChange = 0.0181587, totNum = 1
 ROUND = 322, SUM = 30575, bChange = 0.0181606, totNum = 1
 ROUND = 323, SUM = 30575, bChange = 0.0181625, totNum = 1
 ROUND = 324, SUM = 30575, bChange = 0.0181644, totNum = 1
-ROUND = 325, SUM = 30574.9999999999, bChange = 0.0181662, totNum = 1
+ROUND = 325, SUM = 30575, bChange = 0.0181662, totNum = 1
 ROUND = 326, SUM = 30575, bChange = 0.018168, totNum = 1
 ROUND = 327, SUM = 30575, bChange = 0.0181697, totNum = 1
 ROUND = 328, SUM = 30575, bChange = 0.0181714, totNum = 1
@@ -967,7 +967,7 @@ ROUND = 351, SUM = 30575, bChange = 0.0182045, totNum = 1
 ROUND = 352, SUM = 30575, bChange = 0.0182057, totNum = 1
 ROUND = 353, SUM = 30575, bChange = 0.0182069, totNum = 1
 ROUND = 354, SUM = 30575, bChange = 0.018208, totNum = 1
-ROUND = 355, SUM = 30575.0000000001, bChange = 0.0182091, totNum = 1
+ROUND = 355, SUM = 30575, bChange = 0.0182091, totNum = 1
 ROUND = 356, SUM = 30574.9999999999, bChange = 0.0182103, totNum = 1
 ROUND = 357, SUM = 30575, bChange = 0.0182113, totNum = 1
 ROUND = 358, SUM = 30575, bChange = 0.0182124, totNum = 1
@@ -986,7 +986,7 @@ ROUND = 370, SUM = 30575, bChange = 0.018224, totNum = 1
 ROUND = 371, SUM = 30575, bChange = 0.0182249, totNum = 1
 ROUND = 372, SUM = 30575, bChange = 0.0182257, totNum = 1
 ROUND = 373, SUM = 30575, bChange = 0.0182266, totNum = 1
-ROUND = 374, SUM = 30575, bChange = 0.0182274, totNum = 1
+ROUND = 374, SUM = 30574.9999999999, bChange = 0.0182274, totNum = 1
 ROUND = 375, SUM = 30575, bChange = 0.0182282, totNum = 1
 ROUND = 376, SUM = 30575, bChange = 0.018229, totNum = 1
 ROUND = 377, SUM = 30575, bChange = 0.0182298, totNum = 1

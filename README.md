@@ -50,8 +50,9 @@ Dependancies
     1. SEECER
     2. jellyfish
     3. seqan
-  4. detonatePE.sh
-    1. DETONATE
+  4. rsemEvalPE.sh
+    1. rsem-eval
+    2. bowtie
 
 Usage
 -----------------
@@ -76,9 +77,9 @@ Usage
 
           seecerPE.sh [OPTIONS] -- INPUTPAIR1 INPUTPAIR2
 
-####detonatePE.sh
+####rsemEvalPE.sh
 
-          detonatePE.sh [OPTIONS] -- INPUTPAIR1 INPUTPAIR2  ASSEMBLY
+          rsemEvalPE.sh [OPTIONS] -- INPUTPAIR1 INPUTPAIR2  ASSEMBLY
 
 License
 ---------------
