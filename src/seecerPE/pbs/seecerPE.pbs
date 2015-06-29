@@ -1,0 +1,31 @@
+#!/bin/bash
+#PBS -l ncpus=16
+#PBS -l walltime=03:00:00
+#PBS -j oe
+#PBS -q bl2
+#PBS -M ramifnu@iu.edu
+#PBS -m abe
+#PBS -o /bl2/ogce/workflow/scripts/seecerPETest/seecerPE.stdout
+#PBS -e /bl2/ogce/workflow/scripts/seecerPETest/seecerPE.stderr
+
+source /usr/share/modules/init/bash
+
+module load seecer/0.1.3
+#module load bowtie/1.1.1
+#module load samtools/1.2.0
+
+left_input=SEQC_ILM_AGR_A_1_L01_ATCACG_AC0C1TACXX_R1_Trimmed.fastq.gz
+#left_input=/bl2/ogce/Data/ILM_AGR_SampleATrimmed/SEQC_ILM_AGR_A_1_L01_ATCACG_AC0C1TACXX_R1_Trimmed.fastq.gz
+right_input=SEQC_ILM_AGR_A_1_L01_ATCACG_AC0C1TACXX_R2_Trimmed.fastq.gz
+#right_input=/bl2/ogce/Data/ILM_AGR_SampleATrimmed/SEQC_ILM_AGR_A_1_L01_ATCACG_AC0C1TACXX_R2_Trimmed.fastq.gz
+outputDir=seecerOut
+#outputDir=/bl2/ogce/Data/ILM_AGR_SampleAseecerOut/
+
+cd /bl2/ogce/workflow/scripts/seecerPETest/
+
+if [ -d "$outputDir" ]
+then
+  rm -rf "$outputDir"
+fi
+
+/bl2/ogce/libraries/Testing-SEQC/src/seecerPE/seecerPE.sh -d $outputDir -k 20 -- $left_input $right_input
