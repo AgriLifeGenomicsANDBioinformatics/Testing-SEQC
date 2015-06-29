@@ -62,7 +62,6 @@ read2="$(basename "$INPUT2")"
 lcprefix="$(printf "%s\n" "$read1" "$read2" | sed -e 'N;s/^\(.*\).*\n\1.*$/\1/')"
 LIBRARY="${lcprefix%_[rR]}"
 outdir="${DIR}/filteringPEOut"
-echo "$outdir"
 mkdir -p "$outdir"
 
 # Log file with timestamp
