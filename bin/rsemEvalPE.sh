@@ -1,1 +1,0 @@
-../src/rsemEvalPE/rsemEvalPE.sh

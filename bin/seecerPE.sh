@@ -1,1 +1,0 @@
-../src/seecerPE/seecerPE.sh
