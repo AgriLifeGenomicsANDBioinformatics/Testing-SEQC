@@ -60,30 +60,42 @@ do
 done
 
 # Input reads
-read1=$1
-read2=$2
-trinityOut="trinity_${outdir}"
+read1="$1"
+read2="$2"
+readsDir="$(dirname "$read1")"
+outLevel="$(dirname "$readsDir")"
+outdir="${outLevel}/trinityPEOut"
+logfile="${outdir}/${prefix}.log"
 
 # Less common prefix
 lcprefix="$(printf "%s\n" "$read1" "$read2" | sed -e 'N;s/^\(.*\).*\n\1.*$/\1/')"
-prefix=${lcprefix%_[rR]}
+prefix="${lcprefix%_[rR]}"
 
 # Create output directory
-mkdir -p "$trinityOut"
+mkdir -p "$outdir"
 
-# Gunzip in parallel
-# Process substitution doesn't work with Trinity, i.e. <(zcat read)
-gunzip "$read1" &
-gunzip "$read2" &
-wait %1 %2 || exit $?
-fqFile1="$(basename $read1 .gz)"
-fqFile2="$(basename $read2 .gz)"
+# Gunzip in parallel in case they are compressed
+# Process substitution doesn't work with Seecer, i.e. <(zcat read)
+if [[ "$read1" =~ \.gz$ ]] && [[ "$read2" =~ \.gz$ ]] ;
+then
+  gunzip "$read1" &
+  gunzip "$read2" &
+  wait %1 %2 || exit $?
+  fqFile1="${read1%".gz"}"
+  fqFile2="${read2%".gz"}"
+else
+  fqFile1="${read1}"
+  fqFile2="${read2}"
+fi
 
 # Run
-Trinity --normalize_reads --output "$trinityOut" --seqType fq --max_memory \
-  "$maxMem" --left "$fqFile1" --right "$fqFile2" --CPU "$threads" 2>"$trinityOut/$prefix.log"
+Trinity --normalize_reads --output "$outdir" --seqType fq --max_memory "$maxMem" \
+  --left "$fqFile1" --right "$fqFile2" --CPU "$threads" &>"$logfile"
 
 # Re-compress fq files
 gzip "$fqFile1" &
 gzip "$fqFile2" &
 wait %1 %2 || exit $?
+
+#Copy logfile in the working directory
+cp "$logfile" ./

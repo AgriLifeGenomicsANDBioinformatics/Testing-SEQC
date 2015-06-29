@@ -1,0 +1,187 @@
+Trinity version: v2.0.6
+-currently using the latest production release of Trinity.
+
+Monday, June 29, 2015: 13:38:22	CMD: java -Xmx64m -jar /usr/local/src/trinityrnaseq-2.0.6/util/support_scripts/ExitTester.jar 0
+Monday, June 29, 2015: 13:38:23	CMD: java -Xmx64m -jar /usr/local/src/trinityrnaseq-2.0.6/util/support_scripts/ExitTester.jar 1
+Monday, June 29, 2015: 13:38:23	CMD: mkdir -p /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis
+
+
+----------------------------------------------------------------------------------
+-------------- Trinity Phase 1: Clustering of RNA-Seq Reads  ---------------------
+----------------------------------------------------------------------------------
+
+---------------------------------------------------------------
+------------ In silico Read Normalization ---------------------
+-- (Removing Excess Reads Beyond 50 Coverage --
+-- /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization --
+---------------------------------------------------------------
+
+Monday, June 29, 2015: 13:38:23	CMD: /usr/local/src/trinityrnaseq-2.0.6/util/insilico_read_normalization.pl --seqType fq --JM 4G  --max_cov 50 --CPU 3 --output /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization --left /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/reads/reads_r1.fastq --right /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/reads/reads_r2.fastq --pairs_together --PARALLEL_STATS  
+Converting input files. (both directions in parallel)CMD: /usr/local/src/trinityrnaseq-2.0.6/util/..//trinity-plugins/fastool/fastool --illumina-trinity --to-fasta /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/reads/reads_r1.fastq >> left.fa
+CMD: /usr/local/src/trinityrnaseq-2.0.6/util/..//trinity-plugins/fastool/fastool --illumina-trinity --to-fasta /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/reads/reads_r2.fastq >> right.fa
+Sequences parsed: 30575
+CMD finished (0 seconds)
+Sequences parsed: 30575
+CMD finished (0 seconds)
+CMD: touch left.fa.ok
+CMD finished (0 seconds)
+CMD: touch right.fa.ok
+CMD finished (0 seconds)
+Done converting input files.CMD: cat left.fa right.fa > both.fa
+CMD finished (0 seconds)
+CMD: touch both.fa.ok
+-------------------------------------------
+----------- Jellyfish  --------------------
+-- (building a k-mer catalog from reads) --
+-------------------------------------------
+
+CMD finished (0 seconds)
+CMD: /usr/local/src/trinityrnaseq-2.0.6/util/..//trinity-plugins/jellyfish/bin/jellyfish count -t 3 -m 25 -s 612586563  --canonical  both.fa
+CMD finished (23 seconds)
+CMD: /usr/local/src/trinityrnaseq-2.0.6/util/..//trinity-plugins/jellyfish/bin/jellyfish histo -t 3 -o jellyfish.K25.min2.kmers.fa.histo mer_counts.jf
+CMD finished (0 seconds)
+CMD: /usr/local/src/trinityrnaseq-2.0.6/util/..//trinity-plugins/jellyfish/bin/jellyfish dump -L 2 mer_counts.jf > jellyfish.K25.min2.kmers.fa
+CMD finished (1 seconds)
+CMD: touch jellyfish.K25.min2.kmers.fa.success
+CMD finished (0 seconds)
+CMD: /usr/local/src/trinityrnaseq-2.0.6/util/..//Inchworm/bin/fastaToKmerCoverageStats --reads left.fa --kmers jellyfish.K25.min2.kmers.fa --kmer_size 25  --num_threads 3  --DS  > left.fa.K25.stats
+CMD: /usr/local/src/trinityrnaseq-2.0.6/util/..//Inchworm/bin/fastaToKmerCoverageStats --reads right.fa --kmers jellyfish.K25.min2.kmers.fa --kmer_size 25  --num_threads 3  --DS  > right.fa.K25.stats
+-reading Kmer occurences...
+-reading Kmer occurences...
+
+ done parsing 100964 Kmers, 100964 added, taking 1 seconds.
+
+ done parsing 100964 Kmers, 100964 added, taking 1 seconds.
+STATS_GENERATION_TIME: 2 seconds.
+STATS_GENERATION_TIME: 2 seconds.
+CMD finished (3 seconds)
+CMD finished (3 seconds)
+CMD: touch left.fa.K25.stats.ok
+CMD finished (0 seconds)
+CMD: touch right.fa.K25.stats.ok
+-sorting each stats file by read name.
+CMD finished (0 seconds)
+CMD: /opt/local/libexec/gnubin/sort --parallel=3 -k5,5 -T . -S 2G left.fa.K25.stats > left.fa.K25.stats.sort
+CMD: /opt/local/libexec/gnubin/sort --parallel=3 -k5,5 -T . -S 2G right.fa.K25.stats > right.fa.K25.stats.sort
+CMD finished (0 seconds)
+CMD finished (0 seconds)
+CMD: touch left.fa.K25.stats.sort.ok
+CMD finished (0 seconds)
+CMD: touch right.fa.K25.stats.sort.ok
+CMD finished (0 seconds)
+CMD: /usr/local/src/trinityrnaseq-2.0.6/util/..//util/support_scripts//nbkc_merge_left_right_stats.pl --left left.fa.K25.stats.sort --right right.fa.K25.stats.sort --sorted > pairs.K25.stats
+-opening left.fa.K25.stats.sort
+-opening right.fa.K25.stats.sort
+-done opening files.
+CMD finished (0 seconds)
+CMD: touch pairs.K25.stats.ok
+CMD finished (0 seconds)
+CMD: /usr/local/src/trinityrnaseq-2.0.6/util/..//util/support_scripts//nbkc_normalize.pl pairs.K25.stats 50 200 > pairs.K25.stats.C50.pctSD200.accs
+22870 / 30575 = 74.80% reads selected during normalization.
+200 / 30575 = 0.65% reads discarded as likely aberrant based on coverage profiles.
+0 / 30575 = 0.00% reads missing kmer coverage (N chars included?).
+CMD finished (0 seconds)
+CMD: touch pairs.K25.stats.C50.pctSD200.accs.ok
+CMD finished (0 seconds)
+CMD: touch /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization/reads_r1.fastq.normalized_K25_C50_pctSD200.fq.ok
+CMD finished (0 seconds)
+CMD: touch /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization/reads_r2.fastq.normalized_K25_C50_pctSD200.fq.ok
+CMD finished (0 seconds)
+CMD: ln -sf /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization/reads_r1.fastq.normalized_K25_C50_pctSD200.fq left.norm.fq
+CMD finished (0 seconds)
+CMD: ln -sf /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization/reads_r2.fastq.normalized_K25_C50_pctSD200.fq right.norm.fq
+-removing tmp dir /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization/tmp_normalized_reads
+CMD finished (0 seconds)
+
+
+Normalization complete. See outputs: 
+	/Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization/reads_r1.fastq.normalized_K25_C50_pctSD200.fq
+	/Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization/reads_r2.fastq.normalized_K25_C50_pctSD200.fq
+Monday, June 29, 2015: 13:38:51	CMD: touch /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization/normalization.ok
+Converting input files. (in parallel)Monday, June 29, 2015: 13:38:51	CMD: /usr/local/src/trinityrnaseq-2.0.6/trinity-plugins/fastool/fastool --illumina-trinity --to-fasta /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization/left.norm.fq >> left.fa 2> /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization/left.norm.fq.readcount 
+Monday, June 29, 2015: 13:38:51	CMD: /usr/local/src/trinityrnaseq-2.0.6/trinity-plugins/fastool/fastool --illumina-trinity --to-fasta /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization/right.norm.fq >> right.fa 2> /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/insilico_read_normalization/right.norm.fq.readcount 
+Monday, June 29, 2015: 13:38:51	CMD: cat left.fa right.fa > both.fa
+-------------------------------------------
+----------- Jellyfish  --------------------
+-- (building a k-mer catalog from reads) --
+-------------------------------------------
+
+Monday, June 29, 2015: 13:38:52	CMD: /usr/local/src/trinityrnaseq-2.0.6/trinity-plugins/jellyfish/bin/jellyfish count -t 3 -m 25 -s 612833594  --canonical  both.fa 2> /dev/null 
+Monday, June 29, 2015: 13:39:14	CMD: /usr/local/src/trinityrnaseq-2.0.6/trinity-plugins/jellyfish/bin/jellyfish dump -L 1 mer_counts.jf > jellyfish.kmers.fa 2>/dev/null
+Monday, June 29, 2015: 13:39:16	CMD: /usr/local/src/trinityrnaseq-2.0.6/trinity-plugins/jellyfish/bin/jellyfish histo -t 3 -o jellyfish.kmers.fa.histo mer_counts.jf 2>/dev/null
+Monday, June 29, 2015: 13:39:16	CMD: touch jellyfish.1.finished
+----------------------------------------------
+--------------- Inchworm ---------------------
+-- (Linear contig construction from k-mers) --
+----------------------------------------------
+
+Monday, June 29, 2015: 13:39:16	CMD: /usr/local/src/trinityrnaseq-2.0.6/Inchworm/bin//inchworm --kmers jellyfish.kmers.fa --run_inchworm -K 25 -L 25 --monitor 1   --DS  --keep_tmp_files  --num_threads 3  --PARALLEL_IWORM  > /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/inchworm.K25.L25.DS.fa.tmp 2>/dev/null
+Monday, June 29, 2015: 13:39:23	CMD: touch /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/inchworm.K25.L25.DS.fa.finished
+Running cmd: /usr/local/src/trinityrnaseq-2.0.6/util/misc/fasta_filter_by_min_length.pl /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/inchworm.K25.L25.DS.fa 100 > /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/inchworm.K25.L25.DS.fa.min100
+Running cmd: bowtie-build -q /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/inchworm.K25.L25.DS.fa.min100 /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/inchworm.K25.L25.DS.fa.min100 2>/dev/null
+Running cmd: bash -c " set -o pipefail; bowtie -a -m 20 --best --strata --threads 3  --chunkmbs 512 -q -S -f /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/inchworm.K25.L25.DS.fa.min100 both.fa  | samtools view -@ 3 -F4 -Sb - | samtools sort -@ 3 -no - - > /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/iworm.bowtie.nameSorted.bam"  2>/dev/null
+Running cmd: /usr/local/src/trinityrnaseq-2.0.6/util/support_scripts/scaffold_iworm_contigs.pl /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/iworm.bowtie.nameSorted.bam /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/inchworm.K25.L25.DS.fa > /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/iworm_scaffolds.txt 2>/dev/null
+Running cmd: /usr/local/src/trinityrnaseq-2.0.6/Chrysalis/GraphFromFasta -i /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/inchworm.K25.L25.DS.fa -r both.fa -min_contig_length 200 -min_glue 2 -glue_factor 0.05 -min_iso_ratio 0.05 -t 3 -k 24 -kk 48  -scaffolding /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/iworm_scaffolds.txt  > /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/GraphFromIwormFasta.out
+-----------------------------------------
+--- Chrysalis: GraphFromFasta -----------
+-- (cluster related inchworm contigs) ---
+-----------------------------------------
+
+-setting num threads to: 3
+-running on 3 threads
+GraphFromFasta: Reading file: /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/trinityPEOut/inchworm.K25.L25.DS.fa
+done!
+Counting k-mers...
+KmerAlignCore- Contigs: 0   KmerAlignCore- Contigs: 978   
+done, assigning k-mers...
+KmerAlignCore- Contigs: 0   KmerAlignCore- Contigs: 978   
+done!
+-setting omp for schedule chunksize to 3 for 979 iworm contigs
+Phase 1: Collecting candidate weldmers between iworm contig pairs sharing k-1mers
+Processed: 99.8979 % of iworm contigs.    
+
+...done Phase 1. (13.2329 seconds)
+Captured: 39576 weldmer candidates.
+Setting up reads for streaming...
+Identifying reads that support welding of iworm contigs...
+Reads: (unknown count: streaming-mode)
+
+
+Done!
+Phase 2: Reclustering iworm contigs using welds.
+[0.306435% done]                [10.2145% done]                [20.429% done]                [30.6435% done]                [40.6537% done]                [50.8682% done]                [61.0827% done]                [71.1951% done]                [81.4096% done]                [91.6241% done]                
+now bubbling: 
+
+done bubbling.
+Running cmd: /usr/local/src/trinityrnaseq-2.0.6/Chrysalis/CreateIwormFastaBundle -i /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/GraphFromIwormFasta.out -o /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/bundled_iworm_contigs.fasta -min 200 2>/dev/null 
+Running cmd: /usr/local/src/trinityrnaseq-2.0.6/Chrysalis/ReadsToTranscripts -i both.fa -f /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/bundled_iworm_contigs.fasta -o /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/readsToComponents.out -t 3 -max_mem_reads 10000000  2>/dev/null
+Running cmd: /opt/local/libexec/gnubin/sort --parallel=2 -T . -S 4G -k 1,1n /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/readsToComponents.out > /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/chrysalis/readsToComponents.out.sort 2>/dev/null 
+Monday, June 29, 2015: 13:39:51	CMD: mkdir -p read_partitions/Fb_0/CBin_0
+Monday, June 29, 2015: 13:39:51	CMD: touch partitioned_reads.files.list.ok
+Monday, June 29, 2015: 13:39:51	CMD: /usr/local/src/trinityrnaseq-2.0.6/util/support_scripts/GG_write_trinity_cmds.pl --reads_list_file partitioned_reads.files.list --CPU 1 --max_memory 1G  --full_cleanup --seqType fa --trinity_complete > recursive_trinity.cmds
+Monday, June 29, 2015: 13:39:52	CMD: touch recursive_trinity.cmds.ok
+Monday, June 29, 2015: 13:39:52	CMD: touch recursive_trinity.cmds.ok
+
+
+--------------------------------------------------------------------------------
+------------ Trinity Phase 2: Assembling Clusters of Reads ---------------------
+--------------------------------------------------------------------------------
+
+Monday, June 29, 2015: 13:39:52	CMD: /usr/local/src/trinityrnaseq-2.0.6/trinity-plugins/parafly/bin/ParaFly -c recursive_trinity.cmds -CPU 3 -v 
+Number of Commands: 40
+succeeded(1)   2.5% completed.    succeeded(2)   5% completed.    succeeded(3)   7.5% completed.    succeeded(4)   10% completed.    succeeded(5)   12.5% completed.    succeeded(6)   15% completed.    succeeded(7)   17.5% completed.    succeeded(8)   20% completed.    succeeded(9)   22.5% completed.    succeeded(10)   25% completed.    succeeded(11)   27.5% completed.    succeeded(12)   30% completed.    succeeded(13)   32.5% completed.    succeeded(14)   35% completed.    succeeded(15)   37.5% completed.    succeeded(16)   40% completed.    succeeded(17)   42.5% completed.    succeeded(18)   45% completed.    succeeded(19)   47.5% completed.    succeeded(20)   50% completed.    succeeded(21)   52.5% completed.    succeeded(22)   55% completed.    succeeded(23)   57.5% completed.    succeeded(24)   60% completed.    succeeded(25)   62.5% completed.    succeeded(26)   65% completed.    succeeded(27)   67.5% completed.    succeeded(28)   70% completed.    succeeded(29)   72.5% completed.    succeeded(30)   75% completed.    succeeded(31)   77.5% completed.    succeeded(32)   80% completed.    succeeded(33)   82.5% completed.    succeeded(34)   85% completed.    succeeded(35)   87.5% completed.    succeeded(36)   90% completed.    succeeded(37)   92.5% completed.    succeeded(38)   95% completed.    succeeded(39)   97.5% completed.    succeeded(40)   100% completed.    
+
+All commands completed successfully. :-)
+
+
+
+** Harvesting all assembled transcripts into a single multi-fasta file...
+
+Monday, June 29, 2015: 13:42:04	CMD: find read_partitions/  -name '*inity.fasta'  | /usr/local/src/trinityrnaseq-2.0.6/util/support_scripts/partitioned_trinity_aggregator.pl TR > Trinity.fasta.tmp
+
+
+###################################################################
+Butterfly assemblies are written to /Users/jordi/code/linux/bin/rnaSeq/src/trinityPE/main/./trinityPEOut/Trinity.fasta
+###################################################################
+
+
