@@ -3,8 +3,8 @@ JELLYFISH bin is set to /usr/local/bin/jellyfish
 SEECER parameters: 
 Starting SEECER from step: 1
 ------------------------
-Read 1 = reads/read1_r1.fastq
-Read 2 = reads/read1_r2.fastq
+Read 1 = /Users/jordi/code/linux/bin/rnaSeq/src/seecerPE/main/reads/read1_r1.fastq
+Read 2 = /Users/jordi/code/linux/bin/rnaSeq/src/seecerPE/main/reads/read1_r2.fastq
 ------------------------
 ++ Step 1: Replacing Ns ... and stripping off read IDs
 
@@ -12,7 +12,7 @@ Read 2 = reads/read1_r2.fastq
 
 ++ Step 3: Correcting errors with SEECER ... Your reads are in good hands!
 -----------------------------------------------------------------------
- *** Start time:  Fri Jun 26 19:17:23 CDT 2015
+ *** Start time:  Mon Jun 29 10:19:51 CDT 2015
 Total Reads 49692
 Allocating space
 Processed 0 grams
@@ -76,62 +76,62 @@ Processed 0 grams
  SKIPPING AAAAAAGAAAAAAAAAAAAA
  SKIPPING AAAGAAAAAAAAAAAAAAAA
  SKIPPING AAACAAAAAAAAAAAAAAAA
-541708 of indices
-Total 65215 grams 
-541708 of indices
+541729 of indices
+Total 65229 grams 
+541729 of indices
 Finding locations
 Getting qgrams locations of 0 reads
-540063/541708 of indices
+540084/541729 of indices
 Building Index in 0 seconds.
 done. (0 seconds)
 Total 49692 reads.
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 15465 reads, 5983 collisions(3822), Processed 5538/49692 seeds = 11.1447 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 16438 reads, 7206 collisions(4481), Processed 7719/49692 seeds = 15.5337 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 17286 reads, 9230 collisions(5343), Processed 12301/49692 seeds = 24.7545 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 17430 reads, 9724 collisions(5488), Processed 13481/49692 seeds = 27.1291 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 17658 reads, 10358 collisions(5682), Processed 14748/49692 seeds = 29.6788 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 17845 reads, 11565 collisions(5947), Processed 16972/49692 seeds = 34.1544 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 17896 reads, 11634 collisions(6003), Processed 17291/49692 seeds = 34.7963 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 17994 reads, 11816 collisions(6077), Processed 18253/49692 seeds = 36.7323 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 18256 reads, 12764 collisions(6371), Processed 21181/49692 seeds = 42.6246 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 18258 reads, 12780 collisions(6384), Processed 21278/49692 seeds = 42.8198 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 18294 reads, 12905 collisions(6417), Processed 21634/49692 seeds = 43.5362 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 18487 reads, 14160 collisions(6681), Processed 25340/49692 seeds = 50.9941 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 18543 reads, 14609 collisions(6846), Processed 26752/49692 seeds = 53.8356 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 18671 reads, 15320 collisions(7042), Processed 29446/49692 seeds = 59.257 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 18825 reads, 17540 collisions(7407), Processed 35042/49692 seeds = 70.5184 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 18966 reads, 18855 collisions(7618), Processed 38875/49692 seeds = 78.2319 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 18998 reads, 19393 collisions(7764), Processed 41286/49692 seeds = 83.0838 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 19066 reads, 20060 collisions(7992), Processed 44931/49692 seeds = 90.419 % complete
-Fri Jun 26 19:17:24 2015 (1435364244) 
- Assigned 19085 reads, 20295 collisions(8052), Processed 45930/49692 seeds = Fri Jun 26 19:17:24 201592.4294 ( % complete1435364244
-) 
- Assigned 19085 reads, 20295 collisions(8052), Processed 45937/49692 seeds = 92.4435 % complete
-Accepted: 19108 Corrected: 5277
-CollidedReads: 21279 BadCollided: 343
-Substitutions: 8046 Deletions: 162 Insertions: 247
-19108 5277
+Mon Jun 29 10:19:52 2015 (1435591192) 
+ Assigned 15449 reads, 5984 collisions(3818), Processed 5482/49692 seeds = 11.032 % complete
+Mon Jun 29 10:19:52 2015 (1435591192) 
+ Assigned 16404 reads, 7057 collisions(4508), Processed 7581/49692 seeds = 15.256 % complete
+Mon Jun 29 10:19:52 2015 (1435591192) 
+ Assigned 17232 reads, 9064 collisions(5317), Processed 12071/49692 seeds = 24.2916 % complete
+Mon Jun 29 10:19:52 2015 (1435591192) 
+ Assigned 17434 reads, 9616 collisions(5466), Processed 13177/49692 seeds = 26.5173 % complete
+Mon Jun 29 10:19:52 2015 (1435591192) 
+ Assigned 17706 reads, 10575 collisions(5791), Processed 15254/49692 seeds = 30.6971 % complete
+Mon Jun 29 10:19:52 2015 (1435591192) 
+ Assigned 17814 reads, 11308 collisions(5962), Processed 16540/49692 seeds = 33.285 % complete
+Mon Jun 29 10:19:52 2015 (1435591192) 
+ Assigned 17882 reads, 11448 collisions(6046), Processed 17194/49692 seeds = 34.6011 % complete
+Mon Jun 29 10:19:52 2015 (1435591192) 
+ Assigned 18009 reads, 11877 collisions(6198), Processed 18668/49692 seeds = 37.5674 % complete
+Mon Jun 29 10:19:52 2015 (1435591192) 
+ Assigned 18237 reads, 12577 collisions(6432), Processed 21028/49692 seeds = 42.3167 % complete
+Mon Jun 29 10:19:52 2015 (1435591192) 
+ Assigned 18237 reads, 12590 collisions(6435), Processed 21102/49692 seeds = 42.4656 % complete
+Mon Jun 29 10:19:52 2015 (1435591192) 
+ Assigned 18287 reads, 12845 collisions(6519), Processed 21821/49692 seeds = 43.9125 % complete
+Mon Jun 29 10:19:53 2015 (1435591193) 
+ Assigned 18453 reads, 14013 collisions(6748), Processed 25045/49692 seeds = 50.4005 % complete
+Mon Jun 29 10:19:53 2015 (1435591193) 
+ Assigned 18497 reads, 14263 collisions(6873), Processed 26057/49692 seeds = 52.437 % complete
+Mon Jun 29 10:19:53 2015 (1435591193) 
+ Assigned 18654 reads, 15194 collisions(7179), Processed 29514/49692 seeds = 59.3939 % complete
+Mon Jun 29 10:19:53 2015 (1435591193) 
+ Assigned 18846 reads, 17706 collisions(7566), Processed 35625/49692 seeds = 71.6916 % complete
+Mon Jun 29 10:19:53 2015 (1435591193) 
+ Assigned 18972 reads, 18897 collisions(7827), Processed 39324/49692 seeds = 79.1355 % complete
+Mon Jun 29 10:19:53 2015 (1435591193) 
+ Assigned 18978 reads, 18974 collisions(7870), Processed 40237/49692 seeds = 80.9728 % complete
+Mon Jun 29 10:19:53 2015 (1435591193) 
+ Assigned 19064 reads, 19869 collisions(8176), Processed 44370/49692 seeds = 89.29 % complete
+Mon Jun 29 10:19:53 2015 (1435591193) 
+ Assigned 19087 reads, 20170 collisions(8263), Processed 46014/49692 seeds = 92.5984 % complete
+Mon Jun 29 10:19:53 2015 (1435591193) 
+ Assigned 19095 reads, 20447 collisions(8319), Processed 47019/49692 seeds = 94.6209 % complete
+Accepted: 19107 Corrected: 5279
+CollidedReads: 21061 BadCollided: 326
+Substitutions: 8070 Deletions: 157 Insertions: 249
+19107 5279
 Total Reads: 49692
-*** Total 27182 contigs.
- *** End time:  Fri Jun 26 19:17:25 CDT 2015
+*** Total 27095 contigs.
+ *** End time:  Mon Jun 29 10:19:53 CDT 2015
 -----------------------------------------------------------------------
 
 ++ Step 4: Cleaning and putting back original read IDs ... We finish soon!

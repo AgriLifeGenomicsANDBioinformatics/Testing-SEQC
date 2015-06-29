@@ -57,7 +57,9 @@ INPUT2=$1; shift
 
 # Get the library name and create the output directory
 DIR="$(dirname "$INPUT1")"    
-lcprefix="$(printf "%s\n" "$INPUT1" "$INPUT2" | sed -e 'N;s/^\(.*\).*\n\1.*$/\1/')"
+read1="$(basename "$INPUT1")"
+read2="$(basename "$INPUT2")"
+lcprefix="$(printf "%s\n" "$read1" "$read2" | sed -e 'N;s/^\(.*\).*\n\1.*$/\1/')"
 LIBRARY=${lcprefix%_[rR]}
 outdir="${DIR}/${LIBRARY}"
 mkdir -p "$outdir"
