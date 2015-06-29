@@ -58,7 +58,8 @@ prefix="${lcprefix%_[rR]}"
 
 # Create tmp and output directories
 readsDir="$(dirname "$read1")"
-outdir="${readsDir}/seecerOut"
+outLevel="$(dirname "$readsDir")"
+outdir="${outLevel}/seecerPEOut"
 temp="${readsDir}/${prefix}"
 logfile="${outdir}/${prefix}_seecer${kmerSize}.log"
 
@@ -103,3 +104,7 @@ if [ -d "$temp" ]
 then
   rm -rf "$temp"
 fi
+
+
+# Copy logfile to working directory
+cp "$logfile" ./
