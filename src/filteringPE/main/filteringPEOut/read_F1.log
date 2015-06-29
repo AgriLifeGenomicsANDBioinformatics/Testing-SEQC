@@ -1,0 +1,75 @@
+
+               ________          __              
+              / ____/ /__  _  __/ /_  ____ ______
+             / /_  / / _ \| |/ / __ \/ __ `/ ___/
+            / __/ / /  __/>  </ /_/ / /_/ / /    
+           /_/   /_/\___/_/|_/_.___/\__,_/_/     
+
+Flexbar - flexible barcode and adapter removal, version 2.5
+
+
+Local time:            Mon Jun 29 12:14:06 2015
+
+Target name:           /Users/jordi/code/linux/bin/rnaSeq/src/filteringPE/main/filteringPEOut/read_F1
+File type:             fastq
+Quality format:        i1.8
+Reads file:            /Users/jordi/code/linux/bin/rnaSeq/src/filteringPE/main/reads/read_R1.fastq.gz
+Reads file 2:          /Users/jordi/code/linux/bin/rnaSeq/src/filteringPE/main/reads/read_R2.fastq.gz   (paired run)
+Adapter file:          /Users/jordi/code/linux/bin/rnaSeq/src/filteringPE/main/polyA.fa
+
+threads:               2
+max-uncalled:          5
+min-read-length:       50
+
+adapter-trim-end:      RIGHT
+adapter-min-overlap:   6
+adapter-threshold:     3
+adapter-match:         1
+adapter-mismatch:     -1
+adapter-gap:          -6
+
+Adapter:               Sequence:
+polyA                  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+polyT                  TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+
+
+Processing reads ...done.
+
+Computation time:  < 1 sec
+
+
+Adapter removal statistics
+==========================
+Adapter:            Overlap removal:    Full length:
+polyA               2                   0
+polyT               2                   0
+
+Min, max, mean and median adapter overlap: 30 / 50 / 40 / 30
+
+
+Output file statistics
+======================
+Read file:               /Users/jordi/code/linux/bin/rnaSeq/src/filteringPE/main/filteringPEOut/read_F1_1.fastq
+  written reads          3
+  skipped short reads    0
+Read file 2:             /Users/jordi/code/linux/bin/rnaSeq/src/filteringPE/main/filteringPEOut/read_F1_2.fastq
+  written reads          3
+  too short reads        0
+
+
+Filtering statistics
+====================
+Processed reads                   12
+  skipped due to uncalled bases    6   (3 uncalled in 3 pairs)
+  short prior adapter removal      0
+  finally skipped short reads      0
+  skipped single paired reads      0
+Discarded reads overall            6
+Remaining reads                    6   (50% of input)
+
+Processed bases:   1200
+Remaining bases:    440   (36% of input)
+
+
+Flexbar completed adapter removal.
+

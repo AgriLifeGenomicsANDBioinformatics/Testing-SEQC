@@ -21,7 +21,7 @@ RRNA="rrna_total.fa"    # Add the path to $BOWTIE_INDEXES
 
 usage="
 Description:
-\n\tThe script is aimed to clean paired-end reads by adaptor, quality, polyA, rRNA and chrM.\n
+\n\tThe script is aimed to clean paired-end reads by poly dA/dT tails, rRNA and chrM.\n
 \nUsage:
 \n\t"$script_name" QUAL THREADS INPUTPAI_R1 INPUTPAI_R2\n
 \nE.g.
@@ -56,10 +56,12 @@ INPUT1=$1; shift
 INPUT2=$1; shift
 
 # Get the library name and create the output directory
-DIR="$(dirname "$INPUT1")"    
-lcprefix="$(printf "%s\n" "$INPUT1" "$INPUT2" | sed -e 'N;s/^\(.*\).*\n\1.*$/\1/')"
-LIBRARY=${lcprefix%_[rR]}
-outdir="${DIR}/${LIBRARY}"
+DIR="$(dirname "$(dirname "$INPUT1")")"    
+read1="$(basename "$INPUT1")"
+read2="$(basename "$INPUT2")"
+lcprefix="$(printf "%s\n" "$read1" "$read2" | sed -e 'N;s/^\(.*\).*\n\1.*$/\1/')"
+LIBRARY="${lcprefix%_[rR]}"
+outdir="${DIR}/filteringPEOut"
 mkdir -p "$outdir"
 
 # Log file with timestamp
@@ -165,5 +167,8 @@ left_after_rRNA_reads1="$(($after_rRNA_reads1/$total_reads1))"
 left_after_rRNA_reads2="$(($after_rRNA_reads2/$total_reads2))"
 echo "${left_after_rRNA_reads1}% of original reads left after rRNA filtering" | tee -a "$LOGFILE"
 echo "$(date): Done, $(($total_lines1/4)) reads passed all the filters." | tee -a "$LOGFILE"
+
+# Copy .log file in the working directory
+cp "$LOGFILE" ./
 
 # [ program end ]
