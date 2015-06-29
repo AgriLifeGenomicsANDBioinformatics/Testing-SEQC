@@ -6,13 +6,16 @@ Usage:
 
 Options:
   -h--help                Help.
-  -k--kmerSize            Kmer size. Default: 24.
+  -k--kmerSize            Kmer size. Default: 25.
 
 Examples:
   seecerPE.sh -k 20 -- read_r1.fastq.gz read_r2.fastq.gz
 
 Upstream:
-  filteringPE.sh
+  trinityPE.sh
+
+Notes:
+  25-mers appeared to be near-optimal across a different transcriptomes and different read abundance levels. 
 
 Dependancies:
   SEECER
