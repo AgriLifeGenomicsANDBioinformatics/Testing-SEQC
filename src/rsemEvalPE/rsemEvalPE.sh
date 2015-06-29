@@ -56,18 +56,25 @@ fastaFile="$(basename "$fastaPath")"
 fastaDir="$(dirname "$fastaPath")"
 
 # Setting some file/dirnames
-outdir="${fastaDir}/detonateOut"
+outLevel="$(dirname "$fastaDir")"
+outdir="${outLevel}/rsemEvalPEOut"
 prefix="${fastaFile%".fasta"}"
 transcriptLengthParameters="${fastaDir}/${prefix}_length_distribution/${prefix}.txt"
 logfile="${outdir}/${prefix}_detonateRsem.log"
 
-# Gunzip in parallel
+# Gunzip in parallel in case they are compressed
 # Process substitution doesn't work with Seecer, i.e. <(zcat read)
-gunzip "$read1" &
-gunzip "$read2" &
-wait %1 %2 || exit $?
-fqFile1="${read1%".gz"}"
-fqFile2="${read2%".gz"}"
+if [[ "$read1" =~ \.gz$ ]] && [[ "$read2" =~ \.gz$ ]] ;
+then
+  gunzip "$read1" &
+  gunzip "$read2" &
+  wait %1 %2 || exit $?
+  fqFile1="${read1%".gz"}"
+  fqFile2="${read2%".gz"}"
+else
+  fqFile1="${read1}"
+  fqFile2="${read2}"
+fi
 
 # Find contig length distribution if still doesn't exist
 if [ ! -f "$transcriptLengthParameters" ]
@@ -88,4 +95,5 @@ gzip "$fqFile1" &
 gzip "$fqFile2" &
 wait %1 %2 || exit $?
 
-
+# Copy logfile to working directory
+cp "$logfile" ./

@@ -1,17 +1,17 @@
-rsem-synthesis-reference-transcripts assembly/detonateOut/trinityOut2.temp/trinityOut2 0 0 0 assembly/trinityOut2.fasta
+rsem-synthesis-reference-transcripts /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2 0 0 0 /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/assembly/trinityOut2.fasta
 Transcript Information File is generated!
 Group File is generated!
 Extracted Sequences File is generated!
 
-rsem-preref assembly/detonateOut/trinityOut2.temp/trinityOut2.transcripts.fa 1 assembly/detonateOut/trinityOut2.temp/trinityOut2
+rsem-preref /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2.transcripts.fa 1 /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2
 Refs.makeRefs finished!
 Refs.saveRefs finished!
-assembly/detonateOut/trinityOut2.temp/trinityOut2.idx.fa is generated!
-assembly/detonateOut/trinityOut2.temp/trinityOut2.n2g.idx.fa is generated!
+/Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2.idx.fa is generated!
+/Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2.n2g.idx.fa is generated!
 
-bowtie-build -f assembly/detonateOut/trinityOut2.temp/trinityOut2.n2g.idx.fa assembly/detonateOut/trinityOut2.temp/trinityOut2
+bowtie-build -f /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2.n2g.idx.fa /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2
 Settings:
-  Output files: "assembly/detonateOut/trinityOut2.temp/trinityOut2.*.ebwt"
+  Output files: "/Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2.*.ebwt"
   Line rate: 6 (line is 64 bytes)
   Lines per side: 1 (side is 64 bytes)
   Offset rate: 5 (one in 32)
@@ -28,7 +28,7 @@ Settings:
   Random seed: 0
   Sizeofs: void*:8, int:4, long:8, size_t:8
 Input files DNA, FASTA:
-  assembly/detonateOut/trinityOut2.temp/trinityOut2.n2g.idx.fa
+  /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2.n2g.idx.fa
 Reading reference sizes
   Time reading reference sizes: 00:00:00
 Calculating joined length
@@ -87,7 +87,7 @@ Split 1, merged 7; iterating...
   80%
   90%
   100%
-  Binary sorting into buckets time: 00:00:01
+  Binary sorting into buckets time: 00:00:00
 Splitting and merging
   Splitting and merging time: 00:00:00
 Avg bucket size: 19686 (target: 25838)
@@ -242,8 +242,8 @@ fchr[T]: 103958
 fchr[$]: 137808
 Exiting Ebwt::buildToDisk()
 Returning from initFromVector
-Wrote 4235991 bytes to primary EBWT file: assembly/detonateOut/trinityOut2.temp/trinityOut2.1.ebwt
-Wrote 17232 bytes to secondary EBWT file: assembly/detonateOut/trinityOut2.temp/trinityOut2.2.ebwt
+Wrote 4235991 bytes to primary EBWT file: /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2.1.ebwt
+Wrote 17232 bytes to secondary EBWT file: /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2.2.ebwt
 Re-opening _in1 and _in2 as input streams
 Returning from Ebwt constructor
 Headers:
@@ -505,7 +505,7 @@ Getting block 6 of 8
   Block accumulator loop time: 00:00:00
   Sorting block of length 16858
   (Using difference cover)
-  Sorting block time: 00:00:01
+  Sorting block time: 00:00:00
 Returning block of 16859
 Getting block 7 of 8
   Reserving size (25839) for bucket
@@ -555,8 +555,8 @@ fchr[T]: 103958
 fchr[$]: 137808
 Exiting Ebwt::buildToDisk()
 Returning from initFromVector
-Wrote 4235991 bytes to primary EBWT file: assembly/detonateOut/trinityOut2.temp/trinityOut2.rev.1.ebwt
-Wrote 17232 bytes to secondary EBWT file: assembly/detonateOut/trinityOut2.temp/trinityOut2.rev.2.ebwt
+Wrote 4235991 bytes to primary EBWT file: /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2.rev.1.ebwt
+Wrote 17232 bytes to secondary EBWT file: /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2.rev.2.ebwt
 Re-opening _in1 and _in2 as input streams
 Returning from Ebwt constructor
 Headers:
@@ -589,23 +589,23 @@ Headers:
     ebwtTotLen: 39424
     ebwtTotSz: 39424
     reverse: 0
-Total time for backward call to driver() for mirror index: 00:00:01
+Total time for backward call to driver() for mirror index: 00:00:00
 
-bowtie -q --phred33-quals -n 2 -e 99999999 -l 25 -I 1 -X 1000 -p 2 -a -m 200 -S assembly/detonateOut/trinityOut2.temp/trinityOut2 -1 reads/reads2_r1.fastq -2 reads/reads2_r2.fastq | samtools view -S -b -o assembly/detonateOut/trinityOut2.temp/trinityOut2.bam -
+bowtie -q --phred33-quals -n 2 -e 99999999 -l 25 -I 1 -X 1000 -p 2 -a -m 200 -S /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2 -1 /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/reads/reads2_r1.fastq -2 /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/reads/reads2_r2.fastq | samtools view -S -b -o /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2.bam -
 [samopen] SAM header is present: 71 sequences.
 # reads processed: 30575
 # reads with at least one reported alignment: 27108 (88.66%)
 # reads that failed to align: 3467 (11.34%)
 Reported 64812 paired-end alignments to 1 output stream(s)
 
-rsem-parse-alignments assembly/detonateOut/trinityOut2.temp/trinityOut2 assembly/detonateOut/trinityOut2.temp/trinityOut2 assembly/detonateOut/trinityOut2.stat/trinityOut2 b assembly/detonateOut/trinityOut2.temp/trinityOut2.bam -t 3 -tag XM
+rsem-parse-alignments /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2 /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2 /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.stat/trinityOut2 b /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2.bam -t 3 -tag XM
 Done!
 
-rsem-build-read-index 32 1 0 assembly/detonateOut/trinityOut2.temp/trinityOut2_alignable_1.fq assembly/detonateOut/trinityOut2.temp/trinityOut2_alignable_2.fq
-Build Index assembly/detonateOut/trinityOut2.temp/trinityOut2_alignable_1.fq is Done!
-Build Index assembly/detonateOut/trinityOut2.temp/trinityOut2_alignable_2.fq is Done!
+rsem-build-read-index 32 1 0 /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2_alignable_1.fq /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2_alignable_2.fq
+Build Index /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2_alignable_1.fq is Done!
+Build Index /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2_alignable_2.fq is Done!
 
-rsem-eval-run-em assembly/detonateOut/trinityOut2.temp/trinityOut2 3 assembly/detonateOut/trinityOut2 assembly/detonateOut/trinityOut2.temp/trinityOut2 assembly/detonateOut/trinityOut2.stat/trinityOut2 0.650731242119049 0.00033515059786042 75 0 -p 2
+rsem-eval-run-em /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2 3 /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2 /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp/trinityOut2 /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.stat/trinityOut2 0.650731242119049 0.00033515059786042 75 0 -p 2
 Refs.loadRefs finished!
 Thread 0 : N = 13230, NHit = 32406
 DAT 0 reads left
@@ -636,7 +636,7 @@ ROUND = 20, SUM = 30575, bChange = 0.24834, totNum = 26
 ROUND = 21, SUM = 30575, bChange = 0.248204, totNum = 26
 ROUND = 22, SUM = 30575, bChange = 0.248102, totNum = 26
 ROUND = 23, SUM = 30575, bChange = 0.248026, totNum = 25
-ROUND = 24, SUM = 30575.0000000001, bChange = 0.247969, totNum = 25
+ROUND = 24, SUM = 30575, bChange = 0.247969, totNum = 25
 ROUND = 25, SUM = 30575, bChange = 0.247927, totNum = 24
 ROUND = 26, SUM = 30575, bChange = 0.247895, totNum = 24
 ROUND = 27, SUM = 30575, bChange = 0.247871, totNum = 22
@@ -655,7 +655,7 @@ ROUND = 39, SUM = 30575, bChange = 0.0273948, totNum = 16
 ROUND = 40, SUM = 30575, bChange = 0.0265762, totNum = 16
 ROUND = 41, SUM = 30575, bChange = 0.0257662, totNum = 15
 ROUND = 42, SUM = 30575, bChange = 0.0249654, totNum = 14
-ROUND = 43, SUM = 30575, bChange = 0.0241747, totNum = 14
+ROUND = 43, SUM = 30574.9999999999, bChange = 0.0241747, totNum = 14
 ROUND = 44, SUM = 30575, bChange = 0.0233947, totNum = 13
 ROUND = 45, SUM = 30575, bChange = 0.022626, totNum = 13
 ROUND = 46, SUM = 30575, bChange = 0.0218694, totNum = 13
@@ -682,7 +682,7 @@ ROUND = 66, SUM = 30575, bChange = 0.0163547, totNum = 10
 ROUND = 67, SUM = 30575, bChange = 0.0163358, totNum = 10
 ROUND = 68, SUM = 30575, bChange = 0.0163185, totNum = 10
 ROUND = 69, SUM = 30575, bChange = 0.0163025, totNum = 10
-ROUND = 70, SUM = 30575.0000000001, bChange = 0.016288, totNum = 10
+ROUND = 70, SUM = 30575, bChange = 0.016288, totNum = 10
 ROUND = 71, SUM = 30575, bChange = 0.0162747, totNum = 9
 ROUND = 72, SUM = 30575, bChange = 0.0162628, totNum = 9
 ROUND = 73, SUM = 30575, bChange = 0.016252, totNum = 8
@@ -858,11 +858,11 @@ ROUND = 242, SUM = 30575, bChange = 0.0178718, totNum = 1
 ROUND = 243, SUM = 30575, bChange = 0.0178778, totNum = 1
 ROUND = 244, SUM = 30575, bChange = 0.0178837, totNum = 1
 ROUND = 245, SUM = 30575, bChange = 0.0178894, totNum = 1
-ROUND = 246, SUM = 30575, bChange = 0.0178952, totNum = 1
+ROUND = 246, SUM = 30574.9999999999, bChange = 0.0178952, totNum = 1
 ROUND = 247, SUM = 30575, bChange = 0.0179008, totNum = 1
 ROUND = 248, SUM = 30575, bChange = 0.0179064, totNum = 1
 ROUND = 249, SUM = 30575, bChange = 0.0179119, totNum = 1
-ROUND = 250, SUM = 30575.0000000001, bChange = 0.0179173, totNum = 1
+ROUND = 250, SUM = 30575, bChange = 0.0179173, totNum = 1
 ROUND = 251, SUM = 30575, bChange = 0.0179226, totNum = 1
 ROUND = 252, SUM = 30575, bChange = 0.0179279, totNum = 1
 ROUND = 253, SUM = 30575, bChange = 0.0179331, totNum = 1
@@ -924,7 +924,7 @@ ROUND = 308, SUM = 30575, bChange = 0.0181312, totNum = 1
 ROUND = 309, SUM = 30575, bChange = 0.0181335, totNum = 1
 ROUND = 310, SUM = 30574.9999999999, bChange = 0.0181358, totNum = 1
 ROUND = 311, SUM = 30575, bChange = 0.018138, totNum = 1
-ROUND = 312, SUM = 30575, bChange = 0.0181402, totNum = 1
+ROUND = 312, SUM = 30575.0000000001, bChange = 0.0181402, totNum = 1
 ROUND = 313, SUM = 30575, bChange = 0.0181424, totNum = 1
 ROUND = 314, SUM = 30575, bChange = 0.0181446, totNum = 1
 ROUND = 315, SUM = 30575, bChange = 0.0181467, totNum = 1
@@ -937,7 +937,7 @@ ROUND = 321, SUM = 30575, bChange = 0.0181587, totNum = 1
 ROUND = 322, SUM = 30575, bChange = 0.0181606, totNum = 1
 ROUND = 323, SUM = 30575, bChange = 0.0181625, totNum = 1
 ROUND = 324, SUM = 30575, bChange = 0.0181644, totNum = 1
-ROUND = 325, SUM = 30574.9999999999, bChange = 0.0181662, totNum = 1
+ROUND = 325, SUM = 30575, bChange = 0.0181662, totNum = 1
 ROUND = 326, SUM = 30575, bChange = 0.018168, totNum = 1
 ROUND = 327, SUM = 30575, bChange = 0.0181697, totNum = 1
 ROUND = 328, SUM = 30575, bChange = 0.0181714, totNum = 1
@@ -1000,7 +1000,7 @@ ROUND = 384, SUM = 30575, bChange = 0.0182349, totNum = 1
 ROUND = 385, SUM = 30575, bChange = 0.0182356, totNum = 1
 ROUND = 386, SUM = 30575, bChange = 0.0182363, totNum = 1
 ROUND = 387, SUM = 30575, bChange = 0.0182369, totNum = 1
-ROUND = 388, SUM = 30575.0000000001, bChange = 0.0182376, totNum = 1
+ROUND = 388, SUM = 30575, bChange = 0.0182376, totNum = 1
 ROUND = 389, SUM = 30575, bChange = 0.0182382, totNum = 1
 ROUND = 390, SUM = 30575, bChange = 0.0182389, totNum = 1
 ROUND = 391, SUM = 30575, bChange = 0.0182395, totNum = 1
@@ -1122,7 +1122,7 @@ ROUND = 506, SUM = 30575, bChange = 0.0182706, totNum = 1
 ROUND = 507, SUM = 30575, bChange = 0.0182707, totNum = 1
 ROUND = 508, SUM = 30575, bChange = 0.0182707, totNum = 1
 ROUND = 509, SUM = 30575, bChange = 0.0182708, totNum = 1
-ROUND = 510, SUM = 30574.9999999999, bChange = 0.0182709, totNum = 1
+ROUND = 510, SUM = 30575, bChange = 0.0182709, totNum = 1
 ROUND = 511, SUM = 30575, bChange = 0.018271, totNum = 1
 ROUND = 512, SUM = 30575, bChange = 0.0182711, totNum = 1
 ROUND = 513, SUM = 30575, bChange = 0.0182711, totNum = 1
@@ -1137,7 +1137,7 @@ ROUND = 521, SUM = 30575, bChange = 0.0182717, totNum = 1
 ROUND = 522, SUM = 30575, bChange = 0.0182718, totNum = 1
 ROUND = 523, SUM = 30575, bChange = 0.0182718, totNum = 1
 ROUND = 524, SUM = 30575, bChange = 0.0182719, totNum = 1
-ROUND = 525, SUM = 30574.9999999999, bChange = 0.0182719, totNum = 1
+ROUND = 525, SUM = 30575, bChange = 0.0182719, totNum = 1
 ROUND = 526, SUM = 30575, bChange = 0.018272, totNum = 1
 ROUND = 527, SUM = 30575, bChange = 0.0182721, totNum = 1
 ROUND = 528, SUM = 30575, bChange = 0.0182721, totNum = 1
@@ -1305,7 +1305,7 @@ Calculating data likelihood in log space.
 Data likelihood is calculated!
 Calculating correction score.
 Correction score is calculated!
-Time Used for EM.cpp : 0 h 00 m 02 s
+Time Used for EM.cpp : 0 h 00 m 03 s
 
-rm -rf assembly/detonateOut/trinityOut2.temp
+rm -rf /Users/jordi/code/linux/bin/rnaSeq/src/rsemEvalPE/main/rsemEvalPEOut/trinityOut2.temp
 
