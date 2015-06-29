@@ -65,13 +65,19 @@ logfile="${outdir}/${prefix}_seecer${kmerSize}.log"
 mkdir -p "$temp"
 mkdir -p "$outdir"
 
-# Gunzip in parallel
+# Gunzip in parallel in case they are compressed
 # Process substitution doesn't work with Seecer, i.e. <(zcat read)
-gunzip "$read1" &
-gunzip "$read2" &
-wait %1 %2 || exit $?
-fqFile1="${read1%".gz"}"
-fqFile2="${read2%".gz"}"
+if [[ "$read1" =~ \.gz$ ]] && [[ "$read2" =~ \.gz$ ]] ;
+then
+  gunzip "$read1" &
+  gunzip "$read2" &
+  wait %1 %2 || exit $?
+  fqFile1="${read1%".gz"}"
+  fqFile2="${read2%".gz"}"
+else
+  fqFile1="${read1}"
+  fqFile2="${read2}"
+fi
 
 # Run
 run_seecer.sh -t "$temp" -k "$kmerSize" "$fqFile1" "$fqFile2"  &>"$logfile"
