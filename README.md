@@ -62,15 +62,15 @@ Usage
 
 ####filteringPE.sh
 
-          filteringPE.sh QUAL THREADS INPUTPAIR1 INPUTPAIR2
+          filteringPE.sh QUAL THREADS INPUTPAIR1 INPUTPAIR2 OUTPUT_DIR
 
 ####seecerPE.sh
 
-          seecerPE.sh [OPTIONS] -- INPUTPAIR1 INPUTPAIR2
+          seecerPE.sh [OPTIONS] -- INPUTPAIR1 INPUTPAIR2 OUTPUT_DIR
 
 ####rsemEvalPE.sh
 
-          rsemEvalPE.sh [OPTIONS] -- INPUTPAIR1 INPUTPAIR2  ASSEMBLY
+          rsemEvalPE.sh [OPTIONS] -- INPUTPAIR1 INPUTPAIR2  ASSEMBLY OUTPUT_DIR
 
 License
 ---------------
