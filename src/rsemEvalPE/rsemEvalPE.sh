@@ -52,15 +52,14 @@ done
 read1="$1"
 read2="$2"
 fastaPath="$3"
+outdir="$4"
 fastaFile="$(basename "$fastaPath")"
 fastaDir="$(dirname "$fastaPath")"
 
 # Setting some file/dirnames
-outLevel="$(dirname "$fastaDir")"
-outdir="${outLevel}/rsemEvalPEOut"
-prefix="${fastaFile%".fasta"}"
+prefix="${fastaFile%.*}"
 transcriptLengthParameters="${fastaDir}/${prefix}_length_distribution/${prefix}.txt"
-logfile="${outdir}/${prefix}_detonateRsem.log"
+logfile="${PWD}/${prefix}_detonateRsem.log"
 
 # Gunzip in parallel in case they are compressed
 # Process substitution doesn't work with Seecer, i.e. <(zcat read)
@@ -94,6 +93,3 @@ rsem-eval-calculate-score -p "$threads" --transcript-length-parameters "$transcr
 gzip "$fqFile1" &
 gzip "$fqFile2" &
 wait %1 %2 || exit $?
-
-# Copy logfile to working directory
-cp "$logfile" ./

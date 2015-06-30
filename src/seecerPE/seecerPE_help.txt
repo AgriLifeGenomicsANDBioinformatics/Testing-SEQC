@@ -2,14 +2,14 @@ Description:
   Wrapper for SEECER with paired end reads.
 
 Usage:
-	seecerPE.sh  [OPTIONS]  -- read_r1.fastq.gz read_r2.fastq.gz
+	seecerPE.sh  [OPTIONS]  -- FQFILE_1 FQFILE_2 OUTDIR
 
 Options:
   -h--help                Help.
   -k--kmerSize            Kmer size. Default: 25.
 
 Examples:
-  seecerPE.sh -k 20 -- read_r1.fastq.gz read_r2.fastq.gz
+  seecerPE.sh -k 20 -- read_r1.fastq.gz read_r2.fastq.gz seccerPEOut
 
 Upstream:
   trinityPE.sh

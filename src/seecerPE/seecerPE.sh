@@ -51,6 +51,7 @@ done
 # Read input files
 read1="$1"
 read2="$2"
+outdir="$3"
 
 # Less common prefix
 lcprefix="$(printf "%s\n" "$(basename "$read1")" "$(basename "$read2")" | sed -e 'N;s/^\(.*\).*\n\1.*$/\1/')"
@@ -58,10 +59,8 @@ prefix="${lcprefix%_[rR]}"
 
 # Create tmp and output directories
 readsDir="$(dirname "$read1")"
-outLevel="$(dirname "$readsDir")"
-outdir="${outLevel}/seecerPEOut"
-temp="${readsDir}/${prefix}"
-logfile="${outdir}/${prefix}_seecer${kmerSize}.log"
+temp="${PWD}/${prefix}"
+logfile="${PWD}/${prefix}_seecerPE.log"
 
 mkdir -p "$temp"
 mkdir -p "$outdir"
@@ -104,7 +103,3 @@ if [ -d "$temp" ]
 then
   rm -rf "$temp"
 fi
-
-
-# Copy logfile to working directory
-cp "$logfile" ./

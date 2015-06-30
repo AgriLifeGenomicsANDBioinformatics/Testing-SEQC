@@ -23,10 +23,10 @@ usage="
 Description:
 \n\tThe script is aimed to clean paired-end reads by poly dA/dT tails, rRNA and chrM.\n
 \nUsage:
-\n\t"$script_name" QUAL THREADS INPUTPAI_R1 INPUTPAI_R2\n
+\n\t"$script_name" QUAL THREADS INPUTPAIR_R1 INPUTPAIR_R2 OUTDIR\n
 \nE.g.
-\n\tfilteringPE.sh sanger 2 read_1.fastq.gz read_2.fastq.gz\n
-\n\tfilteringPE.sh i.18 3 read_1.fastq.gz read_2.fastq.gz\n
+\n\tfilteringPE.sh sanger 2 read_1.fastq.gz read_2.fastq.gz filteringPEOut1\n
+\n\tfilteringPE.sh i.18 3 read_1.fastq.gz read_2.fastq.gz filteringPEOut2\n
 \nBefore usage:
 \n\t1. The script assume that the following softwares are in the path:
 		\n\t\t1) flexbar
@@ -43,7 +43,7 @@ Description:
 		\n
 "
 
-if [ $# -ne 4 ]
+if [ $# -ne 5 ]
     then
         echo -e $usage >&2
         exit 1
@@ -54,19 +54,19 @@ QUAL=$1; shift
 THREADS=$1; shift
 INPUT1=$1; shift
 INPUT2=$1; shift
+outdir=$1;shift
 
 # Get the library name and create the output directory
-DIR="$(dirname "$(dirname "$INPUT1")")"    
 read1="$(basename "$INPUT1")"
 read2="$(basename "$INPUT2")"
 lcprefix="$(printf "%s\n" "$read1" "$read2" | sed -e 'N;s/^\(.*\).*\n\1.*$/\1/')"
 LIBRARY="${lcprefix%_[rR]}"
-outdir="${DIR}/filteringPEOut"
+
 mkdir -p "$outdir"
 
 # Log file with timestamp
 script_name_prefix="$(basename "$0" .sh)"
-LOGFILE="${outdir}/${script_name_prefix}_${LIBRARY}.log"
+LOGFILE="${PWD}/${script_name_prefix}_${LIBRARY}.log"
 touch "$LOGFILE"        # For general .log file 
 
 # functions
@@ -167,8 +167,5 @@ left_after_rRNA_reads1="$(($after_rRNA_reads1/$total_reads1))"
 left_after_rRNA_reads2="$(($after_rRNA_reads2/$total_reads2))"
 echo "${left_after_rRNA_reads1}% of original reads left after rRNA filtering" | tee -a "$LOGFILE"
 echo "$(date): Done, $(($total_lines1/4)) reads passed all the filters." | tee -a "$LOGFILE"
-
-# Copy .log file in the working directory
-cp "$LOGFILE" ./
 
 # [ program end ]

@@ -1,17 +1,17 @@
-rsem-synthesis-reference-transcripts ./rsemEvalPEOut/trinityOut1.temp/trinityOut1 0 0 0 assembly/trinityOut1.fasta
+rsem-synthesis-reference-transcripts rsemPEOut/trinityOut1.temp/trinityOut1 0 0 0 assembly/trinityOut1.fasta
 Transcript Information File is generated!
 Group File is generated!
 Extracted Sequences File is generated!
 
-rsem-preref ./rsemEvalPEOut/trinityOut1.temp/trinityOut1.transcripts.fa 1 ./rsemEvalPEOut/trinityOut1.temp/trinityOut1
+rsem-preref rsemPEOut/trinityOut1.temp/trinityOut1.transcripts.fa 1 rsemPEOut/trinityOut1.temp/trinityOut1
 Refs.makeRefs finished!
 Refs.saveRefs finished!
-./rsemEvalPEOut/trinityOut1.temp/trinityOut1.idx.fa is generated!
-./rsemEvalPEOut/trinityOut1.temp/trinityOut1.n2g.idx.fa is generated!
+rsemPEOut/trinityOut1.temp/trinityOut1.idx.fa is generated!
+rsemPEOut/trinityOut1.temp/trinityOut1.n2g.idx.fa is generated!
 
-bowtie-build -f ./rsemEvalPEOut/trinityOut1.temp/trinityOut1.n2g.idx.fa ./rsemEvalPEOut/trinityOut1.temp/trinityOut1
+bowtie-build -f rsemPEOut/trinityOut1.temp/trinityOut1.n2g.idx.fa rsemPEOut/trinityOut1.temp/trinityOut1
 Settings:
-  Output files: "./rsemEvalPEOut/trinityOut1.temp/trinityOut1.*.ebwt"
+  Output files: "rsemPEOut/trinityOut1.temp/trinityOut1.*.ebwt"
   Line rate: 6 (line is 64 bytes)
   Lines per side: 1 (side is 64 bytes)
   Offset rate: 5 (one in 32)
@@ -28,7 +28,7 @@ Settings:
   Random seed: 0
   Sizeofs: void*:8, int:4, long:8, size_t:8
 Input files DNA, FASTA:
-  ./rsemEvalPEOut/trinityOut1.temp/trinityOut1.n2g.idx.fa
+  rsemPEOut/trinityOut1.temp/trinityOut1.n2g.idx.fa
 Reading reference sizes
   Time reading reference sizes: 00:00:00
 Calculating joined length
@@ -109,7 +109,7 @@ Getting block 1 of 7
   80%
   90%
   100%
-  Block accumulator loop time: 00:00:00
+  Block accumulator loop time: 00:00:01
   Sorting block of length 18646
   (Using difference cover)
   Sorting block time: 00:00:00
@@ -242,8 +242,8 @@ fchr[T]: 103958
 fchr[$]: 137808
 Exiting Ebwt::buildToDisk()
 Returning from initFromVector
-Wrote 4235991 bytes to primary EBWT file: ./rsemEvalPEOut/trinityOut1.temp/trinityOut1.1.ebwt
-Wrote 17232 bytes to secondary EBWT file: ./rsemEvalPEOut/trinityOut1.temp/trinityOut1.2.ebwt
+Wrote 4235991 bytes to primary EBWT file: rsemPEOut/trinityOut1.temp/trinityOut1.1.ebwt
+Wrote 17232 bytes to secondary EBWT file: rsemPEOut/trinityOut1.temp/trinityOut1.2.ebwt
 Re-opening _in1 and _in2 as input streams
 Returning from Ebwt constructor
 Headers:
@@ -276,7 +276,7 @@ Headers:
     ebwtTotLen: 39424
     ebwtTotSz: 39424
     reverse: 0
-Total time for call to driver() for forward index: 00:00:00
+Total time for call to driver() for forward index: 00:00:01
 Reading reference sizes
   Time reading reference sizes: 00:00:00
 Calculating joined length
@@ -465,7 +465,7 @@ Getting block 4 of 8
   Block accumulator loop time: 00:00:00
   Sorting block of length 15048
   (Using difference cover)
-  Sorting block time: 00:00:01
+  Sorting block time: 00:00:00
 Returning block of 15049
 Getting block 5 of 8
   Reserving size (25839) for bucket
@@ -525,7 +525,7 @@ Getting block 7 of 8
   Block accumulator loop time: 00:00:00
   Sorting block of length 20729
   (Using difference cover)
-  Sorting block time: 00:00:00
+  Sorting block time: 00:00:01
 Returning block of 20730
 Getting block 8 of 8
   Reserving size (25839) for bucket
@@ -555,8 +555,8 @@ fchr[T]: 103958
 fchr[$]: 137808
 Exiting Ebwt::buildToDisk()
 Returning from initFromVector
-Wrote 4235991 bytes to primary EBWT file: ./rsemEvalPEOut/trinityOut1.temp/trinityOut1.rev.1.ebwt
-Wrote 17232 bytes to secondary EBWT file: ./rsemEvalPEOut/trinityOut1.temp/trinityOut1.rev.2.ebwt
+Wrote 4235991 bytes to primary EBWT file: rsemPEOut/trinityOut1.temp/trinityOut1.rev.1.ebwt
+Wrote 17232 bytes to secondary EBWT file: rsemPEOut/trinityOut1.temp/trinityOut1.rev.2.ebwt
 Re-opening _in1 and _in2 as input streams
 Returning from Ebwt constructor
 Headers:
@@ -591,21 +591,21 @@ Headers:
     reverse: 0
 Total time for backward call to driver() for mirror index: 00:00:01
 
-bowtie -q --phred33-quals -n 2 -e 99999999 -l 25 -I 1 -X 1000 -p 2 -a -m 200 -S ./rsemEvalPEOut/trinityOut1.temp/trinityOut1 -1 reads/reads1_r1.fastq -2 reads/reads1_r2.fastq | samtools view -S -b -o ./rsemEvalPEOut/trinityOut1.temp/trinityOut1.bam -
+bowtie -q --phred33-quals -n 2 -e 99999999 -l 25 -I 1 -X 1000 -p 2 -a -m 200 -S rsemPEOut/trinityOut1.temp/trinityOut1 -1 reads/reads1_r1.fastq -2 reads/reads1_r2.fastq | samtools view -S -b -o rsemPEOut/trinityOut1.temp/trinityOut1.bam -
 [samopen] SAM header is present: 71 sequences.
 # reads processed: 30575
 # reads with at least one reported alignment: 27108 (88.66%)
 # reads that failed to align: 3467 (11.34%)
 Reported 64812 paired-end alignments to 1 output stream(s)
 
-rsem-parse-alignments ./rsemEvalPEOut/trinityOut1.temp/trinityOut1 ./rsemEvalPEOut/trinityOut1.temp/trinityOut1 ./rsemEvalPEOut/trinityOut1.stat/trinityOut1 b ./rsemEvalPEOut/trinityOut1.temp/trinityOut1.bam -t 3 -tag XM
+rsem-parse-alignments rsemPEOut/trinityOut1.temp/trinityOut1 rsemPEOut/trinityOut1.temp/trinityOut1 rsemPEOut/trinityOut1.stat/trinityOut1 b rsemPEOut/trinityOut1.temp/trinityOut1.bam -t 3 -tag XM
 Done!
 
-rsem-build-read-index 32 1 0 ./rsemEvalPEOut/trinityOut1.temp/trinityOut1_alignable_1.fq ./rsemEvalPEOut/trinityOut1.temp/trinityOut1_alignable_2.fq
-Build Index ./rsemEvalPEOut/trinityOut1.temp/trinityOut1_alignable_1.fq is Done!
-Build Index ./rsemEvalPEOut/trinityOut1.temp/trinityOut1_alignable_2.fq is Done!
+rsem-build-read-index 32 1 0 rsemPEOut/trinityOut1.temp/trinityOut1_alignable_1.fq rsemPEOut/trinityOut1.temp/trinityOut1_alignable_2.fq
+Build Index rsemPEOut/trinityOut1.temp/trinityOut1_alignable_1.fq is Done!
+Build Index rsemPEOut/trinityOut1.temp/trinityOut1_alignable_2.fq is Done!
 
-rsem-eval-run-em ./rsemEvalPEOut/trinityOut1.temp/trinityOut1 3 ./rsemEvalPEOut/trinityOut1 ./rsemEvalPEOut/trinityOut1.temp/trinityOut1 ./rsemEvalPEOut/trinityOut1.stat/trinityOut1 0.650731242119049 0.00033515059786042 75 0 -p 2
+rsem-eval-run-em rsemPEOut/trinityOut1.temp/trinityOut1 3 rsemPEOut/trinityOut1 rsemPEOut/trinityOut1.temp/trinityOut1 rsemPEOut/trinityOut1.stat/trinityOut1 0.650731242119049 0.00033515059786042 75 0 -p 2
 Refs.loadRefs finished!
 Thread 0 : N = 13230, NHit = 32406
 DAT 0 reads left
@@ -655,15 +655,15 @@ ROUND = 39, SUM = 30575, bChange = 0.0273948, totNum = 16
 ROUND = 40, SUM = 30575, bChange = 0.0265762, totNum = 16
 ROUND = 41, SUM = 30575, bChange = 0.0257662, totNum = 15
 ROUND = 42, SUM = 30575, bChange = 0.0249654, totNum = 14
-ROUND = 43, SUM = 30575, bChange = 0.0241747, totNum = 14
+ROUND = 43, SUM = 30574.9999999999, bChange = 0.0241747, totNum = 14
 ROUND = 44, SUM = 30575, bChange = 0.0233947, totNum = 13
 ROUND = 45, SUM = 30575, bChange = 0.022626, totNum = 13
 ROUND = 46, SUM = 30575, bChange = 0.0218694, totNum = 13
-ROUND = 47, SUM = 30575, bChange = 0.0211253, totNum = 13
+ROUND = 47, SUM = 30574.9999999999, bChange = 0.0211253, totNum = 13
 ROUND = 48, SUM = 30575, bChange = 0.0203945, totNum = 13
 ROUND = 49, SUM = 30575, bChange = 0.0196774, totNum = 13
 ROUND = 50, SUM = 30575, bChange = 0.0189745, totNum = 13
-ROUND = 51, SUM = 30575.0000000001, bChange = 0.0182863, totNum = 13
+ROUND = 51, SUM = 30575, bChange = 0.0182863, totNum = 13
 ROUND = 52, SUM = 30575, bChange = 0.0176132, totNum = 13
 ROUND = 53, SUM = 30575, bChange = 0.0169555, totNum = 13
 ROUND = 54, SUM = 30575, bChange = 0.0167281, totNum = 13
@@ -704,7 +704,7 @@ ROUND = 88, SUM = 30575, bChange = 0.0162053, totNum = 8
 ROUND = 89, SUM = 30575, bChange = 0.0162083, totNum = 8
 ROUND = 90, SUM = 30575, bChange = 0.0162119, totNum = 7
 ROUND = 91, SUM = 30575, bChange = 0.0162161, totNum = 7
-ROUND = 92, SUM = 30574.9999999999, bChange = 0.0162208, totNum = 7
+ROUND = 92, SUM = 30575, bChange = 0.0162208, totNum = 7
 ROUND = 93, SUM = 30575, bChange = 0.0162261, totNum = 7
 ROUND = 94, SUM = 30575, bChange = 0.0162318, totNum = 7
 ROUND = 95, SUM = 30575, bChange = 0.0162381, totNum = 7
@@ -725,7 +725,7 @@ ROUND = 109, SUM = 30575, bChange = 0.0163671, totNum = 5
 ROUND = 110, SUM = 30575, bChange = 0.0163787, totNum = 5
 ROUND = 111, SUM = 30575, bChange = 0.0163904, totNum = 5
 ROUND = 112, SUM = 30575, bChange = 0.0164024, totNum = 5
-ROUND = 113, SUM = 30575.0000000001, bChange = 0.0164146, totNum = 4
+ROUND = 113, SUM = 30575, bChange = 0.0164146, totNum = 4
 ROUND = 114, SUM = 30575, bChange = 0.016427, totNum = 4
 ROUND = 115, SUM = 30575, bChange = 0.0164396, totNum = 4
 ROUND = 116, SUM = 30575, bChange = 0.0164524, totNum = 4
@@ -748,7 +748,7 @@ ROUND = 132, SUM = 30575.0000000001, bChange = 0.0166731, totNum = 3
 ROUND = 133, SUM = 30575, bChange = 0.0166875, totNum = 3
 ROUND = 134, SUM = 30575, bChange = 0.016702, totNum = 3
 ROUND = 135, SUM = 30575, bChange = 0.0167164, totNum = 3
-ROUND = 136, SUM = 30574.9999999999, bChange = 0.0167309, totNum = 3
+ROUND = 136, SUM = 30575, bChange = 0.0167309, totNum = 3
 ROUND = 137, SUM = 30575, bChange = 0.0167454, totNum = 3
 ROUND = 138, SUM = 30575, bChange = 0.0167599, totNum = 3
 ROUND = 139, SUM = 30575, bChange = 0.0167744, totNum = 3
@@ -770,7 +770,7 @@ ROUND = 154, SUM = 30575, bChange = 0.0169893, totNum = 2
 ROUND = 155, SUM = 30575, bChange = 0.0170032, totNum = 2
 ROUND = 156, SUM = 30575, bChange = 0.0170172, totNum = 1
 ROUND = 157, SUM = 30575, bChange = 0.017031, totNum = 1
-ROUND = 158, SUM = 30575, bChange = 0.0170448, totNum = 1
+ROUND = 158, SUM = 30575.0000000001, bChange = 0.0170448, totNum = 1
 ROUND = 159, SUM = 30575, bChange = 0.0170585, totNum = 1
 ROUND = 160, SUM = 30575, bChange = 0.0170721, totNum = 1
 ROUND = 161, SUM = 30575, bChange = 0.0170857, totNum = 1
@@ -862,7 +862,7 @@ ROUND = 246, SUM = 30575, bChange = 0.0178952, totNum = 1
 ROUND = 247, SUM = 30575, bChange = 0.0179008, totNum = 1
 ROUND = 248, SUM = 30575, bChange = 0.0179064, totNum = 1
 ROUND = 249, SUM = 30575, bChange = 0.0179119, totNum = 1
-ROUND = 250, SUM = 30575, bChange = 0.0179173, totNum = 1
+ROUND = 250, SUM = 30575.0000000001, bChange = 0.0179173, totNum = 1
 ROUND = 251, SUM = 30575, bChange = 0.0179226, totNum = 1
 ROUND = 252, SUM = 30575, bChange = 0.0179279, totNum = 1
 ROUND = 253, SUM = 30575, bChange = 0.0179331, totNum = 1
@@ -928,9 +928,9 @@ ROUND = 312, SUM = 30575, bChange = 0.0181402, totNum = 1
 ROUND = 313, SUM = 30575, bChange = 0.0181424, totNum = 1
 ROUND = 314, SUM = 30575, bChange = 0.0181446, totNum = 1
 ROUND = 315, SUM = 30575, bChange = 0.0181467, totNum = 1
-ROUND = 316, SUM = 30575.0000000001, bChange = 0.0181488, totNum = 1
+ROUND = 316, SUM = 30575, bChange = 0.0181488, totNum = 1
 ROUND = 317, SUM = 30575, bChange = 0.0181508, totNum = 1
-ROUND = 318, SUM = 30574.9999999999, bChange = 0.0181529, totNum = 1
+ROUND = 318, SUM = 30575, bChange = 0.0181529, totNum = 1
 ROUND = 319, SUM = 30575, bChange = 0.0181548, totNum = 1
 ROUND = 320, SUM = 30575, bChange = 0.0181568, totNum = 1
 ROUND = 321, SUM = 30575, bChange = 0.0181587, totNum = 1
@@ -986,7 +986,7 @@ ROUND = 370, SUM = 30575, bChange = 0.018224, totNum = 1
 ROUND = 371, SUM = 30575, bChange = 0.0182249, totNum = 1
 ROUND = 372, SUM = 30575, bChange = 0.0182257, totNum = 1
 ROUND = 373, SUM = 30575, bChange = 0.0182266, totNum = 1
-ROUND = 374, SUM = 30575, bChange = 0.0182274, totNum = 1
+ROUND = 374, SUM = 30574.9999999999, bChange = 0.0182274, totNum = 1
 ROUND = 375, SUM = 30575, bChange = 0.0182282, totNum = 1
 ROUND = 376, SUM = 30575, bChange = 0.018229, totNum = 1
 ROUND = 377, SUM = 30575, bChange = 0.0182298, totNum = 1
@@ -1054,7 +1054,7 @@ ROUND = 438, SUM = 30575, bChange = 0.0182595, totNum = 1
 ROUND = 439, SUM = 30575, bChange = 0.0182598, totNum = 1
 ROUND = 440, SUM = 30575, bChange = 0.01826, totNum = 1
 ROUND = 441, SUM = 30575, bChange = 0.0182603, totNum = 1
-ROUND = 442, SUM = 30575.0000000001, bChange = 0.0182606, totNum = 1
+ROUND = 442, SUM = 30575, bChange = 0.0182606, totNum = 1
 ROUND = 443, SUM = 30575, bChange = 0.0182608, totNum = 1
 ROUND = 444, SUM = 30575, bChange = 0.0182611, totNum = 1
 ROUND = 445, SUM = 30575, bChange = 0.0182613, totNum = 1
@@ -1307,5 +1307,5 @@ Calculating correction score.
 Correction score is calculated!
 Time Used for EM.cpp : 0 h 00 m 02 s
 
-rm -rf ./rsemEvalPEOut/trinityOut1.temp
+rm -rf rsemPEOut/trinityOut1.temp
 

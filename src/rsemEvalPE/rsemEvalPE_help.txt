@@ -9,7 +9,7 @@ Options:
   -t--threads             Threads used by DETONATE. Default: 1.
 
 Examples:
-  rsemEvalPE.sh -t 2 -- reads/reads_r1.fastq.gz reads/reads_r2.fastq.gz assembly/trinityOut.fasta 
+  rsemEvalPE.sh -t 2 -- reads/reads_r1.fastq.gz reads/reads_r2.fastq.gz assembly/trinityOut.fasta rsemPEOut 
 
 Upstream:
   seecerPE.sh
