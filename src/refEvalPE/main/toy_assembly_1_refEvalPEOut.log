@@ -1,0 +1,28 @@
+Tue Jun 30 16:39:08 CDT 2015: Starting BLAT ...
+Loaded 677 letters in 1 sequences
+Searched 626 bases in 1 sequences
+Loaded 626 letters in 1 sequences
+Searched 677 bases in 1 sequences
+Tue Jun 30 16:39:08 CDT 2015: Starting RSEM ...
+rsem-synthesis-reference-transcripts refEvalPEOut/rsem/toy_assembly_1_ref 0 0 assemblies/toy_assembly_1.fa
+Transcript Information File is generated!
+Group File is generated!
+Extracted Sequences File is generated!
+
+rsem-preref refEvalPEOut/rsem/toy_assembly_1_ref.transcripts.fa 1 refEvalPEOut/rsem/toy_assembly_1_ref -l 125
+Refs.makeRefs finished!
+Refs.saveRefs finished!
+refEvalPEOut/rsem/toy_assembly_1_ref.idx.fa is generated!
+refEvalPEOut/rsem/toy_assembly_1_ref.n2g.idx.fa is generated!
+
+rsem-synthesis-reference-transcripts refEvalPEOut/rsem/toy_ref_ref 0 0 reference/toy_ref.fa
+Transcript Information File is generated!
+Group File is generated!
+Extracted Sequences File is generated!
+
+rsem-preref refEvalPEOut/rsem/toy_ref_ref.transcripts.fa 1 refEvalPEOut/rsem/toy_ref_ref -l 125
+Refs.makeRefs finished!
+Refs.saveRefs finished!
+refEvalPEOut/rsem/toy_ref_ref.idx.fa is generated!
+refEvalPEOut/rsem/toy_ref_ref.n2g.idx.fa is generated!
+

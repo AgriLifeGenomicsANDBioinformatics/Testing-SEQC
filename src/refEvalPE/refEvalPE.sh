@@ -51,17 +51,17 @@ done
 assembly="$1"
 reference="$2"
 read1="$3"
+read2="$4"
+outdir="$5"
 
 ## Setting some file/dirnames
 assemblyFile="$(basename "$assembly")"
 referenceFile="$(basename "$reference")"
 assemblyDir="$(dirname "$assembly")"
 referenceDir="$(dirname "$reference")"
-outLevel="$(dirname "$assemblyDir")"
-outdir="${outLevel}/refEvalPEOut"
 prefixAssembly="${assemblyFile%.*}"
 prefixReference="${referenceFile%.*}"
-logfile="${outdir}/${prefixAssembly}_refEvalPEOut.log"
+logfile="${PWD}/${prefixAssembly}_refEvalPEOut.log"
 
 ## Create general output directory
 mkdir -p "$outdir"
@@ -89,13 +89,13 @@ refFileReference="${outdirRsem}/${prefixReference}_ref"
 echo "$(date): Starting RSEM ..." | tee -a "$logfile"
 rsem-prepare-reference "$assembly" "$refFileAssembly" &>>"$logfile"
 rsem-prepare-reference "$reference" "$refFileReference" &>>"$logfile"
+exit 0
 # Output files 2
 exprFileAssembly="${outdirRsem}/${prefixAssembly}_expr"
 exprFileReference="${outdirRsem}/${prefixReference}_expr"
 rsem-calculate-expression -p "$threads" --no-bam-output "$read1" "$refFileAssembly" "$exprFileAssembly" &>>"$logfile"
 rsem-calculate-expression -p "$threads" --no-bam-output "$read1" "$refFileReference" "$exprFileReference" &>>"$logfile"
 
-exit 0
 
 ref-eval --scores=nucl,pair,contig,kmer,kc \
              --weighted=both \
