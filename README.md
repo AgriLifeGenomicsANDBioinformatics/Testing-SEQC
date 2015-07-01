@@ -63,7 +63,7 @@ Usage
   3. `pbs/`
     * `script_name.pbs`: pbs script to run the command on blacklight.
 
-####cutadapt.sh
+####cutadaptPE.sh
 
           cutadaptPE.sh INPUT_DIR OUTPUT_DIR  READS_PREFIX
 
