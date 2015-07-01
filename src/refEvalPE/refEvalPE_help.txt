@@ -23,6 +23,17 @@ Dependancies:
   bowtie-build
 
 Notes:
+  The output will be organized as follows:
+    
+    OUTDIR
+    |-- blat
+    |   `-- *.psl
+    |-- ref
+    |   `-- scores.txt
+    `-- rsem
+        `-- ...
+  
+  The scores for the assembly can be found under ${OUTDIR}/ref/*.txt
 
 Date:
   2015/07/01
