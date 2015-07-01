@@ -2981,3 +2981,148 @@ Normalizing the induced distributions...
 Computing kmer Jensen-Shannon, Hellinger, and total variation scores...
 Done computing all scores.
 Wed Jul  1 12:09:31 CDT 2015: Done
+Wed Jul  1 12:17:38 CDT 2015: Starting ...
+Wed Jul  1 12:17:38 CDT 2015: Starting BLAT ...
+Loaded 677 letters in 1 sequences
+Searched 626 bases in 1 sequences
+Loaded 626 letters in 1 sequences
+Searched 677 bases in 1 sequences
+Wed Jul  1 12:17:38 CDT 2015: Starting RSEM ...
+rsem-synthesis-reference-transcripts refEvalPEOut/rsem/toy_assembly_1_ref 0 0 assemblies/toy_assembly_1.fa
+Transcript Information File is generated!
+Group File is generated!
+Extracted Sequences File is generated!
+
+rsem-preref refEvalPEOut/rsem/toy_assembly_1_ref.transcripts.fa 1 refEvalPEOut/rsem/toy_assembly_1_ref -l 125
+Refs.makeRefs finished!
+Refs.saveRefs finished!
+refEvalPEOut/rsem/toy_assembly_1_ref.idx.fa is generated!
+refEvalPEOut/rsem/toy_assembly_1_ref.n2g.idx.fa is generated!
+
+rsem-synthesis-reference-transcripts refEvalPEOut/rsem/toy_ref_ref 0 0 reference/toy_ref.fa
+Transcript Information File is generated!
+Group File is generated!
+Extracted Sequences File is generated!
+
+rsem-preref refEvalPEOut/rsem/toy_ref_ref.transcripts.fa 1 refEvalPEOut/rsem/toy_ref_ref -l 125
+Refs.makeRefs finished!
+Refs.saveRefs finished!
+refEvalPEOut/rsem/toy_ref_ref.idx.fa is generated!
+refEvalPEOut/rsem/toy_ref_ref.n2g.idx.fa is generated!
+
+Wed Jul  1 12:17:39 CDT 2015: Building bowtie indexes ...
+Wed Jul  1 12:17:39 CDT 2015: Calculating expression ...
+bowtie -q --phred33-quals -n 2 -e 99999999 -l 25 -p 1 -a -m 200 -S refEvalPEOut/rsem/toy_assembly_1_ref reads/toy_SE.fq | samtools view -S -b -o refEvalPEOut/rsem/toy_assembly_1_expr.temp/toy_assembly_1_expr.bam -
+[samopen] SAM header is present: 1 sequences.
+# reads processed: 3818
+# reads with at least one reported alignment: 3812 (99.84%)
+# reads that failed to align: 6 (0.16%)
+Reported 3812 alignments to 1 output stream(s)
+
+rsem-parse-alignments refEvalPEOut/rsem/toy_assembly_1_ref refEvalPEOut/rsem/toy_assembly_1_expr.temp/toy_assembly_1_expr refEvalPEOut/rsem/toy_assembly_1_expr.stat/toy_assembly_1_expr b refEvalPEOut/rsem/toy_assembly_1_expr.temp/toy_assembly_1_expr.bam -t 1 -tag XM
+Done!
+
+rsem-build-read-index 32 1 0 refEvalPEOut/rsem/toy_assembly_1_expr.temp/toy_assembly_1_expr_alignable.fq
+Build Index refEvalPEOut/rsem/toy_assembly_1_expr.temp/toy_assembly_1_expr_alignable.fq is Done!
+
+rsem-run-em refEvalPEOut/rsem/toy_assembly_1_ref 1 refEvalPEOut/rsem/toy_assembly_1_expr refEvalPEOut/rsem/toy_assembly_1_expr.temp/toy_assembly_1_expr refEvalPEOut/rsem/toy_assembly_1_expr.stat/toy_assembly_1_expr -p 1
+Refs.loadRefs finished!
+DAT 0 reads left
+Thread 0 : N = 3812, NHit = 3812
+EM_init finished!
+estimateFromReads, N0 finished.
+estimateFromReads, N1 finished.
+ROUND = 1, SUM = 3818, bChange = 2.52329e-05, totNum = 0
+ROUND = 2, SUM = 3818, bChange = 2.51884e-05, totNum = 0
+ROUND = 3, SUM = 3818, bChange = 1.54073e-11, totNum = 0
+ROUND = 4, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 5, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 6, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 7, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 8, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 9, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 10, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 11, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 12, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 13, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 14, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 15, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 16, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 17, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 18, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 19, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 20, SUM = 3818, bChange = 0, totNum = 0
+Expression Results are written!
+Time Used for EM.cpp : 0 h 00 m 00 s
+
+rm -rf refEvalPEOut/rsem/toy_assembly_1_expr.temp
+
+bowtie -q --phred33-quals -n 2 -e 99999999 -l 25 -p 1 -a -m 200 -S refEvalPEOut/rsem/toy_ref_ref reads/toy_SE.fq | samtools view -S -b -o refEvalPEOut/rsem/toy_ref_expr.temp/toy_ref_expr.bam -
+[samopen] SAM header is present: 1 sequences.
+# reads processed: 3818
+# reads with at least one reported alignment: 3818 (100.00%)
+# reads that failed to align: 0 (0.00%)
+Reported 3818 alignments to 1 output stream(s)
+
+rsem-parse-alignments refEvalPEOut/rsem/toy_ref_ref refEvalPEOut/rsem/toy_ref_expr.temp/toy_ref_expr refEvalPEOut/rsem/toy_ref_expr.stat/toy_ref_expr b refEvalPEOut/rsem/toy_ref_expr.temp/toy_ref_expr.bam -t 1 -tag XM
+Done!
+
+rsem-build-read-index 32 1 0 refEvalPEOut/rsem/toy_ref_expr.temp/toy_ref_expr_alignable.fq
+Build Index refEvalPEOut/rsem/toy_ref_expr.temp/toy_ref_expr_alignable.fq is Done!
+
+rsem-run-em refEvalPEOut/rsem/toy_ref_ref 1 refEvalPEOut/rsem/toy_ref_expr refEvalPEOut/rsem/toy_ref_expr.temp/toy_ref_expr refEvalPEOut/rsem/toy_ref_expr.stat/toy_ref_expr -p 1
+Refs.loadRefs finished!
+DAT 0 reads left
+Thread 0 : N = 3818, NHit = 3818
+EM_init finished!
+estimateFromReads, N1 finished.
+ROUND = 1, SUM = 3818, bChange = 1e-08, totNum = 0
+ROUND = 2, SUM = 3818, bChange = 2.06191e-09, totNum = 0
+ROUND = 3, SUM = 3818, bChange = 0.000261888, totNum = 0
+ROUND = 4, SUM = 3818, bChange = 0.000102262, totNum = 0
+ROUND = 5, SUM = 3818, bChange = 4.49134e-14, totNum = 0
+ROUND = 6, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 7, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 8, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 9, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 10, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 11, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 12, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 13, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 14, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 15, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 16, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 17, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 18, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 19, SUM = 3818, bChange = 0, totNum = 0
+ROUND = 20, SUM = 3818, bChange = 0, totNum = 0
+Expression Results are written!
+Time Used for EM.cpp : 0 h 00 m 00 s
+
+rm -rf refEvalPEOut/rsem/toy_ref_expr.temp
+
+Wed Jul  1 12:17:40 CDT 2015: Computing number of reads ...
+Wed Jul  1 12:17:40 CDT 2015: Computing average read length ...
+Wed Jul  1 12:17:41 CDT 2015: Computing scores ...
+Reading the sequences...
+Reading the expression...
+Reading the alignments and extracting intervals...
+Computing nucleotide precision, recall, and F1 scores...
+Computing pair precision, recall, and F1 scores...
+Computing number of non-N bases...
+Computing contig precision, recall, and F1 scores...
+Reverse complementing the sequences...
+Initializing the hash table with space for 1255 entries...
+Populating the hash table...done; hash table contains 1254 entries.
+Computing kmer recall, inverse compression rate, and kmer compression scores...
+Reverse complementing the sequences...done.
+Initializing the hash table with space for 1255 entries...
+Populating the hash table...done; hash table contains 1356 entries.
+Normalizing the induced distributions...
+Computing kmer Jensen-Shannon, Hellinger, and total variation scores...
+Initializing the hash table with space for 1255 entries...
+Populating the hash table...done; hash table contains 1356 entries.
+Normalizing the induced distributions...
+Computing kmer Jensen-Shannon, Hellinger, and total variation scores...
+Done computing all scores.
+Wed Jul  1 12:17:41 CDT 2015: Done

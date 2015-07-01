@@ -141,13 +141,13 @@ numReads="$(( ($n-1)/4 ))"
 
 # Get average length of the first 100 reads in fq file
 echo "$(date): Computing average read length ..." | tee -a "$logfile"
-readLength=0
+averageReadLength=0
 for i in {2..400..4};
 do
   n="$(sed -n ${i}p "$fqFile1" | wc -c)"
-  readLength="$(( $n + $readLength - 1 ))"
+  averageReadLength="$(( $n + $averageReadLength - 1 ))"
 done
-readLength="$(($readLength/100))"
+averageReadLength="$(($averageReadLength/100))"
 
 # Compute score
 echo "$(date): Computing scores ..." | tee -a "$logfile"
@@ -163,7 +163,7 @@ ref-eval --scores=nucl,pair,contig,kmer,kc \
              --A-to-B "$blatOutAtoR" \
              --B-to-A "$blatOutRtoA" \
              --num-reads "$numReads" \
-             --readlen "$readLength" \
+             --readlen "$averageReadLength" \
              --kmerlen "$kmerSize" 1>"$scoreFile" 2>>"$logfile"
 
 echo "$(date): Done" | tee -a "$logfile"
