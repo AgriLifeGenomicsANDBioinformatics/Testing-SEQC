@@ -42,8 +42,15 @@ Dependancies
     2. jellyfish
     3. seqan
   4. rsemEvalPE.sh
-    1. rsem-eval
-    2. bowtie
+    1. rsem-eval-calculate-score
+    2. rsem-eval-estimate-transcript-length-distribution
+    3. bowtie
+  5. refEvalPE.sh
+    1. blat
+    2. ref-eval
+    3. rsem-calculate-expression
+    4. rsem-prepare-reference
+    5. bowtie-build
 
 Usage
 -----------------
@@ -71,6 +78,10 @@ Usage
 ####rsemEvalPE.sh
 
           rsemEvalPE.sh [OPTIONS] -- INPUTPAIR1 INPUTPAIR2  ASSEMBLY OUTPUT_DIR
+
+####refEvalPE.sh
+
+          refEvalPE.sh [OPTIONS] -- ASSEMBLY REFERENCE INPUTPAIR1 INPUTPAIR2  OUTDIR
 
 License
 ---------------
