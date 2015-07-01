@@ -2,7 +2,7 @@ Description:
   Evaluates de quality of an assembly with a reference.
 
 Usage:
-	refEvalPE.sh  [OPTIONS]  -- ASSEMBLY.fasta REFERENCE.fasta READ_1.fastq.gz READ_2.fastq.gz  OUTDIR
+	refEvalPE.sh  [OPTIONS]  -- ASSEMBLY REFERENCE READ_1 READ_2  OUTDIR
 
 Options:
   -h--help                Help.
@@ -10,7 +10,7 @@ Options:
   -k--kmerSize            Kmer size used by ref-eval. Default: 25.
 
 Examples:
-  refEvalPE.sh -t 16 -- assemblies/toy_assembly_1.fa reference/toy_ref.fa reads/toy_SE.fq reads/toy_SE.fq refEvalPEOut
+  refEvalPE.sh -t 16 -- assemblies/toy_assembly_1.fa reference/toy_ref.fa reads/read_R1.fq.gz reads/read_R2.fq.gz refEvalPEOut
 
 Upstream:
   trinityPE.sh
