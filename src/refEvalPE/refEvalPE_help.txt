@@ -1,25 +1,27 @@
 Description:
-  Evaluates de quality of an assembly without any reference.
+  Evaluates de quality of an assembly with a reference.
 
 Usage:
-	rsemEvalPE.sh  [OPTIONS]  -- read_r1.fastq.gz read_r2.fastq.gz  assembly.fasta
+	refEvalPE.sh  [OPTIONS]  -- ASSEMBLY.fasta REFERENCE.fasta READ_1.[fq|fastq] READ_2.[fq|fastq]  OUTDIR
 
 Options:
   -h--help                Help.
   -t--threads             Threads used by DETONATE. Default: 1.
 
 Examples:
-  rsemEvalPE.sh -t 2 -- reads/reads_r1.fastq.gz reads/reads_r2.fastq.gz assembly/trinityOut.fasta 
+  refEvalPE.sh -- assemblies/toy_assembly_1.fa reference/toy_ref.fa reads/toy_SE.fq reads/toy_SE.fq refEvalPEOut
 
 Upstream:
-  seecerPE.sh
+  trinityPE.sh
 
 Dependancies:
-  rsem-eval
+  blat
+  ref-eval
+  rsem
   bowtie
 
 Date:
-  2015/06/26
+  2015/07/01
 
 Author:
   Jordi Abante <abante.jordi@gmail.com>

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-outdir=refEvalPEOut
+outdir="/Users/jordi/code/linux/bin/rnaSeq/src/refEvalPE/main/refEvalPEOut"
 
 if [ -d "$outdir" ]
 then
@@ -7,4 +7,4 @@ then
 fi
 
 set -x
-refEvalPE.sh -- assemblies/toy_assembly_1.fa reference/toy_ref.fa reads/toy_SE.fq reads/toy_SE.fq refEvalPEOut
+refEvalPE.sh -- assemblies/toy_assembly_1.fa reference/toy_ref.fa reads/toy_SE.fq reads/toy_SE.fq "$outdir"

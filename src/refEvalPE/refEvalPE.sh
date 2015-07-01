@@ -47,6 +47,8 @@ do
   esac
 done
 
+set -x
+
 ## Read input files
 assembly="$1"
 reference="$2"
@@ -82,34 +84,59 @@ blat -minIdentity=80 "$assembly" "$reference" "$blatOutRtoA" &>>"$logfile"
 # rsem output directory
 outdirRsem="${outdir}/rsem"
 mkdir -p "$outdirRsem"
+
 # Output files 1
 refFileAssembly="${outdirRsem}/${prefixAssembly}_ref"
 refFileReference="${outdirRsem}/${prefixReference}_ref"
+
 # Run rsem
 echo "$(date): Starting RSEM ..." | tee -a "$logfile"
 rsem-prepare-reference "$assembly" "$refFileAssembly" &>>"$logfile"
 rsem-prepare-reference "$reference" "$refFileReference" &>>"$logfile"
-exit 0
+
+# Generate bowtie indexes
+bowtie-build -fq "${refFileAssembly}.transcripts.fa" "${refFileAssembly}"
+bowtie-build -fq "${refFileReference}.transcripts.fa" "${refFileReference}"
+
+# Check whether the reads are compressed
+# Gunzip in parallel in case they are compressed
+# Process substitution doesn't work with Seecer, i.e. <(zcat read)
+if [[ "$read1" =~ \.gz$ ]] && [[ "$read2" =~ \.gz$ ]] ;
+then
+  gunzip "$read1" &
+  gunzip "$read2" &
+  wait %1 %2 || exit $?
+  fqFile1="${read1%".gz"}"
+  fqFile2="${read2%".gz"}"
+else
+  fqFile1="${read1}"
+  fqFile2="${read2}"
+fi
+
 # Output files 2
 exprFileAssembly="${outdirRsem}/${prefixAssembly}_expr"
 exprFileReference="${outdirRsem}/${prefixReference}_expr"
-rsem-calculate-expression -p "$threads" --no-bam-output "$read1" "$refFileAssembly" "$exprFileAssembly" &>>"$logfile"
-rsem-calculate-expression -p "$threads" --no-bam-output "$read1" "$refFileReference" "$exprFileReference" &>>"$logfile"
+rsem-calculate-expression -p "$threads" --no-bam-output "$fqFile1" "$refFileAssembly" "$exprFileAssembly" &>>"$logfile"
+rsem-calculate-expression -p "$threads" --no-bam-output "$fqFile1" "$refFileReference" "$exprFileReference" &>>"$logfile"
 
+# rsem output directory
+outdirRef="${outdir}/ref"
+mkdir -p "$outdirRef"
 
+# Scores file
+scoreFile="${outdirRef}/${prefixAssembly}_${prefixReference}_refEvalPE.txt"
+
+# Compute score
 ref-eval --scores=nucl,pair,contig,kmer,kc \
              --weighted=both \
              --A-seqs "$assembly" \
              --B-seqs "$reference" \
-             --A-expr A_expr.isoforms.results \
-             --B-expr B_expr.isoforms.results \
+             --A-expr "${exprFileAssembly}.isoforms.results" \
+             --B-expr "${exprFileReference}.isoforms.results" \
              --A-to-B "$blatOutAtoR" \
              --B-to-A "$blatOutRtoA" \
              --num-reads 5000000 \
              --readlen 76 \
              --kmerlen 76 \
-             | tee scores.txt
+             | tee "$scoreFile" &>>"$logfile"
 
-
-# Copy logfile to working directory
-cp "$logfile" ./
