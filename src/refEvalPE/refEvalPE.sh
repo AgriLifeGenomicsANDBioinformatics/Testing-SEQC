@@ -124,8 +124,8 @@ echo "$(date): Calculating expression ..." | tee -a "$logfile"
 exprFileAssembly="${outdirRsem}/${prefixAssembly}_expr"
 exprFileReference="${outdirRsem}/${prefixReference}_expr"
 
-rsem-calculate-expression -p "$threads" --no-bam-output "$fqFile1" "$refFileAssembly" "$exprFileAssembly" &>>"$logfile"
-rsem-calculate-expression -p "$threads" --no-bam-output "$fqFile1" "$refFileReference" "$exprFileReference" &>>"$logfile"
+rsem-calculate-expression -p "$threads" --no-bam-output --paired-end "$fqFile1" "$fqFile2" "$refFileAssembly" "$exprFileAssembly" &>>"$logfile"
+rsem-calculate-expression -p "$threads" --no-bam-output --paired-end "$fqFile1" "$fqFile2" "$refFileReference" "$exprFileReference" &>>"$logfile"
 
 # rsem output directory
 outdirRef="${outdir}/ref"
