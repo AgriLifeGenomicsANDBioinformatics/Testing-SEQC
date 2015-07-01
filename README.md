@@ -81,7 +81,7 @@ Usage
 
 ####refEvalPE.sh
 
-          refEvalPE.sh [OPTIONS] -- ASSEMBLY REFERENCE INPUTPAIR1 INPUTPAIR2  OUTDIR
+          refEvalPE.sh [OPTIONS] -- ASSEMBLY REFERENCE INPUTPAIR1 INPUTPAIR2  OUTPUT_DIR
 
 License
 ---------------
