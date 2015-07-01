@@ -164,7 +164,11 @@ ref-eval --scores=nucl,pair,contig,kmer,kc \
              --B-to-A "$blatOutRtoA" \
              --num-reads "$numReads" \
              --readlen "$averageReadLength" \
-             --kmerlen "$kmerSize" 1>"$scoreFile" &>>"$logfile"
+             --kmerlen "$kmerSize" 1>"$scoreFile" 2>>"$logfile"
 
+# Copy scores to the logfile
+cat "$scoreFile" >> "$logfile"
+
+# Done
 echo "$(date): Done" | tee -a "$logfile"
 
