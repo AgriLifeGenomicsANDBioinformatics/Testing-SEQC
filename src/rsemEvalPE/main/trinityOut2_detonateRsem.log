@@ -405,7 +405,7 @@ Getting block 1 of 8
   Block accumulator loop time: 00:00:00
   Sorting block of length 23406
   (Using difference cover)
-  Sorting block time: 00:00:01
+  Sorting block time: 00:00:00
 Returning block of 23407
 Getting block 2 of 8
   Reserving size (25839) for bucket
@@ -425,7 +425,7 @@ Getting block 2 of 8
   Block accumulator loop time: 00:00:00
   Sorting block of length 19489
   (Using difference cover)
-  Sorting block time: 00:00:00
+  Sorting block time: 00:00:01
 Returning block of 19490
 Getting block 3 of 8
   Reserving size (25839) for bucket
@@ -605,7 +605,7 @@ rsem-build-read-index 32 1 0 rsemPEOut/trinityOut2.temp/trinityOut2_alignable_1.
 Build Index rsemPEOut/trinityOut2.temp/trinityOut2_alignable_1.fq is Done!
 Build Index rsemPEOut/trinityOut2.temp/trinityOut2_alignable_2.fq is Done!
 
-rsem-eval-run-em rsemPEOut/trinityOut2.temp/trinityOut2 3 rsemPEOut/trinityOut2 rsemPEOut/trinityOut2.temp/trinityOut2 rsemPEOut/trinityOut2.stat/trinityOut2 0.650731242119049 0.00033515059786042 75 0 -p 2
+rsem-eval-run-em rsemPEOut/trinityOut2.temp/trinityOut2 3 rsemPEOut/trinityOut2 rsemPEOut/trinityOut2.temp/trinityOut2 rsemPEOut/trinityOut2.stat/trinityOut2 0.650731242119049 0.00033515059786042 76 0 -p 2
 Refs.loadRefs finished!
 Thread 0 : N = 13230, NHit = 32406
 DAT 0 reads left
@@ -655,11 +655,11 @@ ROUND = 39, SUM = 30575, bChange = 0.0273948, totNum = 16
 ROUND = 40, SUM = 30575, bChange = 0.0265762, totNum = 16
 ROUND = 41, SUM = 30575, bChange = 0.0257662, totNum = 15
 ROUND = 42, SUM = 30575, bChange = 0.0249654, totNum = 14
-ROUND = 43, SUM = 30574.9999999999, bChange = 0.0241747, totNum = 14
+ROUND = 43, SUM = 30575, bChange = 0.0241747, totNum = 14
 ROUND = 44, SUM = 30575, bChange = 0.0233947, totNum = 13
 ROUND = 45, SUM = 30575, bChange = 0.022626, totNum = 13
 ROUND = 46, SUM = 30575, bChange = 0.0218694, totNum = 13
-ROUND = 47, SUM = 30575, bChange = 0.0211253, totNum = 13
+ROUND = 47, SUM = 30574.9999999999, bChange = 0.0211253, totNum = 13
 ROUND = 48, SUM = 30575, bChange = 0.0203945, totNum = 13
 ROUND = 49, SUM = 30575, bChange = 0.0196774, totNum = 13
 ROUND = 50, SUM = 30575, bChange = 0.0189745, totNum = 13
@@ -734,12 +734,12 @@ ROUND = 118, SUM = 30575, bChange = 0.0164784, totNum = 4
 ROUND = 119, SUM = 30575, bChange = 0.0164917, totNum = 4
 ROUND = 120, SUM = 30575, bChange = 0.016505, totNum = 4
 ROUND = 121, SUM = 30575, bChange = 0.0165185, totNum = 4
-ROUND = 122, SUM = 30575.0000000001, bChange = 0.0165322, totNum = 4
+ROUND = 122, SUM = 30575, bChange = 0.0165322, totNum = 4
 ROUND = 123, SUM = 30575, bChange = 0.0165459, totNum = 4
 ROUND = 124, SUM = 30575, bChange = 0.0165597, totNum = 4
 ROUND = 125, SUM = 30575, bChange = 0.0165737, totNum = 4
 ROUND = 126, SUM = 30575, bChange = 0.0165877, totNum = 3
-ROUND = 127, SUM = 30575, bChange = 0.0166018, totNum = 3
+ROUND = 127, SUM = 30575.0000000001, bChange = 0.0166018, totNum = 3
 ROUND = 128, SUM = 30575, bChange = 0.0166159, totNum = 3
 ROUND = 129, SUM = 30575, bChange = 0.0166301, totNum = 3
 ROUND = 130, SUM = 30575, bChange = 0.0166444, totNum = 3
@@ -937,7 +937,7 @@ ROUND = 321, SUM = 30575, bChange = 0.0181587, totNum = 1
 ROUND = 322, SUM = 30575, bChange = 0.0181606, totNum = 1
 ROUND = 323, SUM = 30575, bChange = 0.0181625, totNum = 1
 ROUND = 324, SUM = 30575, bChange = 0.0181644, totNum = 1
-ROUND = 325, SUM = 30575, bChange = 0.0181662, totNum = 1
+ROUND = 325, SUM = 30574.9999999999, bChange = 0.0181662, totNum = 1
 ROUND = 326, SUM = 30575, bChange = 0.018168, totNum = 1
 ROUND = 327, SUM = 30575, bChange = 0.0181697, totNum = 1
 ROUND = 328, SUM = 30575, bChange = 0.0181714, totNum = 1
@@ -1000,7 +1000,7 @@ ROUND = 384, SUM = 30575, bChange = 0.0182349, totNum = 1
 ROUND = 385, SUM = 30575, bChange = 0.0182356, totNum = 1
 ROUND = 386, SUM = 30575, bChange = 0.0182363, totNum = 1
 ROUND = 387, SUM = 30575, bChange = 0.0182369, totNum = 1
-ROUND = 388, SUM = 30575, bChange = 0.0182376, totNum = 1
+ROUND = 388, SUM = 30575.0000000001, bChange = 0.0182376, totNum = 1
 ROUND = 389, SUM = 30575, bChange = 0.0182382, totNum = 1
 ROUND = 390, SUM = 30575, bChange = 0.0182389, totNum = 1
 ROUND = 391, SUM = 30575, bChange = 0.0182395, totNum = 1
@@ -1076,7 +1076,7 @@ ROUND = 460, SUM = 30575, bChange = 0.0182646, totNum = 1
 ROUND = 461, SUM = 30575, bChange = 0.0182648, totNum = 1
 ROUND = 462, SUM = 30575, bChange = 0.018265, totNum = 1
 ROUND = 463, SUM = 30575, bChange = 0.0182651, totNum = 1
-ROUND = 464, SUM = 30575, bChange = 0.0182653, totNum = 1
+ROUND = 464, SUM = 30575.0000000001, bChange = 0.0182653, totNum = 1
 ROUND = 465, SUM = 30575, bChange = 0.0182655, totNum = 1
 ROUND = 466, SUM = 30575, bChange = 0.0182657, totNum = 1
 ROUND = 467, SUM = 30575, bChange = 0.0182658, totNum = 1
@@ -1137,7 +1137,7 @@ ROUND = 521, SUM = 30575, bChange = 0.0182717, totNum = 1
 ROUND = 522, SUM = 30575, bChange = 0.0182718, totNum = 1
 ROUND = 523, SUM = 30575, bChange = 0.0182718, totNum = 1
 ROUND = 524, SUM = 30575, bChange = 0.0182719, totNum = 1
-ROUND = 525, SUM = 30574.9999999999, bChange = 0.0182719, totNum = 1
+ROUND = 525, SUM = 30575, bChange = 0.0182719, totNum = 1
 ROUND = 526, SUM = 30575, bChange = 0.018272, totNum = 1
 ROUND = 527, SUM = 30575, bChange = 0.0182721, totNum = 1
 ROUND = 528, SUM = 30575, bChange = 0.0182721, totNum = 1

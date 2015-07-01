@@ -24,7 +24,6 @@ eval set -- "$TEMP"
 
 # Defaults
 threads=1
-averageLength=75
 
 while true
 do
@@ -81,6 +80,15 @@ then
   mkdir -p "$(dirname "$transcriptLengthParameters")"
   rsem-eval-estimate-transcript-length-distribution "$fastaPath" "$transcriptLengthParameters"
 fi
+
+# Get average length of the first 100 reads in fq file
+averageLength=0
+for i in {2..400..4};
+do
+  n="$(sed -n ${i}p "$fqFile1" | wc -c)"
+  averageLength="$(( $n + $averageLength - 1 ))"
+done
+averageLength="$(($averageLength/100))"
 
 # Evaluation
 # Create output directory
