@@ -2,14 +2,15 @@ Description:
   Evaluates de quality of an assembly with a reference.
 
 Usage:
-	refEvalPE.sh  [OPTIONS]  -- ASSEMBLY.fasta REFERENCE.fasta READ_1.[fq|fastq] READ_2.[fq|fastq]  OUTDIR
+	refEvalPE.sh  [OPTIONS]  -- ASSEMBLY.fasta REFERENCE.fasta READ_1.fastq.gz READ_2.fastq.gz  OUTDIR
 
 Options:
   -h--help                Help.
   -t--threads             Threads used by DETONATE. Default: 1.
+  -k--kmerSize            Kmer size used by ref-eval. Default: 25.
 
 Examples:
-  refEvalPE.sh -- assemblies/toy_assembly_1.fa reference/toy_ref.fa reads/toy_SE.fq reads/toy_SE.fq refEvalPEOut
+  refEvalPE.sh -t 16 -- assemblies/toy_assembly_1.fa reference/toy_ref.fa reads/toy_SE.fq reads/toy_SE.fq refEvalPEOut
 
 Upstream:
   trinityPE.sh
@@ -17,8 +18,11 @@ Upstream:
 Dependancies:
   blat
   ref-eval
-  rsem
-  bowtie
+  rsem-calculate-expression
+  rsem-prepare-reference
+  bowtie-build
+
+Notes:
 
 Date:
   2015/07/01

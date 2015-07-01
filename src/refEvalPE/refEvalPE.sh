@@ -12,7 +12,7 @@ if [ $# -eq 0 ]
         exit 1
 fi
 
-TEMP=$(getopt -o ht: -l help,threads: -n "$script_name.sh" -- "$@")
+TEMP=$(getopt -o ht:k: -l help,threads:,kmerSize: -n "$script_name.sh" -- "$@")
 
 if [ $? -ne 0 ]
 then
@@ -24,6 +24,7 @@ eval set -- "$TEMP"
 
 # Defaults
 threads=1
+kmerSize=25
 
 while true
 do
@@ -36,7 +37,11 @@ do
       threads="$2"
       shift 2
       ;;
-   --)
+    -k|--kmerSize)	
+      kmerSize="$2"
+      shift 2
+      ;;
+    --)
       shift
       break
       ;;
@@ -46,8 +51,6 @@ do
       ;;
   esac
 done
-
-set -x
 
 ## Read input files
 assembly="$1"
@@ -59,11 +62,12 @@ outdir="$5"
 ## Setting some file/dirnames
 assemblyFile="$(basename "$assembly")"
 referenceFile="$(basename "$reference")"
-assemblyDir="$(dirname "$assembly")"
-referenceDir="$(dirname "$reference")"
+assemblyDir="$(realpath "$assembly")"
+referenceDir="$(realpath "$reference")"
 prefixAssembly="${assemblyFile%.*}"
 prefixReference="${referenceFile%.*}"
 logfile="${PWD}/${prefixAssembly}_refEvalPEOut.log"
+echo "$(date): Starting ..." | tee -a "$logfile"
 
 ## Create general output directory
 mkdir -p "$outdir"
@@ -72,7 +76,7 @@ mkdir -p "$outdir"
 # Blat output directory
 outdirBlat="${outdir}/blat"
 mkdir -p "$outdirBlat"
-# Output files
+# Output files BLAT
 blatOutAtoR="${outdirBlat}/${prefixAssembly}ToRef.psl"
 blatOutRtoA="${outdirBlat}/refTo${prefixAssembly}.psl"
 # Run Blat
@@ -85,7 +89,7 @@ blat -minIdentity=80 "$assembly" "$reference" "$blatOutRtoA" &>>"$logfile"
 outdirRsem="${outdir}/rsem"
 mkdir -p "$outdirRsem"
 
-# Output files 1
+# Output files rsem-prepare-reference
 refFileAssembly="${outdirRsem}/${prefixAssembly}_ref"
 refFileReference="${outdirRsem}/${prefixReference}_ref"
 
@@ -95,12 +99,14 @@ rsem-prepare-reference "$assembly" "$refFileAssembly" &>>"$logfile"
 rsem-prepare-reference "$reference" "$refFileReference" &>>"$logfile"
 
 # Generate bowtie indexes
-bowtie-build -fq "${refFileAssembly}.transcripts.fa" "${refFileAssembly}"
-bowtie-build -fq "${refFileReference}.transcripts.fa" "${refFileReference}"
+echo "$(date): Building bowtie indexes ..." | tee -a "$logfile"
+transcriptsAssembly="${refFileAssembly}.transcripts.fa"
+transcriptsReference="${refFileReference}.transcripts.fa"
+
+bowtie-build -fq "$transcriptsAssembly" "$refFileAssembly" &>>"$logfile"
+bowtie-build -fq "$transcriptsReference" "$refFileReference" &>>"$logfile"
 
 # Check whether the reads are compressed
-# Gunzip in parallel in case they are compressed
-# Process substitution doesn't work with Seecer, i.e. <(zcat read)
 if [[ "$read1" =~ \.gz$ ]] && [[ "$read2" =~ \.gz$ ]] ;
 then
   gunzip "$read1" &
@@ -113,9 +119,11 @@ else
   fqFile2="${read2}"
 fi
 
-# Output files 2
+# Output files rsem-calculate-expression
+echo "$(date): Calculating expression ..." | tee -a "$logfile"
 exprFileAssembly="${outdirRsem}/${prefixAssembly}_expr"
 exprFileReference="${outdirRsem}/${prefixReference}_expr"
+
 rsem-calculate-expression -p "$threads" --no-bam-output "$fqFile1" "$refFileAssembly" "$exprFileAssembly" &>>"$logfile"
 rsem-calculate-expression -p "$threads" --no-bam-output "$fqFile1" "$refFileReference" "$exprFileReference" &>>"$logfile"
 
@@ -126,17 +134,37 @@ mkdir -p "$outdirRef"
 # Scores file
 scoreFile="${outdirRef}/${prefixAssembly}_${prefixReference}_refEvalPE.txt"
 
+# Get number of reads
+echo "$(date): Computing number of reads ..." | tee -a "$logfile"
+n="$(cat "$fqFile1" | wc -l)"
+numReads="$(( ($n-1)/4 ))"
+
+# Get average length of the first 100 reads in fq file
+echo "$(date): Computing average read length ..." | tee -a "$logfile"
+readLength=0
+for i in {2..400..4};
+do
+  n="$(sed -n ${i}p "$fqFile1" | wc -c)"
+  readLength="$(( $n + $readLength - 1 ))"
+done
+readLength="$(($readLength/100))"
+
 # Compute score
+echo "$(date): Computing scores ..." | tee -a "$logfile"
+isoformsAssembly="${exprFileAssembly}.isoforms.results"
+isoformsReference="${exprFileReference}.isoforms.results"
+
 ref-eval --scores=nucl,pair,contig,kmer,kc \
              --weighted=both \
              --A-seqs "$assembly" \
              --B-seqs "$reference" \
-             --A-expr "${exprFileAssembly}.isoforms.results" \
-             --B-expr "${exprFileReference}.isoforms.results" \
+             --A-expr "$isoformsAssembly" \
+             --B-expr "$isoformsReference" \
              --A-to-B "$blatOutAtoR" \
              --B-to-A "$blatOutRtoA" \
-             --num-reads 5000000 \
-             --readlen 76 \
-             --kmerlen 76 \
-             | tee "$scoreFile" &>>"$logfile"
+             --num-reads "$numReads" \
+             --readlen "$readLength" \
+             --kmerlen "$kmerSize" 1>"$scoreFile" 2>>"$logfile"
+
+echo "$(date): Done" | tee -a "$logfile"
 
