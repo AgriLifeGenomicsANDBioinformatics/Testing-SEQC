@@ -25,3 +25,4 @@ Date:
 
 Author:
   Jordi Abante <abante.jordi@gmail.com>
+  https://jordiabante.wordpress.com
