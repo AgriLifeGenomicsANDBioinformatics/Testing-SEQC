@@ -25,4 +25,5 @@ Date:
   2015/06/21
 
 Author:
-Jordi Abante <abante.jordi@gmail.com>
+  Jordi Abante <abante.jordi@gmail.com>
+  https://jordiabante.wordpress.com

@@ -1,0 +1,14 @@
+# Sequence KOG1762.2 - Length = 10381 bps
+KOG1762.2	cegma	First	5001	5171	126.54	+	0	KOG1762.2_1
+KOG1762.2	cegma	Terminal	5221	5385	107.71	+	0	KOG1762.2_1
+# Sequence KOG1992.2 - Length = 14527 bps
+KOG1992.2	cegma	First	5888	5938	-20.95	+	0	KOG1992.2_1
+KOG1992.2	cegma	Terminal	5968	7443	812.66	+	0	KOG1992.2_1
+# Sequence KOG2067.9 - Length = 20178 bps
+KOG2067.9	cegma	Single	13122	13508	209.32	+	0	KOG2067.9_1
+# Sequence KOG3232.6 - Length = 10732 bps
+KOG3232.6	cegma	Single	5338	5736	267.85	+	0	KOG3232.6_1
+# Sequence KOG3418.12 - Length = 10908 bps
+KOG3418.12	cegma	First	5407	5562	113.98	+	0	KOG3418.12_1
+KOG3418.12	cegma	Internal	5610	5747	103.72	+	0	KOG3418.12_1
+KOG3418.12	cegma	Terminal	5796	5912	86.90	+	0	KOG3418.12_1
