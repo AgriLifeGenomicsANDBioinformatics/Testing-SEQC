@@ -1,0 +1,1 @@
+../src/cegma/cegma.sh

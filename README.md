@@ -51,6 +51,10 @@ Dependancies
     3. rsem-calculate-expression
     4. rsem-prepare-reference
     5. bowtie-build
+  6. cegma.sh
+    1. CEGMA
+    2. geneid
+    3. genewise
 
 Usage
 -----------------
@@ -82,6 +86,10 @@ Usage
 ####refEvalPE.sh
 
           refEvalPE.sh [OPTIONS] -- ASSEMBLY REFERENCE INPUTPAIR1 INPUTPAIR2  OUTPUT_DIR
+
+####cegma.sh
+
+          cegma.sh [OPTIONS] -- ASSEMBLY CORE_GENES OUTPUT_DIR
 
 License
 ---------------
