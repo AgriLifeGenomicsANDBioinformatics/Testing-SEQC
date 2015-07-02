@@ -1,0 +1,85 @@
+Thu Jul  2 16:50:13 CDT 2015: Starting ...
+Thu Jul  2 16:50:13 CDT 2015: Running CEGMA ...
+
+
+********************************************************************************
+**                    MAPPING PROTEINS TO GENOME (TBLASTN)                    **
+********************************************************************************
+
+RUNNING: genome_map  -n genome -p 6 -o 40000 -c 5000 -t 3  coreGenes/coreGenes.fa assembly/assembly1.fa 2>cegmaOut/assembly1.cegma.errors
+
+
+Building a new DB, current time: 07/02/2015 16:50:14
+New DB name:   /tmp/genome22604.blastdb
+New DB title:  assembly/assembly1.fa
+Sequence type: Nucleotide
+Keep Linkouts: T
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 1 sequences in 0.0636821 seconds.
+
+
+********************************************************************************
+**     MAKING INITIAL GENE PREDICTIONS FOR CORE GENES (GENEWISE + GENEID)     **
+********************************************************************************
+
+RUNNING: local_map -n local -f -h /usr/local/src/CEGMA_v2.5/data/hmm_profiles -i KOG  genome.chunks.fa 2>cegmaOut/assembly1.cegma.errors
+NOTE: created 20 geneid predictions
+
+
+********************************************************************************
+**           FILTERING INITIAL PROTEINS PRODUCED BY GENEID (HMMER)            **
+********************************************************************************
+
+RUNNING: hmm_select -i KOG -o local -t 3  /usr/local/src/CEGMA_v2.5/data/hmm_profiles local.geneid.fa /usr/local/src/CEGMA_v2.5/data/profiles_cutoff.tbl 2>cegmaOut/assembly1.cegma.errors
+NOTE: Found 15 geneid predictions with scores above threshold value
+
+
+********************************************************************************
+**       CALCULATING GENEID PARAMETERS FROM SELECTED GENEID PREDICTIONS       **
+********************************************************************************
+
+RUNNING: geneid-train  local.geneid.selected.gff local.geneid.selected.dna geneid_params 2>cegmaOut/assembly1.cegma.errors
+DATA COLLECTED: 15 Coding sequences containing 54 introns 
+RUNNING: make_paramfile /usr/local/src/CEGMA_v2.5/data/self.param.template \
+	    geneid_params/coding.initial.5.logs geneid_params/coding.transition.5.logs \
+	    geneid_params/start.logs geneid_params/acc.logs geneid_params/don.logs \
+	    geneid_params/intron.max >  geneid_params/self.param
+
+
+********************************************************************************
+**                           ACCURATE LOCAL MAPPING                           **
+********************************************************************************
+
+RUNNING: local_map -n local_self -g local.genewise.gff -d geneid_params/self.param -h /usr/local/src/CEGMA_v2.5/data/hmm_profiles -i KOG  genome.chunks.fa 2>cegmaOut/assembly1.cegma.errors
+NOTE: Will use specifed local.genewise.gff file instead of running genewise
+NOTE: created 20 geneid predictions
+
+
+********************************************************************************
+**                              FINAL FILTERING                               **
+********************************************************************************
+
+RUNNING: hmm_select -i KOG -o local_self -t 3  /usr/local/src/CEGMA_v2.5/data/hmm_profiles local_self.geneid.fa /usr/local/src/CEGMA_v2.5/data/profiles_cutoff.tbl 2>cegmaOut/assembly1.cegma.errors
+NOTE: Found 5 geneid predictions with scores above threshold value
+
+
+********************************************************************************
+**         CONVERTING LOCAL COORDINATES INTO GENOME-WIDE COORDINATES          **
+********************************************************************************
+
+
+
+********************************************************************************
+**    EVALUATING RESULTS AND COMPARING TO SET OF 248 HIGHLY CONSERVED CEGS    **
+********************************************************************************
+
+RUNNING: completeness  local_self.hmm_select.aln /usr/local/src/CEGMA_v2.5/data/completeness_cutoff.tbl > cegmaOut/assembly1.completeness_report
+Use of uninitialized value in division (/) at /usr/local/src/CEGMA_v2.5/bin/completeness line 252.
+
+
+********************************************************************************
+**                             CEGMA HAS FINISHED                             **
+********************************************************************************
+
+Thu Jul  2 16:57:58 CDT 2015: Done
