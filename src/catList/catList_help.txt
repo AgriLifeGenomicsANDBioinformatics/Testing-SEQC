@@ -1,0 +1,22 @@
+Description:
+  Concatenates the files listed in the input file.
+
+Usage:
+  catList.sh [OPTIONS] -- LIST
+
+Options:
+  -h--help                Help.
+  -o--outfile                Output file prefix.
+
+Examples:
+  catList.sh -o out/output.fa -- files/list.txt
+
+Notes:
+  - The list file should be in the same directory than the files being concatenated unless absolute path is provided.
+
+Date:
+  2015/07/03
+
+Author:
+  Jordi Abante <abante.jordi@gmail.com>
+  https://jordiabante.wordpress.com

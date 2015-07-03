@@ -1,0 +1,3 @@
+a.fa
+b.fa.gz
+c.fa
