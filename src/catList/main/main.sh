@@ -6,4 +6,4 @@ then
   rm "${outfile}.gz"
 fi
 
-../catList.sh -o "$outfile" -- files/list.txt
+../catList.sh -c -o "$outfile" -- files/list.txt

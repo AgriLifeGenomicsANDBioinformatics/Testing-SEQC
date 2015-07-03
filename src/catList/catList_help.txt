@@ -6,7 +6,8 @@ Usage:
 
 Options:
   -h--help                Help.
-  -o--outfile                Output file prefix.
+  -o--outfile             Output file prefix.
+  -c--compress            Compress the output file.
 
 Examples:
   catList.sh -o out/output.fa -- files/list.txt

@@ -12,7 +12,7 @@ if [ $# -eq 0 ]
         exit 1
 fi
 
-TEMP=$(getopt -o ho: -l help,outdir: -n "$script_name.sh" -- "$@")
+TEMP=$(getopt -o ho:c -l help,outdir:,compress -n "$script_name.sh" -- "$@")
 
 if [ $? -ne 0 ]
 then
@@ -35,6 +35,10 @@ do
     -o|--outfile)			
       outfile="$2"
       shift 2
+      ;;
+    -c|--compress)			
+      compress="x"
+      shift
       ;;
     --)
       shift
@@ -72,8 +76,11 @@ while read line; do
 done < "$list" 
 
 # Compress the file
-echo "$(date): Compressing output file ..." 
-gzip "$outfile"
+if [ "$compress" ];
+then
+  echo "$(date): Compressing output file ..." 
+  gzip "$outfile"
+fi
 
 # Done
 echo "$(date): Done" 
