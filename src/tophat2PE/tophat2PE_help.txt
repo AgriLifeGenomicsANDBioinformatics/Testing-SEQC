@@ -15,7 +15,7 @@ Upstream:
   trinityPE.sh
 
 Dependancies:
-  bowtie2-build
+  bowtie2
   tophat2
 
 Notes:
