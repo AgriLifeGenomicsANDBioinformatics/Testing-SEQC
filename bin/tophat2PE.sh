@@ -1,0 +1,1 @@
+../src/tophat2PE/tophat2PE.sh

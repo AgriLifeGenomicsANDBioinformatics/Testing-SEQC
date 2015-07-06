@@ -1,0 +1,39 @@
+Description:
+  Aligns the reads to a reference genome/transcriptome.
+
+Usage:
+	tophat2PE.sh  [OPTIONS]  -- ASSEMBLY/REFERENCE READ_1 READ_2  OUTDIR
+
+Options:
+  -h--help                Help.
+  -t--threads             Threads used by DETONATE. Default: 1.
+
+Examples:
+  tophat2PE.sh -t 16 -- reference/test_ref1.fa reads/reads_1* reads/reads_2* tophat2PEOut
+
+Upstream:
+  trinityPE.sh
+
+Dependancies:
+  bowtie2-build
+  tophat2
+
+Notes:
+  Calling multiple instances of the script like:
+    tophat2PE.sh -- reference/test_ref1.fa reads/reads1_1* reads/reads1_2* tophat2PEOut
+    tophat2PE.sh -- reference/test_ref2.fa reads/reads2_1* reads/reads2_2* tophat2PEOut
+
+  The output will be organized as follows:
+  
+  `-- tophat2PEOut
+    |-- test_ref1_out
+    |   `-- logs
+    `-- test_ref2_out
+        `-- logs   
+  
+Date:
+  2015/07/06
+
+Author:
+  Jordi Abante <abante.jordi@gmail.com>
+  https://jordiabante.wordpress.com
