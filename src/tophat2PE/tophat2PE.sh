@@ -66,6 +66,7 @@ echo "$(date): Starting ..." | tee -a "$logfile"
 referenceAbsPath="$(realpath "$reference")"
 referenceDir="$(dirname "$referenceAbsPath")"
 referenceIndex="${referenceAbsPath%.*}"
+bowtie2Index="${bowtie_indexes}/${prefixReference}"
 
 ## Temp dir for tophat2
 ## One for each assembly when working in parallel
@@ -79,12 +80,12 @@ outPrefix="${outdir}/${prefixReference}_out"
 mkdir -p "$outPrefix"
 
 # Generate bowtie indexes
-if [ ! -f "${referenceIndex}".1.bt2 ];
+if [ ! -f "${bowtie2Index}.1.bt2" ];
 then
   echo "$(date): Building bowtie indexes ..." | tee -a "$logfile"
-  bowtie2-build -fq "$referenceAbsPath" "$referenceIndex" &>>"$logfile"
+  bowtie2-build -fq "$referenceAbsPath" "$bowtie2Index" &>>"$logfile"
 else
-  echo "$(date): Indexes for bowtie2 found in ${referenceDir}..." | tee -a "$logfile"
+  echo "$(date): Indexes for bowtie2 found in ${bowtie_indexes}..." | tee -a "$logfile"
 fi
 
 # Check whether the reads are compressed
@@ -104,7 +105,7 @@ fi
 
 # Run tophat2
 echo -e "$(date): Running tophat2 ..." | tee -a "$logfile"
-tophat2 -p "$threads" -o "$outPrefix" --tmp-dir "$temp" "$referenceIndex" "$fqFile1" "$fqFile2" &>>"$logfile" 
+tophat2 -p "$threads" -o "$outPrefix" --tmp-dir "$temp" "$bowtie2Index" "$fqFile1" "$fqFile2" &>>"$logfile" 
 
 # Compress reads again
 echo "$(date): Compressing fastq files ..." | tee -a "$logfile"
