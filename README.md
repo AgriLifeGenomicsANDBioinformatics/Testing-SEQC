@@ -96,7 +96,7 @@ Usage
 
 ####tophat2PE.sh
 
-          tophat2PE.sh [OPTIONS] -- ASSEMBL/REFERENCEY INPUTPAIR1 INPUTPAIR2 OUTPUT_DIR
+          tophat2PE.sh [OPTIONS] -- ASSEMBLY/REFERENCE INPUTPAIR1 INPUTPAIR2 OUTPUT_DIR
 
 License
 ---------------
