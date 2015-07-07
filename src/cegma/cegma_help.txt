@@ -2,7 +2,7 @@ Description:
   Wrapper for CEGMA (Core Eukaryotic Genes Mapping).
 
 Usage:
-	cegma.sh  [OPTIONS]  -- ASSEMBLY.[fa|fa.gz] REFERENCE.fasta OUTPUT_DIR
+  cegma.sh  [OPTIONS]  -- ASSEMBLY CORE_GENES OUTPUT_DIR
 
 Options:
   -h--help                Help.
@@ -10,7 +10,7 @@ Options:
   -i--maxIntron           Introns maximum size. Default: 50.
 
 Examples:
-  cegma.sh -t 3 -- assembly/assembly1.fa coreGenes/coreGenes.fa "$outdir"
+  cegma.sh -t 3 -- assembly/assembly1.fa coreGenes/coreGenes.fa cegmaPEOut
 
 Upstream:
   trinityPE.sh

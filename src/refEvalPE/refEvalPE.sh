@@ -22,6 +22,9 @@ fi
 
 eval set -- "$TEMP"
 
+# Environment variables
+bowtie_indexes="$BOWTIE_INDEXES"
+
 # Defaults
 threads=1
 kmerSize=25
