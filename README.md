@@ -50,11 +50,14 @@ Dependancies
     2. ref-eval
     3. rsem-calculate-expression
     4. rsem-prepare-reference
-    5. bowtie-build
+    5. bowtie2
   6. cegma.sh
     1. CEGMA
     2. geneid
     3. genewise
+  7. tophat2PE.sh
+    1. bowtie2
+    2. tophat2
 
 Usage
 -----------------
@@ -90,6 +93,10 @@ Usage
 ####cegma.sh
 
           cegma.sh [OPTIONS] -- ASSEMBLY CORE_GENES OUTPUT_DIR
+
+####tophat2PE.sh
+
+          tophat2PE.sh [OPTIONS] -- ASSEMBL/REFERENCEY INPUTPAIR1 INPUTPAIR2 OUTPUT_DIR
 
 License
 ---------------
