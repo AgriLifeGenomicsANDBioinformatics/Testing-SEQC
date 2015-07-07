@@ -23,7 +23,7 @@ fi
 eval set -- "$TEMP"
 
 # Environment variables
-bowtie_indexes="$BOWTIE_INDEXES"
+bowtie_indexes="$BOWTIE2_INDEXES"
 
 # Defaults
 threads=1
@@ -93,21 +93,27 @@ outdirRsem="${outdir}/rsem"
 mkdir -p "$outdirRsem"
 
 # Output files rsem-prepare-reference
-refFileAssembly="${outdirRsem}/${prefixAssembly}_ref"
-refFileReference="${outdirRsem}/${prefixReference}_ref"
+refFileAssembly="${outdirRsem}/${prefixAssembly}"
+refFileReference="${outdirRsem}/${prefixReference}"
 
 # Run rsem
 echo "$(date): Starting RSEM ..." | tee -a "$logfile"
 rsem-prepare-reference "$assembly" "$refFileAssembly" &>>"$logfile"
 rsem-prepare-reference "$reference" "$refFileReference" &>>"$logfile"
 
-# Generate bowtie indexes
-echo "$(date): Building bowtie indexes ..." | tee -a "$logfile"
+# Generate bowtie indexes in BOWTIE2_INDEXES
+echo "$(date): Building ${prefixAssembly} bowtie index ..." | tee -a "$logfile"
 transcriptsAssembly="${refFileAssembly}.transcripts.fa"
 transcriptsReference="${refFileReference}.transcripts.fa"
+bowtie2-build -fq "$transcriptsAssembly" "$refFileAssembly" &>>"$logfile"
 
-bowtie-build -fq "$transcriptsAssembly" "$refFileAssembly" &>>"$logfile"
-bowtie-build -fq "$transcriptsReference" "$refFileReference" &>>"$logfile"
+if [ -e "${refFileReference}.1.bt2" ];
+then 
+  echo "$(date): Reference index found in ${outdirRsem}..." | tee -a "$logfile"
+else
+  echo "$(date): Building ${prefixReference} bowtie index ..." | tee -a "$logfile"
+  bowtie2-build -fq "$transcriptsReference" "$refFileReference" &>>"$logfile"
+fi
 
 # Check whether the reads are compressed
 if [[ "$read1" =~ \.gz$ ]] && [[ "$read2" =~ \.gz$ ]] ;
@@ -127,8 +133,8 @@ echo "$(date): Calculating expression ..." | tee -a "$logfile"
 exprFileAssembly="${outdirRsem}/${prefixAssembly}_expr"
 exprFileReference="${outdirRsem}/${prefixReference}_expr"
 
-rsem-calculate-expression -p "$threads" --no-bam-output --paired-end "$fqFile1" "$fqFile2" "$refFileAssembly" "$exprFileAssembly" &>>"$logfile"
-rsem-calculate-expression -p "$threads" --no-bam-output --paired-end "$fqFile1" "$fqFile2" "$refFileReference" "$exprFileReference" &>>"$logfile"
+rsem-calculate-expression -p "$threads" --no-bam-output --bowtie2 --paired-end "$fqFile1" "$fqFile2" "$refFileAssembly" "$exprFileAssembly" &>>"$logfile"
+rsem-calculate-expression -p "$threads" --no-bam-output --bowtie2 --paired-end "$fqFile1" "$fqFile2" "$refFileReference" "$exprFileReference" &>>"$logfile"
 
 # rsem output directory
 outdirRef="${outdir}/ref"
@@ -171,6 +177,22 @@ ref-eval --scores=nucl,pair,contig,kmer,kc \
 
 # Copy scores to the logfile
 cat "$scoreFile" >> "$logfile"
+
+# Create symlinks bowtie2 indexes
+echo "$(date): Refreshing symlinks for bowtie2 indexes in ${bowtie_indexes} ..." | tee -a "$logfile"
+for f in ${outdirRsem}/*bt2;
+do
+  name="$(basename "$f")"
+  symlink="${bowtie_indexes}/${name}" 
+  fullpath="$(realpath "$f")"
+  if [ -e "$symlink" ];
+  then
+    rm "$symlink"
+    ln -fs "$fullpath" "$symlink"
+  else 
+    ln -fs "$fullpath" "$symlink"
+  fi
+done
 
 # Done
 echo "$(date): Done" | tee -a "$logfile"

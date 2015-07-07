@@ -20,7 +20,7 @@ Dependancies:
   ref-eval
   rsem-calculate-expression
   rsem-prepare-reference
-  bowtie-build
+  bowtie2
 
 Notes:
   The output will be organized as follows:

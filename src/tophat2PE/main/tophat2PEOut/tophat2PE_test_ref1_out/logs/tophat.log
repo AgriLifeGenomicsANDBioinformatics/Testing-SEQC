@@ -1,0 +1,37 @@
+
+[2015-07-07 12:57:27] Beginning TopHat run (v2.0.14)
+-----------------------------------------------
+[2015-07-07 12:57:27] Checking for Bowtie
+		  Bowtie version:	 2.2.3.0
+[2015-07-07 12:57:27] Checking for Bowtie index files (genome)..
+[2015-07-07 12:57:27] Checking for reference FASTA file
+	Warning: Could not find FASTA file /Users/jordi/code/linux/bin/bowtie2pkg/src/refGenomes/Users/jordi/code/linux/bin/bowtie2pkg/src/refGenomes/tophat2PE_test_ref1.fa
+[2015-07-07 12:57:27] Reconstituting reference FASTA file from Bowtie index
+  Executing: /Users/jordi/osPackages/bowtie2-2.2.3/bowtie2-inspect /Users/jordi/code/linux/bin/bowtie2pkg/src/refGenomes/tophat2PE_test_ref1 > /Users/jordi/code/linux/bin/rnaSeq/src/tophat2PE/main/tophat2PE_test_ref1_temp/tophat2PE_test_ref1.fa
+[2015-07-07 12:57:27] Generating SAM header for /Users/jordi/code/linux/bin/bowtie2pkg/src/refGenomes/tophat2PE_test_ref1
+[2015-07-07 12:57:27] Preparing reads
+	 left reads: min. length=75, max. length=75, 100 kept reads (0 discarded)
+	right reads: min. length=75, max. length=75, 100 kept reads (0 discarded)
+[2015-07-07 12:57:27] Mapping left_kept_reads to genome tophat2PE_test_ref1 with Bowtie2 
+[2015-07-07 12:57:28] Mapping left_kept_reads_seg1 to genome tophat2PE_test_ref1 with Bowtie2 (1/3)
+[2015-07-07 12:57:28] Mapping left_kept_reads_seg2 to genome tophat2PE_test_ref1 with Bowtie2 (2/3)
+[2015-07-07 12:57:28] Mapping left_kept_reads_seg3 to genome tophat2PE_test_ref1 with Bowtie2 (3/3)
+[2015-07-07 12:57:28] Mapping right_kept_reads to genome tophat2PE_test_ref1 with Bowtie2 
+[2015-07-07 12:57:28] Mapping right_kept_reads_seg1 to genome tophat2PE_test_ref1 with Bowtie2 (1/3)
+[2015-07-07 12:57:28] Mapping right_kept_reads_seg2 to genome tophat2PE_test_ref1 with Bowtie2 (2/3)
+[2015-07-07 12:57:28] Mapping right_kept_reads_seg3 to genome tophat2PE_test_ref1 with Bowtie2 (3/3)
+[2015-07-07 12:57:28] Searching for junctions via segment mapping
+[2015-07-07 12:57:28] Retrieving sequences for splices
+[2015-07-07 12:57:28] Indexing splices
+[2015-07-07 12:57:29] Mapping left_kept_reads_seg1 to genome segment_juncs with Bowtie2 (1/3)
+[2015-07-07 12:57:29] Mapping left_kept_reads_seg2 to genome segment_juncs with Bowtie2 (2/3)
+[2015-07-07 12:57:29] Mapping left_kept_reads_seg3 to genome segment_juncs with Bowtie2 (3/3)
+[2015-07-07 12:57:29] Joining segment hits
+[2015-07-07 12:57:29] Mapping right_kept_reads_seg1 to genome segment_juncs with Bowtie2 (1/3)
+[2015-07-07 12:57:29] Mapping right_kept_reads_seg2 to genome segment_juncs with Bowtie2 (2/3)
+[2015-07-07 12:57:29] Mapping right_kept_reads_seg3 to genome segment_juncs with Bowtie2 (3/3)
+[2015-07-07 12:57:30] Joining segment hits
+[2015-07-07 12:57:30] Reporting output tracks
+-----------------------------------------------
+[2015-07-07 12:57:30] A summary of the alignment counts can be found in tophat2PEOut/tophat2PE_test_ref1_out/align_summary.txt
+[2015-07-07 12:57:30] Run complete: 00:00:02 elapsed
