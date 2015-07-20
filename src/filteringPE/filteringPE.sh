@@ -132,7 +132,7 @@ gzip "${prefix2}_2.fastq" &
 wait %1 %2 || exit $?
 
 # Get rid of intermediate files
-rm "${outdir}"/*_F1_*fastq.gz
+#rm "${outdir}"/*_F1_*fastq.gz
 
 # Count actual number of reads
 total_lines1="$(zcat "${prefix2}_1.fastq.gz" | wc -l)"
@@ -155,7 +155,7 @@ gzip "${prefix3}_2.fastq" &
 wait %1 %2 || exit $?
 
 # Get rid of intermediate files
-rm "${outdir}"/*_F2_*.fastq.gz
+#rm "${outdir}"/*_F2_*.fastq.gz
 
 # Count actual number of reads
 total_lines1="$(zcat ${prefix3}_1.fastq.gz | wc -l)"
