@@ -1,0 +1,21 @@
+Description:
+  Collapses all the logfiles in one .tsv file.
+
+Usage:
+  parseLogfile.sh [OPTIONS] -- PREFIX
+
+Options:
+  -h--help                Help.
+
+Examples:
+  parseLogfile.sh filteringPE
+
+Notes:
+  - The script should be executed in the directory where the logfiles are stored.
+
+Date:
+  2015/07/21
+
+Author:
+  Jordi Abante <abante.jordi@gmail.com>
+  https://jordiabante.wordpress.com
