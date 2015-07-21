@@ -60,8 +60,8 @@ do
   # Reads after each filter
   percentages="$(cat "$f" | grep %)"
   while read line; do 
-    temp="\t${line::2}"
-    printf "${temp}%%"
+    temp="${line::2}"
+    printf "\t${temp}%%"
   done < <(echo "$percentages")
   # Total reads in the end
   final_reads="$(cat "$f" | sed -n -e 's/^.*Done, //p' | sed -n -e 's/ reads.*$//p')"
