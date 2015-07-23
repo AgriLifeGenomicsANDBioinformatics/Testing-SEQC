@@ -10,11 +10,11 @@ Flexbar - flexible barcode and adapter removal, version 2.5
 
 Local time:            Thu Jul 23 10:57:50 2015
 
-Target name:           filteringPEOut/SEQC_ILM_AGR_A_1_L01_ATCACG_BD0J2JACXX_F1
+Target name:           filteringPEOut/SEQC_ILM_AGR_A_1_L02_ATCACG_AC0C1TACXX_F1
 File type:             fastq
 Quality format:        i1.8
-Reads file:            reads/SEQC_ILM_AGR_A_1_L01_ATCACG_BD0J2JACXX_R1.fastq.gz
-Reads file 2:          reads/SEQC_ILM_AGR_A_1_L01_ATCACG_BD0J2JACXX_R2.fastq.gz   (paired run)
+Reads file:            reads/SEQC_ILM_AGR_A_1_L02_ATCACG_AC0C1TACXX_R1.fastq.gz
+Reads file 2:          reads/SEQC_ILM_AGR_A_1_L02_ATCACG_AC0C1TACXX_R2.fastq.gz   (paired run)
 Adapter file:          /Users/jordi/code/linux/bin/rnaSeq/src/filteringPE/main/polyA.fa
 
 threads:               2
@@ -49,10 +49,10 @@ Min, max, mean and median adapter overlap: 30 / 50 / 40 / 30
 
 Output file statistics
 ======================
-Read file:               filteringPEOut/SEQC_ILM_AGR_A_1_L01_ATCACG_BD0J2JACXX_F1_1.fastq
+Read file:               filteringPEOut/SEQC_ILM_AGR_A_1_L02_ATCACG_AC0C1TACXX_F1_1.fastq
   written reads          3
   skipped short reads    0
-Read file 2:             filteringPEOut/SEQC_ILM_AGR_A_1_L01_ATCACG_BD0J2JACXX_F1_2.fastq
+Read file 2:             filteringPEOut/SEQC_ILM_AGR_A_1_L02_ATCACG_AC0C1TACXX_F1_2.fastq
   written reads          3
   too short reads        0
 
