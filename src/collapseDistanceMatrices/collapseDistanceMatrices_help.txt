@@ -1,0 +1,20 @@
+Description:
+    Collapses distance matrices.
+
+Usage:
+    collapseDistanceMatrixes.sh  [OPTIONS]  -- [MATRICES_FILES]
+
+Options:
+    -h|--help           Help
+    -d|--outdir         Output directory
+         
+Examples:
+    collapseDistanceMatrixes.sh -d out -- contig_1_ma_dm.txt contig_2_ma_dm.txt contig_3_ma_dm.txt
+    collapseDistanceMatrixes.sh -d out -- <(cat list.txt)
+    
+Date:
+    2015/07/27
+
+Author:
+    Jordi Abante <abante.jordi@gmail.com>
+    https://jordiabante.wordpress.com
