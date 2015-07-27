@@ -25,8 +25,8 @@ all_samples<-replace(all_samples,all_samples=="c",2)
 all_samples<-replace(all_samples,all_samples=="u",3)
 all_samples<-replace(all_samples,all_samples=="g",4)
 
-# Compute the distance matrix using Manhattan's distance
-distance_matrix<-dist(t(all_samples),method="manhattan")
+# Compute the Levenshtein distance matrix
+distance_matrix<-adist(all_samples)
 
 # Print output
 write.table(as.matrix(distance_matrix),sep="\t",file=args[2],quote=FALSE)
