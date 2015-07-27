@@ -1,7 +1,0 @@
-center_1_sample_1	center_1_sample_2	center_1_sample_3	center_2_sample_1	center_2_sample_2	center_2_sample_3
-center_1_sample_1	0	2	3	12	11	11
-center_1_sample_2	2	0	1	10	9	9
-center_1_sample_3	3	1	0	10	10	8
-center_2_sample_1	12	10	10	0	2	9
-center_2_sample_2	11	9	10	2	0	9
-center_2_sample_3	11	9	8	9	9	0
