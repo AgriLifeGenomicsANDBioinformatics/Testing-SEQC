@@ -1,24 +1,19 @@
 Description:
-  Computes fragment length distribution and plots it.
+    Plots a dendrogram out of a distance matrix.
 
 Usage:
-  get_fragment_length_distribution.sh  [options]  -- BEDGRAPH_FILE/TXT_FILE
+    plotDendrogram.sh  [options]  -- DISTANCE_MATRIX_TXT_FILE
 
 Options:
-  -h|--help           Help
-  -d|--outdir         Output directory
+    -h|--help           Help
+    -d|--outdir         Output directory
          
 Examples:
-  get_fragment_length_distribution.sh -d fragment_length_distribution -- r1s1.bedGraph.gz 
-  get_fragment_length_distribution.sh r1s1.txt
-
-Dependancies:
-  bedtools
-  ggplot2
+    plotDendrogram.sh -d out -- contig_1_ma_dm.txt
 
 Date:
-  2015/07/23
+    2015/07/27
 
 Author:
-  Jordi Abante <abante.jordi@gmail.com>
-  https://jordiabante.wordpress.com
+    Jordi Abante <abante.jordi@gmail.com>
+    https://jordiabante.wordpress.com
