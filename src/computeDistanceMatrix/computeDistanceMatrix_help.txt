@@ -1,0 +1,22 @@
+Description:
+    Computes Levenshtein's distance between the sequences in the fasta file.
+
+Usage:
+    computeDistMat.sh  [options]  -- FASTA_FILE
+
+Options:
+    -h|--help           Help
+    -d|--outdir         Output directory
+         
+Examples:
+    computeDistMat.sh -d out -- contig_1.fa 
+
+Dependancies:
+    R{seqinr}
+
+Date:
+    2015/07/27
+
+Author:
+    Jordi Abante <abante.jordi@gmail.com>
+    https://jordiabante.wordpress.com
