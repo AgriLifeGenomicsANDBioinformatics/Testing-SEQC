@@ -1,1 +1,1 @@
-../src/plotDendrogram/plotDendrogram.sh
+../src/methods/plotDendrogram/plotDendrogram.sh

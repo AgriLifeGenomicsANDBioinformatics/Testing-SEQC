@@ -1,1 +1,1 @@
-../src/parseLogfile/parseLogfile.sh
+../src/misc/parseLogfile/parseLogfile.sh

@@ -1,0 +1,1 @@
+../src/methods/collapseDistanceMatrices/collapseDistanceMatrices.sh

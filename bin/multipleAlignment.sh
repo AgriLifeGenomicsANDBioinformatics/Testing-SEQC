@@ -1,1 +1,1 @@
-../src/multipleAlignment/multipleAlignment.sh
+../src/methods/multipleAlignment/multipleAlignment.sh
