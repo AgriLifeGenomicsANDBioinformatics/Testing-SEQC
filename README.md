@@ -1,8 +1,3 @@
-Project description
--------------------
-
-TODO: Write a project description
-
 Installation
 ------------------
 
