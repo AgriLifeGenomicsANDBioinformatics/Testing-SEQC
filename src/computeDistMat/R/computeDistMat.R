@@ -18,13 +18,6 @@ for(i in 1:length(fasta)){
     }
 }
 
-# Code the nucleotides
-all_samples<-replace(all_samples,all_samples=="-",0)
-all_samples<-replace(all_samples,all_samples=="a",1)
-all_samples<-replace(all_samples,all_samples=="c",2)
-all_samples<-replace(all_samples,all_samples=="u",3)
-all_samples<-replace(all_samples,all_samples=="g",4)
-
 # Compute the Levenshtein distance matrix
 distance_matrix<-adist(all_samples)
 
