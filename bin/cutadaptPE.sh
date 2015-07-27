@@ -1,1 +1,1 @@
-../src/cutadaptPE/cutadaptPE.sh
+../src/preprocess/cutadaptPE/cutadaptPE.sh

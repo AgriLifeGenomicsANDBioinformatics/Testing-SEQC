@@ -1,1 +1,1 @@
-../src/filteringPE/filteringPE.sh
+../src/preprocess/filteringPE/filteringPE.sh

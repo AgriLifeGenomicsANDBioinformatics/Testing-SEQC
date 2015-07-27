@@ -1,1 +1,1 @@
-../src/refEvalPE/refEvalPE.sh
+../src/assembly/refEvalPE/refEvalPE.sh

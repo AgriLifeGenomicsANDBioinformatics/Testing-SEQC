@@ -1,1 +1,1 @@
-../src/rsemEvalPE/rsemEvalPE.sh
+../src/assembly/rsemEvalPE/rsemEvalPE.sh

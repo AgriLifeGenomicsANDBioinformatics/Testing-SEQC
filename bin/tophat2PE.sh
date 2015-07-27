@@ -1,1 +1,1 @@
-../src/tophat2PE/tophat2PE.sh
+../src/assembly/tophat2PE/tophat2PE.sh

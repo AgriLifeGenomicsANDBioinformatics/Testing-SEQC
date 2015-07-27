@@ -1,1 +1,1 @@
-../src/cegma/cegma.sh
+../src/assembly/cegma/cegma.sh
