@@ -11,6 +11,12 @@ Options:
 Examples:
     collapseDistanceMatrixes.sh -d out -- contig_1_ma_dm.txt contig_2_ma_dm.txt contig_3_ma_dm.txt
     collapseDistanceMatrixes.sh -d out -- <(cat list.txt)
+
+Upstream:
+    computeDistanceMatrix.sh
+
+Downstream:
+    plotDendrogram.sh
     
 Date:
     2015/07/27

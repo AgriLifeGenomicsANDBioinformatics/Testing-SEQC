@@ -55,4 +55,4 @@ outfile="${outdir}/${prefix}_dm.txt"
 mkdir -p "$outdir"
 
 # R command
-Rscript "${script_absdir}/R/${script_name}.R" "$@" "$outfile" # &>/dev/null
+Rscript "${script_absdir}/R/${script_name}.R" "$@" "$outfile"  &>/dev/null

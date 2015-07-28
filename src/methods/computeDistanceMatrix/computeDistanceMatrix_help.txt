@@ -14,6 +14,12 @@ Examples:
 Dependancies:
     R{seqinr}
 
+Upstream:
+    multipleAlignment.sh
+
+Downstream:
+    collapseDistanceMatrices.sh
+
 Date:
     2015/07/27
 
