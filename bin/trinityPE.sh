@@ -1,0 +1,1 @@
+../src/assembly/trinityPE/trinityPE.sh
