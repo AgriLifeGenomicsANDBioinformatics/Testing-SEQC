@@ -1,1 +1,1 @@
-../src/misc/catList/catList.sh
+../src/miscellaneous/catList/catList.sh
