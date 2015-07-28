@@ -19,14 +19,13 @@ for(i in 1:length(fasta)){
 }
 
 # Code the nucleotides
+# Need to think of a way to not bias the classifier
+# E.g. a C instead of an A is less penalyzed than a G.
+# Maybe it would be a good idea to implement something like the
+# penalty matrices in the alignments.
 all_samples<-replace(all_samples,all_samples=="-",0)
 all_samples<-replace(all_samples,all_samples=="a",1)
 all_samples<-replace(all_samples,all_samples=="c",2)
 all_samples<-replace(all_samples,all_samples=="u",3)
 all_samples<-replace(all_samples,all_samples=="g",4)
 
-# Compute the Levenshtein distance matrix
-distance_matrix<-dist(t(all_samples),method="manhattan")
-
-# Print output
-write.table(as.matrix(distance_matrix),sep="\t",file=args[2],quote=FALSE)
