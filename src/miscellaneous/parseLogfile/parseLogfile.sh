@@ -68,5 +68,4 @@ do
   printf "\t$final_reads"
   # New line
   printf "\n"
-done >> "summary_${prefix}.log"
-
+done >> "summary_${prefix}.txt"
