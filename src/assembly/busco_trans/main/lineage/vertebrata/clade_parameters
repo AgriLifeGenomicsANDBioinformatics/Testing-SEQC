@@ -1,0 +1,6 @@
+#Vertebrata Clade parameters for BUSCOS
+Z	143785
+sp1	generic
+sp2	human
+sp3	chicken
+flank	20000

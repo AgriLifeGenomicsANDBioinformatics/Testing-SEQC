@@ -1,0 +1,6 @@
+#Metazoa Clade parameters for BUSCOS
+Z	41317
+sp1	generic
+sp2	fly
+sp3	human
+flank	10000

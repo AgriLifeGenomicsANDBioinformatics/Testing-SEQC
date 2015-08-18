@@ -1,0 +1,12 @@
+#Summarized BUSCO benchmarking for file: /Users/jordi/code/linux/bin/rna_seq/src/assembly/busco_trans/main/assembly/transcriptome2.fasta
+#BUSCO was run in mode: trans
+
+Summarized benchmarks in BUSCO notation:
+	C:0.0%[D:0.0%],F:0.0%,M:99%,n:3023
+
+Representing:
+	1	Complete Single-copy BUSCOs
+	0	Complete Duplicated BUSCOs
+	0	Fragmented BUSCOs
+	3022	Missing BUSCOs
+	3023	Total BUSCO groups searched

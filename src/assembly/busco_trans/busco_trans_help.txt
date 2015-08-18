@@ -1,0 +1,29 @@
+Description:
+    Evaluates de quality of an assembly using a set of orthologous genes.
+
+Usage:
+    busco_trans.sh  [OPTIONS]  -- assembly.fasta
+
+Options:
+    -h--help                Help.
+    -d--outdir              Output directory. Default: $PWD.
+    -t--threads             Threads used. Default: 1.
+
+Examples:
+    busco_trans.sh -t 4 -d out -- assembly/transcriptome1.fa
+
+Upstream:
+    seecerPE.sh
+
+Dependancies:
+    BUSCO
+
+Notes:
+    - Make sure that contigs are not named with the character "|".
+
+Date:
+    2015/08/17
+
+Author:
+    Jordi Abante <abante.jordi@gmail.com>
+    https://jordiabante.wordpress.com
