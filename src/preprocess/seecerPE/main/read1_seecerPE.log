@@ -8,130 +8,28 @@ Read 2 = reads/read1_r2.fastq
 ------------------------
 ++ Step 1: Replacing Ns ... and stripping off read IDs
 
+/usr/local/src/SEECER/bin/run_seecer.sh: line 153:  2356 Segmentation fault: 11  ${BINDIR}/random_sub_N $RS_ARGS
 ++ Step 2: Running JELLYFISH to count kmers ...
 
+terminate called after throwing an instance of 'jellyfish::file_parser::FileParserError'
+  what():  Empty input file 'reads/read1_r1.fastq_N': Undefined error: 0
+/usr/local/src/SEECER/bin//run_jellyfish.sh: line 11:  2366 Abort trap: 6           $JF count -m $3 -o $TMPDIR/jf_tmp -c 3 -s 10000000 -t 32 --both-strands $6 $7
+ls: cannot access /Users/jordi/code/linux/bin/rna_seq/src/preprocess/seecerPE/main/read1/jf_tmp_*: No such file or directory
+Error: Requires at least 2 arguments.
+Usage: jellyfish merge [options] input:string+
+Use --help for more information
+rm: cannot remove '/Users/jordi/code/linux/bin/rna_seq/src/preprocess/seecerPE/main/read1/jf_tmp_*': No such file or directory
+terminate called after throwing an instance of 'jellyfish::compacted_hash::ErrorReading'
+  what():  '/Users/jordi/code/linux/bin/rna_seq/src/preprocess/seecerPE/main/read1/jf_merged_20': File truncated
+/usr/local/src/SEECER/bin//run_jellyfish.sh: line 23:  2379 Abort trap: 6           $JF dump --lower-count=$LCOUNT -o $2 -c $TMPDIR/jf_merged_$3
+rm: cannot remove '/Users/jordi/code/linux/bin/rna_seq/src/preprocess/seecerPE/main/read1/jf_merged_20': No such file or directory
 ++ Step 3: Correcting errors with SEECER ... Your reads are in good hands!
 -----------------------------------------------------------------------
- *** Start time:  Thu Jul 23 11:04:37 CDT 2015
-Total Reads 49692
-Allocating space
-Processed 0 grams
- SKIPPING AAAAAAAAAAAAAAAAAAAA
-Processed 0 grams
- SKIPPING AAAAAAAAAAAAAAAAAATA
- SKIPPING AAAAAAAAATAAAAAAAAAA
- SKIPPING AAAAAAAAAAAAAAAATAAA
- SKIPPING AAAAAAAAAATAAAAAAAAA
- SKIPPING AAATAAAAAAAAAAAAAAAA
- SKIPPING AAAAAAAGAAAAAAAAAAAA
- SKIPPING AAGAAAAAAAAAAAAAAAAA
- SKIPPING AAAAAAAAAAAAAAAAGAAA
- SKIPPING AAAAAAAAAAAAAAAACAAA
- SKIPPING AAAAAAAAAAAAAAAAAAAT
- SKIPPING ACAAAAAAAAAAAAAAAAAA
- SKIPPING AAAAAAAAAAAAAAAAAAAC
- SKIPPING AAAAAAAATAAAAAAAAAAA
- SKIPPING AAAAAAAAAAATAAAAAAAA
- SKIPPING AAAAAAAAAAAAAAAAAAGA
- SKIPPING AAAAAAAAAAAAAAAAAACA
- SKIPPING AAAAAAATAAAAAAAAAAAA
- SKIPPING AAAAAAAAAAAAAAAAAAAG
- SKIPPING AAAAAAACAAAAAAAAAAAA
- SKIPPING AAAAAAAAAAAAAGAAAAAA
- SKIPPING AAAAATAAAAAAAAAAAAAA
- SKIPPING AAAAAAAAAAAACAAAAAAA
- SKIPPING AAAAAATAAAAAAAAAAAAA
- SKIPPING AAAAAAAACAAAAAAAAAAA
- SKIPPING AAAAAAAAAAAAAACAAAAA
- SKIPPING CAAAAAAAAAAAAAAAAAAA
- SKIPPING AAAAAAAAAACAAAAAAAAA
- SKIPPING AATAAAAAAAAAAAAAAAAA
- SKIPPING AAAAAAAAAAGAAAAAAAAA
- SKIPPING AAAAGAAAAAAAAAAAAAAA
- SKIPPING AACAAAAAAAAAAAAAAAAA
- SKIPPING AAAAAAAAAAAAAAATAAAA
- SKIPPING AAAAAAAAAAAAAAGAAAAA
- SKIPPING AAAAAAAAGAAAAAAAAAAA
- SKIPPING AAAAAAAAAAAAAAAAAGAA
- SKIPPING AGAAAAAAAAAAAAAAAAAA
- SKIPPING AAAATAAAAAAAAAAAAAAA
- SKIPPING AAAAAAAAAAAATAAAAAAA
- SKIPPING AAAAAGAAAAAAAAAAAAAA
- SKIPPING ATAAAAAAAAAAAAAAAAAA
- SKIPPING AAAAAACAAAAAAAAAAAAA
- SKIPPING AAAAAAAAAAAAAAAGAAAA
- SKIPPING AAAAAAAAAGAAAAAAAAAA
- SKIPPING AAAAAAAAACAAAAAAAAAA
- SKIPPING AAAAAAAAAAAAAAAAACAA
- SKIPPING GAAAAAAAAAAAAAAAAAAA
- SKIPPING AAAAAAAAAAACAAAAAAAA
- SKIPPING AAAAAAAAAAAAAAAAATAA
- SKIPPING AAAAAAAAAAAAACAAAAAA
- SKIPPING AAAAACAAAAAAAAAAAAAA
- SKIPPING TAAAAAAAAAAAAAAAAAAA
- SKIPPING AAAAAAAAAAAAGAAAAAAA
- SKIPPING AAAAAAAAAAAAAAACAAAA
- SKIPPING AAAAAAAAAAAGAAAAAAAA
- SKIPPING AAAACAAAAAAAAAAAAAAA
- SKIPPING AAAAAAGAAAAAAAAAAAAA
- SKIPPING AAAGAAAAAAAAAAAAAAAA
- SKIPPING AAACAAAAAAAAAAAAAAAA
-541722 of indices
-Total 65223 grams 
-541722 of indices
-Finding locations
-Getting qgrams locations of 0 reads
-540077/541722 of indices
-Building Index in 0 seconds.
-done. (0 seconds)
-Total 49692 reads.
-Thu Jul 23 11:04:39 2015 (1437667479) 
- Assigned 15387 reads, 5916 collisions(3835), Processed 5349/49692 seeds = 10.7643 % complete
-Thu Jul 23 11:04:39 2015 (1437667479) 
- Assigned 16396 reads, 7086 collisions(4549), Processed 7670/49692 seeds = 15.4351 % complete
-Thu Jul 23 11:04:39 2015 (1437667479) 
- Assigned 17222 reads, 9128 collisions(5334), Processed 12098/49692 seeds = 24.346 % complete
-Thu Jul 23 11:04:39 2015 (1437667479) 
- Assigned 17363 reads, 9385 collisions(5444), Processed 12951/49692 seeds = 26.0625 % complete
-Thu Jul 23 11:04:39 2015 (1437667479) 
- Assigned 17684 reads, 10642 collisions(5756), Processed 15287/49692 seeds = 30.7635 % complete
-Thu Jul 23 11:04:39 2015 (1437667479) 
- Assigned 17812 reads, 11254 collisions(5885), Processed 16520/49692 seeds = 33.2448 % complete
-Thu Jul 23 11:04:39 2015 (1437667479) 
- Assigned 17846 reads, 11285 collisions(5903), Processed 16746/49692 seeds = 33.6996 % complete
-Thu Jul 23 11:04:39 2015 (1437667479) 
- Assigned 18003 reads, 11946 collisions(6123), Processed 18831/49692 seeds = 37.8954 % complete
-Thu Jul 23 11:04:39 2015 (1437667479) 
- Assigned 18152 reads, 12451 collisions(6261), Processed 20172/49692 seeds = 40.5941 % complete
-Thu Jul 23 11:04:40 2015 (1437667480) 
- Assigned 18241 reads, 12649 collisions(6335), Processed 20937/49692 seeds = 42.1335 % complete
-Thu Jul 23 11:04:40 2015 (1437667480) 
- Assigned 18302 reads, 12953 collisions(6434), Processed 22327/49692 seeds = 44.9308 % complete
-Thu Jul 23 11:04:40 2015 (1437667480) 
- Assigned 18506 reads, 14344 collisions(6697), Processed 25838/49692 seeds = 51.9963 % complete
-Thu Jul 23 11:04:40 2015 (1437667480) 
- Assigned 18569 reads, 14767 collisions(6884), Processed 27320/49692 seeds = 54.9787 % complete
-Thu Jul 23 11:04:40 2015 (1437667480) 
- Assigned 18632 reads, 15193 collisions(6986), Processed 28942/49692 seeds = 58.2428 % complete
-Thu Jul 23 11:04:40 2015 (1437667480) 
- Assigned 18828 reads, 17491 collisions(7378), Processed 35216/49692 seeds = 70.8686 % complete
-Thu Jul 23 11:04:40 2015 (1437667480) 
- Assigned 18959 reads, 18959 collisions(7599), Processed 39197/49692 seeds = 78.8799 % complete
-Thu Jul 23 11:04:40 2015 (1437667480) 
- Assigned 18988 reads, 19375 collisions(7742), Processed 41498/49692 seeds = 83.5104 % complete
-Thu Jul 23 11:04:40 2015 (1437667480) 
- Assigned 19027 reads, 19663 collisions(7830), Processed 42881/49692 seeds = 86.2936 % complete
-Thu Jul 23 11:04:40 2015 (1437667480) 
- Assigned 19076 reads, 20363 collisions(8054), Processed 46252/49692 seeds = 93.0774 % complete
-Thu Jul 23 11:04:40 2015 (1437667480) 
- Assigned 19088 reads, 20538 collisions(8097), Processed 47026/49692 seeds = 94.635 % complete
-Accepted: 19101 Corrected: 5275
-CollidedReads: 21239 BadCollided: 338
-Substitutions: 8056 Deletions: 153 Insertions: 246
-19101 5275
-Total Reads: 49692
-*** Total 27162 contigs.
- *** End time:  Thu Jul 23 11:04:41 CDT 2015
+ *** Start time:  Mon Aug 3 18:53:19 CDT 2015
+seqan-cxx/seqan/sequence/string_base.h:248 Assertion failed : static_cast<TStringPos>(pos) < static_cast<TStringPos>(length(me)) was: 0 >= 0 (Trying to access an element behind the last one!)
+/usr/local/src/SEECER/bin/run_seecer.sh: line 192:  2383 Abort trap: 6           ${BINDIR}/seecer $Read1_N $Read2_N $SEECER_PARAMS --kmer $K -k $TMPDIR/counts_${K}_${LCOUNT} -o $TMPDIR/corrected.fasta
+ *** End time:  Mon Aug 3 18:53:19 CDT 2015
 -----------------------------------------------------------------------
 
 ++ Step 4: Cleaning and putting back original read IDs ... We finish soon!
+/usr/local/src/SEECER/bin/run_seecer.sh: line 209:  2385 Segmentation fault: 11  ${BINDIR}/replace_ids $TMPDIR/corrected.fasta $Reads $Reads_N $Reads_O
