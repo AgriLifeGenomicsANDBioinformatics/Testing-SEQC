@@ -47,7 +47,11 @@ Dependancies
         4. rsem-prepare-reference
         5. bowtie2
     6. busco_trans.sh
-        1. BUSCO_v1.1b1
+        1. Python3.X
+        2. NCBI-BLAST+
+        3. HMMER3.1b2
+        4. EMBOSS
+        5. BUSCO_v1.1b1
     6. cegma.sh
         1. CEGMA
         2. geneid
