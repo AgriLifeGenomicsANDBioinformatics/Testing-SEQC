@@ -15,6 +15,9 @@ Upstream:
     seecerPE.sh
 
 Dependancies:
+    Python3.X
+    NCBI-BLAST+
+    HMMER3.1b2
     BUSCO_v1.1b1
 
 Notes:
