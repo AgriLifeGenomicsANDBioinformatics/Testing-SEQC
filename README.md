@@ -26,33 +26,35 @@ Dependancies
 2. If the machine running the code is Machintosh install coreutils (sudo port install coreutils) as well as: gzip, grep, getopt, mysql, openssl, readline, boost, zlib.
 
 3. The following packages should be available in the path variable in the machine running the code:
-  1. cutadaptPE.sh
-    1. cutadapt
-  2. filteringPE.sh
-    1. bowtie
-    2. flexbar
-    3. samtools
-  3. seecerPE.sh
-    1. SEECER
-    2. jellyfish
-    3. seqan
-  4. rsemEvalPE.sh
-    1. rsem-eval-calculate-score
-    2. rsem-eval-estimate-transcript-length-distribution
-    3. bowtie
-  5. refEvalPE.sh
-    1. blat
-    2. ref-eval
-    3. rsem-calculate-expression
-    4. rsem-prepare-reference
-    5. bowtie2
-  6. cegma.sh
-    1. CEGMA
-    2. geneid
-    3. genewise
-  7. tophat2PE.sh
-    1. bowtie2
-    2. tophat2
+    1. cutadaptPE.sh
+        1. cutadapt
+    2. filteringPE.sh
+        1. bowtie
+        2. flexbar
+        3. samtools
+    3. seecerPE.sh
+        1. SEECER
+        2. jellyfish
+        3. seqan
+    4. rsemEvalPE.sh
+        1. rsem-eval-calculate-score
+        2. rsem-eval-estimate-transcript-length-distribution
+        3. bowtie
+    5. refEvalPE.sh
+        1. blat
+        2. ref-eval
+        3. rsem-calculate-expression
+        4. rsem-prepare-reference
+        5. bowtie2
+    6. busco_trans.sh
+        1. BUSCO_v1.1b1
+    6. cegma.sh
+        1. CEGMA
+        2. geneid
+        3. genewise
+    7. tophat2PE.sh
+        1. bowtie2
+        2. tophat2
 
 Usage
 -----------------
@@ -84,6 +86,10 @@ Usage
 ####refEvalPE.sh
 
           refEvalPE.sh [OPTIONS] -- ASSEMBLY REFERENCE INPUTPAIR1 INPUTPAIR2  OUTPUT_DIR
+
+####busco_trans.sh
+
+          busco_trans.sh [OPTIONS] -- ASSEMBLY OUTPUT_DIR
 
 ####cegma.sh
 
