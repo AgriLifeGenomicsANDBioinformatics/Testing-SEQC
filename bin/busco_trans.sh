@@ -1,0 +1,1 @@
+../src/assembly/busco_trans/busco_trans.sh
