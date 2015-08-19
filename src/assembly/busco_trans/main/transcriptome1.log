@@ -48,3 +48,53 @@ Total BUSCOs partially recovered (>2 sigma) :  0
 Total groups searched: 3023
 Total BUSCOs not found:  3022
 Total running time:   51.55588507652283 seconds
+BUSCO_v1.1b1.py -in /Users/jordi/code/linux/bin/rna_seq/src/assembly/busco_trans/main/assembly/transcriptome1.fa -l /Users/jordi/code/linux/bin/rna_seq/src/assembly/busco_trans/main/lineage/vertebrata -o transcriptome1 -f -c 4 -m transcriptome
+
+
+Building a new DB, current time: 08/19/2015 10:57:49
+New DB name:   /Users/jordi/code/linux/bin/rna_seq/src/assembly/busco_trans/main/out/transcriptome1/transcriptome1
+New DB title:  /Users/jordi/code/linux/bin/rna_seq/src/assembly/busco_trans/main/assembly/transcriptome1.fa
+Sequence type: Nucleotide
+Keep Linkouts: T
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 71 sequences in 0.017956 seconds.
+vertebrata
+*** Running tBlastN ***
+*** Getting coordinates for candidate transcripts! ***
+*** Extracting candidate transcripts! ***
+TR9_c0_g1_i1transcriptome1_.temp w
+TR11_c0_g1_i1transcriptome1_.temp w
+TR11_c0_g2_i1transcriptome1_.temp w
+TR11_c0_g3_i1transcriptome1_.temp w
+TR13_c0_g1_i1transcriptome1_.temp w
+TR13_c0_g1_i2transcriptome1_.temp w
+TR14_c0_g1_i1transcriptome1_.temp w
+TR14_c0_g1_i2transcriptome1_.temp w
+TR15_c0_g1_i1transcriptome1_.temp w
+TR17_c0_g2_i1transcriptome1_.temp w
+TR17_c0_g2_i3transcriptome1_.temp w
+TR17_c0_g2_i4transcriptome1_.temp w
+TR18_c0_g1_i1transcriptome1_.temp w
+TR22_c0_g1_i1transcriptome1_.temp w
+Translating candidate transcripts !
+TR11_c0_g1_i1transcriptome1_.temp
+TR11_c0_g2_i1transcriptome1_.temp
+TR11_c0_g3_i1transcriptome1_.temp
+TR13_c0_g1_i1transcriptome1_.temp
+TR13_c0_g1_i2transcriptome1_.temp
+TR14_c0_g1_i1transcriptome1_.temp
+TR14_c0_g1_i2transcriptome1_.temp
+TR15_c0_g1_i1transcriptome1_.temp
+TR17_c0_g2_i1transcriptome1_.temp
+TR17_c0_g2_i3transcriptome1_.temp
+TR17_c0_g2_i4transcriptome1_.temp
+TR18_c0_g1_i1transcriptome1_.temp
+TR22_c0_g1_i1transcriptome1_.temp
+TR9_c0_g1_i1transcriptome1_.temp
+*** Running HMMER to confirm transcript orthology ***
+Total complete BUSCOs found in assembly (<2 sigma) :  1	(0 duplicated).
+Total BUSCOs partially recovered (>2 sigma) :  0
+Total groups searched: 3023
+Total BUSCOs not found:  3022
+Total running time:   52.98685598373413 seconds

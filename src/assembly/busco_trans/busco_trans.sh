@@ -12,7 +12,7 @@ if [ $# -eq 0 ]
         exit 1
 fi
 
-TEMP=$(getopt -o ht:d: -l help,threads:.outdir: -n "$script_name.sh" -- "$@")
+TEMP=$(getopt -o ht: -l help,threads: -n "$script_name.sh" -- "$@")
 
 if [ $? -ne 0 ]
 then
@@ -24,7 +24,6 @@ eval set -- "$TEMP"
 
 # Defaults
 threads=1
-outdir="$PWD"
 
 # Options
 while true
@@ -36,10 +35,6 @@ do
       ;;
     -t|--threads)	
       threads="$2"
-      shift 2
-      ;;
-    -d|--outdir)	
-      outdir="$2"
       shift 2
       ;;
    --)
@@ -55,6 +50,7 @@ done
 
 # Read input files
 transcriptome="$1"
+outdir="$2"
 
 # Setting some file/dirnames
 transcriptome_basename="$(basename "$transcriptome")"
