@@ -25,11 +25,13 @@
 
 # Libraries
 use strict;
-use Compress::Zlib;
 
 # Read arguments
 my $scriptname = $0;
-my $transcript_file = @ARGV[0];
+my $transcript_file= @ARGV[0];
+my $transcript_name= @ARGV[0];
+$transcript_name =~ s{.*/}{};      # removes path  
+$transcript_name =~ s{\.[^.]+$}{}; # removes extension
 my $output_prefix = @ARGV[1];
 
 # Variables
@@ -39,7 +41,7 @@ my %transcript=();
 ## Main
 read_transcript();  # Read in the assembly
 filter_data();      # Select a contig per each exon combination
-generate_files();   # Generate a file for each existant combination with oen contig
+generate_files();   # Generate a file for each existant combination with one contig
 
 ## Read in the transcript into hash table
 sub read_transcript{
@@ -58,7 +60,6 @@ sub read_transcript{
             $transcript{$contig}=$transcript{$contig} . $line;
         }
     }
-    #foreach(keys %transcript){print "$_\n$transcript{$_}\n"};
 }
 ## Sub to filter stdin
 sub filter_data{
@@ -98,7 +99,7 @@ sub generate_files{
         {
             my $filename = join('',$output_prefix,$key,".fa");
             open(my $fh, '>', $filename) or die "Could not open file '$filename' $!";
-            print $fh ">$contig\n$transcript{$contig}\n";
+            print $fh ">${transcript_name}_${contig}\n$transcript{$contig}\n";
             close $fh;
         }
     }

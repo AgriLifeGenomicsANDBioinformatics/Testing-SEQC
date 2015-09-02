@@ -85,4 +85,3 @@ blastn -outfmt 6 -num_threads "$threads" -subject "$exon_file" \
 
 # Done
 echo "$(date): Done." | tee -a "$logfile"
-exit 1

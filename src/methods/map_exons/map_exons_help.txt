@@ -1,5 +1,5 @@
 Description:
-    Multiple alignment between transcriptome and exon database.
+    Map the exons found in the input transcriptome.
 
 Usage:
     map_exons.sh  [OPTIONS]  -- TRANSCRIPTOME EXONS
