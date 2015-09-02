@@ -3,20 +3,3 @@ Statistics:
 Trinity Version:      v2.0.6
 Compiler:             Intel
 Trinity Parameters:   --normalize_reads --output trinity_out --seqType fq --max_memory 4G --left reads_r1.fastq --right reads_r2.fastq --CPU 3
-Paired mode
- Input data
-  Left.fasta    2 MByte
-  Right.fasta   2 MByte
-  Number of unique KMERs: 458893
-  Number of reads:        0 Output data
-  Trinity.fasta 0 MByte
-
-Runtime
-=======
-Start:       Sun Jun 21 15:34:02 CDT 2015
-End:         Sun Jun 21 15:37:23 CDT 2015
-Trinity   201 seconds
-  Inchworm   30 seconds
-  Chrysalis  -1434918897 seconds
-  Butterfly  0 seconds
-  Rest       1434919068 seconds

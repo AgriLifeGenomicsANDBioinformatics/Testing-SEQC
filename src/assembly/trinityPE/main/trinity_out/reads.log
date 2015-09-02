@@ -1,0 +1,41 @@
+Trinity version: v2.0.6
+-currently using the latest production release of Trinity.
+
+Wednesday, August 19, 2015: 11:25:32	CMD: java -Xmx64m -jar /usr/local/src/trinityrnaseq-2.0.6/util/support_scripts/ExitTester.jar 0
+Wednesday, August 19, 2015: 11:25:32	CMD: java -Xmx64m -jar /usr/local/src/trinityrnaseq-2.0.6/util/support_scripts/ExitTester.jar 1
+
+
+----------------------------------------------------------------------------------
+-------------- Trinity Phase 1: Clustering of RNA-Seq Reads  ---------------------
+----------------------------------------------------------------------------------
+
+---------------------------------------------------------------
+------------ In silico Read Normalization ---------------------
+-- (Removing Excess Reads Beyond 50 Coverage --
+-- /Users/jordi/code/linux/bin/rna_seq/src/assembly/trinityPE/main/trinity_out/insilico_read_normalization --
+---------------------------------------------------------------
+
+Wednesday, August 19, 2015: 11:25:33	CMD: /usr/local/src/trinityrnaseq-2.0.6/util/insilico_read_normalization.pl --seqType fq --JM 4G  --max_cov 50 --CPU 3 --output /Users/jordi/code/linux/bin/rna_seq/src/assembly/trinityPE/main/trinity_out/insilico_read_normalization --left /Users/jordi/code/linux/bin/rna_seq/src/assembly/trinityPE/main/reads_r1.fastq --right /Users/jordi/code/linux/bin/rna_seq/src/assembly/trinityPE/main/reads_r2.fastq --pairs_together --PARALLEL_STATS  
+Converting input files. (both directions in parallel)left file exists, nothing to doright file exists, nothing to do-------------------------------------------
+----------- Jellyfish  --------------------
+-- (building a k-mer catalog from reads) --
+-------------------------------------------
+
+Done converting input files.CMD: /usr/local/src/trinityrnaseq-2.0.6/util/..//Inchworm/bin/fastaToKmerCoverageStats --reads left.fa --kmers jellyfish.K25.min2.kmers.fa --kmer_size 25  --num_threads 3  --DS  > left.fa.K25.stats
+CMD: /usr/local/src/trinityrnaseq-2.0.6/util/..//Inchworm/bin/fastaToKmerCoverageStats --reads right.fa --kmers jellyfish.K25.min2.kmers.fa --kmer_size 25  --num_threads 3  --DS  > right.fa.K25.stats
+dyld: Library not loaded: /opt/local/lib/libgcc/libgomp.1.dylib
+  Referenced from: /usr/local/src/trinityrnaseq-2.0.6/util/..//Inchworm/bin/fastaToKmerCoverageStats
+  Reason: image not found
+dyld: Library not loaded: /opt/local/lib/libgcc/libgomp.1.dylib
+  Referenced from: /usr/local/src/trinityrnaseq-2.0.6/util/..//Inchworm/bin/fastaToKmerCoverageStats
+  Reason: image not found
+bash: line 1: 92869 Trace/BPT trap: 5       /usr/local/src/trinityrnaseq-2.0.6/util/..//Inchworm/bin/fastaToKmerCoverageStats --reads left.fa --kmers jellyfish.K25.min2.kmers.fa --kmer_size 25 --num_threads 3 --DS > left.fa.K25.stats
+Thread 3 terminated abnormally: Error, cmd: /usr/local/src/trinityrnaseq-2.0.6/util/..//Inchworm/bin/fastaToKmerCoverageStats --reads left.fa --kmers jellyfish.K25.min2.kmers.fa --kmer_size 25  --num_threads 3  --DS  > left.fa.K25.stats died with ret 34048 at /usr/local/src/trinityrnaseq-2.0.6/util/insilico_read_normalization.pl line 727.
+Error, thread exited with error Error, cmd: /usr/local/src/trinityrnaseq-2.0.6/util/..//Inchworm/bin/fastaToKmerCoverageStats --reads left.fa --kmers jellyfish.K25.min2.kmers.fa --kmer_size 25  --num_threads 3  --DS  > left.fa.K25.stats died with ret 34048 at /usr/local/src/trinityrnaseq-2.0.6/util/insilico_read_normalization.pl line 727.
+
+bash: line 1: 92872 Trace/BPT trap: 5       /usr/local/src/trinityrnaseq-2.0.6/util/..//Inchworm/bin/fastaToKmerCoverageStats --reads right.fa --kmers jellyfish.K25.min2.kmers.fa --kmer_size 25 --num_threads 3 --DS > right.fa.K25.stats
+Thread 4 terminated abnormally: Error, cmd: /usr/local/src/trinityrnaseq-2.0.6/util/..//Inchworm/bin/fastaToKmerCoverageStats --reads right.fa --kmers jellyfish.K25.min2.kmers.fa --kmer_size 25  --num_threads 3  --DS  > right.fa.K25.stats died with ret 34048 at /usr/local/src/trinityrnaseq-2.0.6/util/insilico_read_normalization.pl line 727.
+Error, thread exited with error Error, cmd: /usr/local/src/trinityrnaseq-2.0.6/util/..//Inchworm/bin/fastaToKmerCoverageStats --reads right.fa --kmers jellyfish.K25.min2.kmers.fa --kmer_size 25  --num_threads 3  --DS  > right.fa.K25.stats died with ret 34048 at /usr/local/src/trinityrnaseq-2.0.6/util/insilico_read_normalization.pl line 727.
+
+Error, 2 threads errored out at /usr/local/src/trinityrnaseq-2.0.6/util/insilico_read_normalization.pl line 914.
+Error, cmd: /usr/local/src/trinityrnaseq-2.0.6/util/insilico_read_normalization.pl --seqType fq --JM 4G  --max_cov 50 --CPU 3 --output /Users/jordi/code/linux/bin/rna_seq/src/assembly/trinityPE/main/trinity_out/insilico_read_normalization --left /Users/jordi/code/linux/bin/rna_seq/src/assembly/trinityPE/main/reads_r1.fastq --right /Users/jordi/code/linux/bin/rna_seq/src/assembly/trinityPE/main/reads_r2.fastq --pairs_together --PARALLEL_STATS   died with ret 7424 at /usr/local/bin/Trinity line 2116.

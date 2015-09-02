@@ -76,12 +76,12 @@ mkdir -p "$trinityOut"
 gunzip "$read1" &
 gunzip "$read2" &
 wait %1 %2 || exit $?
-fqFile1="$(basename $read1 .gz)"
-fqFile2="$(basename $read2 .gz)"
+fqFile1="$(basename "$read1" .gz)"
+fqFile2="$(basename "$read2" .gz)"
 
 # Run
 Trinity --normalize_reads --output "$trinityOut" --seqType fq --max_memory \
-  "$maxMem" --left "$fqFile1" --right "$fqFile2" --CPU "$threads" 2>"$trinityOut/$prefix.log"
+  "$maxMem" --left "$fqFile1" --right "$fqFile2" --CPU "$threads" | tee -a "${trinityOut}/${prefix}.log"
 
 # Re-compress fq files
 gzip "$fqFile1" &
