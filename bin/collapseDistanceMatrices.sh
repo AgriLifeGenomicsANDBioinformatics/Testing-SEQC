@@ -1,1 +1,1 @@
-../src/methods/collapseDistanceMatrices/collapseDistanceMatrices.sh
+../src/methods/backup/collapseDistanceMatrices/collapseDistanceMatrices.sh

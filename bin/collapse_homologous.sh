@@ -1,0 +1,1 @@
+../src/methods/collapse_homologous/collapse_homologous.sh

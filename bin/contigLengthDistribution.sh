@@ -1,1 +1,1 @@
-../src/methods/contigLengthDistribution/contigLengthDistribution.sh
+../src/miscellaneous/contigLengthDistribution/contigLengthDistribution.sh

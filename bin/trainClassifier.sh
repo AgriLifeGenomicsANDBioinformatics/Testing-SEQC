@@ -1,1 +1,0 @@
-../src/methods/trainClassifier/trainClassifier.sh
