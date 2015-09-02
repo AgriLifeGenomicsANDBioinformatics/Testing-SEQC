@@ -1,0 +1,23 @@
+Description:
+    Multiple alignment between transcriptome and exon database.
+
+Usage:
+    map_exons.sh  [OPTIONS]  -- TRANSCRIPTOME EXONS
+
+Options:
+    -h--help            Help.
+    -d--outdir          Output directory. Default: PWD.
+    -t--threads         Threads used. Default: 2.
+
+Examples:
+    map_exons.sh -t 16 -d out -- contigs.fa exons.fa
+
+Dependancies:
+    blastn
+
+Date:
+    2015/09/02
+
+Author:
+    Jordi Abante <abante.jordi@gmail.com>
+    https://jordiabante.wordpress.com
