@@ -1,0 +1,1 @@
+../src/methods/multiple_alignment/multiple_alignment.sh
