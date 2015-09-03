@@ -1,0 +1,27 @@
+Description:
+    Multiple sequence alignment.
+
+Usage:
+    multiple_alignment.sh  [OPTIONS]  -- SEQ_FILE
+
+Options:
+    -h--help              Help.
+    -d--outdir            Output directory. Default: PWD.
+    -t--threads           Threads used by DETONATE. Default: 1.
+    -s--sequence_type     Type of sequences aligned. Default: RNA.
+
+Examples:
+    multiple_alignment.sh -t 16 -s RNA -- contigs.fa
+
+Dependancies:
+    clustalo
+
+Notes:
+    - Given an issue with clustalo, the threads should be set to 1.
+
+Date:
+    2015/07/26
+
+Author:
+    Jordi Abante <abante.jordi@gmail.com>
+    https://jordiabante.wordpress.com
