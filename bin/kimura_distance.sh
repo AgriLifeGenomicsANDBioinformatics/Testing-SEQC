@@ -1,0 +1,1 @@
+../src/methods/kimura_distance/kimura_distance.sh
