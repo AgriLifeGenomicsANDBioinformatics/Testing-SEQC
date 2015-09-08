@@ -12,6 +12,12 @@ Options:
 Examples:
     map_exons.sh -t 16 -d out -- contigs.fa exons.fa
 
+Upstream:
+    Trinity
+
+Downstream:
+    collapse_homologous.sh
+
 Dependancies:
     blastn
 

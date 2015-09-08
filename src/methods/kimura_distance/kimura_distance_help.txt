@@ -1,27 +1,25 @@
 Description:
-    Collapse into one file all those contigs from different samples with the same exons combination.
+    Measure Kimura's distance between the sequences in the fasta file.
 
 Usage:
-    collapse_homologous.sh  [OPTIONS]  -- CONTIGS_DIR
+    kimura_distance.sh  [OPTIONS]  -- HOMOLOGOUS_DIR
 
 Options:
     -h--help            Help.
     -d--outdir          Output directory. Default: PWD.
+    -t--threads         Threads used. Default: 2.
 
 Examples:
-    collapse_homologous.sh -d out -- mapped_exons/
+    kimura_distance.sh -t 16 -d out -- homologous/
 
 Upstream:
-    map_exons.sh
-
-Downstream:
     multiple_alignment.sh
 
 Dependancies:
     NA
 
 Date:
-    2015/09/02
+    2015/09/08
 
 Author:
     Jordi Abante <abante.jordi@gmail.com>

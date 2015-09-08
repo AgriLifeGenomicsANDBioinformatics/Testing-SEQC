@@ -6,13 +6,16 @@ abspath_script="$(readlink -f -e "$0")"
 script_absdir="$(dirname "$abspath_script")"
 script_name="$(basename "$0" .sh)"
 
+# Find perl scripts
+perl_script="${script_absdir}/perl/${script_name}.pl"
+
 if [ $# -eq 0 ]
     then
         cat "$script_absdir/${script_name}_help.txt"
         exit 1
 fi
 
-TEMP=$(getopt -o hd:t:s: -l help,outdir:,threads:,sequence_type -n "$script_name.sh" -- "$@")
+TEMP=$(getopt -o hd:t: -l help,outdir:,threads: -n "$script_name.sh" -- "$@")
 
 if [ $? -ne 0 ]
 then
@@ -25,7 +28,6 @@ eval set -- "$TEMP"
 # Defaults
 outdir="$PWD"
 threads=1
-sequence_type="DNA"
 
 # Options
 while true
@@ -43,10 +45,6 @@ do
       threads="$2"
       shift 2
       ;;
-    -s|--sequence_type)	
-      sequence_type="$2"
-      shift 2
-      ;;
     --)
       shift
       break
@@ -59,25 +57,26 @@ do
 done
 
 # Read input files
-sequences_file="$1"
-sequences_name="$(basename "$sequences_file")"
+homologous_input="$1"
+homologous_directory="$(readlink -f "$homologous_input")"
+
+# Get the files to process
+files="$(ls ${homologous_directory})"
 
 # Output file and Logfile
-prefix="${sequences_name%.*}"
-outfile="${outdir}/${prefix}_ma.fa"
+outfile="${outdir}/${prefix}.txt"
 logfile="${PWD}/${prefix}.log"
 
 # Create output directory
 mkdir -p "$outdir"
 touch "$logfile"
 
-# Run
-echo "$(date): Starting multiple alignment ..." | tee -a "$logfile"
-clustalo --threads "$threads" \
-    --seqtype "$sequence_type" \
-    -i "$sequences_file" \
-    -o "$outfile" \
-    2>>"$logfile"
+# Run in parallel
+echo "$(date): Starting with ${threads} threads..." | tee -a "$logfile"
+export homologous_directory
+export perl_script
+echo "${files}" \
+    | xargs -I {} --max-proc "$threads" bash -c ''$perl_script' "${homologous_directory}/"{}'
 
 # Done
 echo "$(date): Done." | tee -a "$logfile"

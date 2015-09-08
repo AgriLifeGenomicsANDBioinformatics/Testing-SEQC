@@ -57,7 +57,7 @@ sub read_transcript{
         }
         else
         {
-            $transcript{$contig}=$transcript{$contig} . $line;
+            $transcript{$contig} .= $line;
         }
     }
 }

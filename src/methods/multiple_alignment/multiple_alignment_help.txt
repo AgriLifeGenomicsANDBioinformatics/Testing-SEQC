@@ -8,10 +8,16 @@ Options:
     -h--help              Help.
     -d--outdir            Output directory. Default: PWD.
     -t--threads           Threads used by DETONATE. Default: 1.
-    -s--sequence_type     Type of sequences aligned. Default: RNA.
+    -s--sequence_type     Type of sequences aligned. Default: DNA.
 
 Examples:
-    multiple_alignment.sh -t 16 -s RNA -- contigs.fa
+    multiple_alignment.sh -t 16 -- contigs.fa
+
+Upstream:
+    collapse_homologous.sh
+
+Downstream:
+    kimura_distance.sh
 
 Dependancies:
     clustalo
