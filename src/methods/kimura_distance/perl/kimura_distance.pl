@@ -30,8 +30,9 @@ use strict;
 my $scriptname = $0;
 my $homologous_file= @ARGV[0];
 my $homologous_name= @ARGV[0];
-$homologous_name =~ s{.*/}{};      # removes path  
-$homologous_name =~ s{\.[^.]+$}{}; # removes extension
+$homologous_name =~ s{.*/}{};       # removes path  
+$homologous_name =~ s{\.[^.]+$}{};  # removes extension
+my $outdir= @ARGV[1];
 
 # Variables
 my %homologous=();  # Hash table with all the contigs in the file
@@ -41,7 +42,8 @@ my $sample_number;  # Number of contigs in the file
 ## Main
 read_homologous();  # Read in the assembly
 distance_matrix();  # Compute Kimura's distance
-print_matrix();     # Print distance matrix
+save_matrix();      # Write matrix in output file
+#print_matrix();     # Print distance matrix
 
 ## Read in the homologous into hash table
 sub read_homologous
@@ -74,10 +76,10 @@ sub read_homologous
 sub distance_matrix
 {
     my $i=0;
-    foreach my $x (keys %homologous)
+    foreach my $x (sort keys %homologous)
     {
         my $j=0;
-        foreach my $y (keys %homologous)
+        foreach my $y (sort keys %homologous)
         {           
             my $dist=pairwise_distance(\@{$homologous{$x}},\@{$homologous{$y}});
             $matrix[$i][$j]=$dist;
@@ -102,15 +104,56 @@ sub pairwise_distance
     return $dist;
 }
 
-## Sub to print output
-sub print_matrix
+## Generate output file
+sub save_matrix
 {
+    # Array with contig IDs
+    my @ids=();
+    # Open output file
+    my $filename = join('',$outdir,"/",$homologous_name,"_dist.txt");
+    open(my $fh, '>', $filename) or die "Could not open file '$filename' $!";
+    # Print first row just IDs
+    print $fh "\t";
+    foreach my $key (sort keys %homologous)
+    {   
+        push @ids,$key;
+        print $fh "$key\t";
+    }
+    print $fh "\n";
+    # Print ID and values for each row
     for(my $row = 0; $row < $sample_number; $row++) 
     {
+        print $fh "$ids[$row]\t";
         for(my $col = 0; $col < $sample_number; $col++) 
         {
-            print "$matrix[$row][$col]\t"
+            print $fh "$matrix[$row][$col]\t";
+        }
+    print $fh "\n";
+    }
+    # Close FH
+    close $fh;
+}
+
+## Sub to print output to STDERR
+sub print_matrix
+{  
+    my @ids=();
+    print STDERR "\t";
+    foreach my $key (sort keys %homologous)
+    {   
+        push @ids,$key;
+        print STDERR "$key\t";
+    }
+    print STDERR "\n";
+    for(my $row = 0; $row < $sample_number; $row++) 
+    {
+        print STDERR "$ids[$row]\t";
+        for(my $col = 0; $col < $sample_number; $col++) 
+        {
+            
+            print STDERR "$matrix[$row][$col]\t"
         }
     print "\n";
     }
 }
+

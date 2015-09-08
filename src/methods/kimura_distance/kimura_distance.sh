@@ -75,8 +75,9 @@ touch "$logfile"
 echo "$(date): Starting with ${threads} threads..." | tee -a "$logfile"
 export homologous_directory
 export perl_script
+export outdir
 echo "${files}" \
-    | xargs -I {} --max-proc "$threads" bash -c ''$perl_script' "${homologous_directory}/"{}'
+    | xargs -I {} --max-proc "$threads" bash -c ''$perl_script' "${homologous_directory}/"{} '${outdir}''
 
 # Done
 echo "$(date): Done." | tee -a "$logfile"

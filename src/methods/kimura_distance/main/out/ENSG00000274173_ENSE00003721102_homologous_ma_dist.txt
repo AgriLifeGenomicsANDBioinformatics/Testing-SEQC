@@ -1,0 +1,4 @@
+	transcript1_contig4	transcript2_contig4	transcript3_contig4	
+transcript1_contig4	0	204	285	
+transcript2_contig4	204	0	81	
+transcript3_contig4	285	81	0	
