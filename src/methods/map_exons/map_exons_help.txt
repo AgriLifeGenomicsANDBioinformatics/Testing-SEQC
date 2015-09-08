@@ -20,6 +20,7 @@ Downstream:
 
 Dependancies:
     blastn
+    bedtools
 
 Date:
     2015/09/02
