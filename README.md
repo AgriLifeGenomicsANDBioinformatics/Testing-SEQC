@@ -1,3 +1,7 @@
+Workflow
+------------------
+![methods_pipeline](https://raw.github.com/AgriLifeGenomicsANDBioinformatics/Testing-SEQC/images/methods_pipeline.png)
+
 Installation
 ------------------
 
