@@ -81,7 +81,15 @@ sub distance_matrix
         my $j=0;
         foreach my $y (sort keys %homologous)
         {           
-            my $dist=pairwise_distance(\@{$homologous{$x}},\@{$homologous{$y}});
+            my $dist=0;
+            if($x ne $y)
+            {
+                $dist=pairwise_distance(\@{$homologous{$x}},\@{$homologous{$y}});
+            } 
+            elsif($i>$j)
+            {
+                $dist=$matrix[$j][$i];
+            }
             $matrix[$i][$j]=$dist;
             $j+=1;
         }
@@ -92,15 +100,56 @@ sub distance_matrix
 ## Compute pairwise distance
 sub pairwise_distance
 {
+    # Input arrays
     my $seq1_ref=shift;
     my $seq2_ref=shift;
     my @seq1=@{$seq1_ref};
     my @seq2=@{$seq2_ref};
-    my $dist=0;
-    foreach (my $i = 0; $i < $#seq1; $i++) 
+    # Distance variables
+    my $p=0;        # Proportion of sites that show transitional differences, i.e. A<=>G or C<=>T
+    my $q=0;        # Proportion of sites that show transversional differences, i.e. [AG]<=>[CT]
+    my $dist=0;     # Kimura's two-parameter distance
+    # Compute p and q
+    foreach (my $i = 0; $i < ($#seq1+1); $i++) 
     {
-        if( @seq1[$i] ne @seq2[$i]){$dist+=1}
+        if((@seq1[$i] =~ /[AG]/) && (@seq2[$i] =~ /[AG]/))
+        {
+            if(@seq1[$i] ne @seq2[$i])
+            {
+                $p++;
+            }
+        } 
+        elsif ((@seq1[$i] =~ /[CT]/) && (@seq2[$i] =~ /[CT]/))
+        {
+            if(@seq1[$i] ne @seq2[$i])
+            {
+                $p++;
+            }
+        } 
+        elsif ((@seq1[$i] =~ /-/) or (@seq2[$i] =~ /-/))
+        {
+            # Deal with indels
+        }
+        else
+        {
+            $q++;
+        }
     }
+    $p/=($#seq1+1);
+    $q/=($#seq1+1);
+    # Compute distance
+    my $arg1=1-2*$p-$q;
+    my $arg2=1-2*$q;
+    # If one of the arguments is zero log=Inf
+    if($arg1 >0 and $arg2 >0)
+    {
+        $dist=-0.5*log($arg1)-0.25*log($arg2);
+    } 
+    else
+    {
+        $dist="inf";
+    }
+    # Return value
     return $dist;
 }
 
@@ -109,7 +158,7 @@ sub save_matrix
 {
     # Array with contig IDs
     my @ids=();
-    # Open output file
+    # Op-en output file
     my $filename = join('',$outdir,"/",$homologous_name,"_dist.txt");
     open(my $fh, '>', $filename) or die "Could not open file '$filename' $!";
     # Print first row just IDs

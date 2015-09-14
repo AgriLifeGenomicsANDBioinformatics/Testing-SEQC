@@ -1,4 +1,0 @@
-	transcript1_contig2	transcript2_contig2	transcript3_contig2	
-transcript1_contig2	0	17	71	
-transcript2_contig2	17	0	62	
-transcript3_contig2	71	62	0	

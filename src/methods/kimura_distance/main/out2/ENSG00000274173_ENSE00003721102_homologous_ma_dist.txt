@@ -1,0 +1,4 @@
+	transcript1_contig4	transcript2_contig4	transcript3_contig4	
+transcript1_contig4	0	0	0	
+transcript2_contig4	0	0	0	
+transcript3_contig4	0	0	0	

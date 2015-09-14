@@ -1,0 +1,9 @@
+test1:
+    * ---transversional
+    * -transitional--
+    * transversional-transversional-transversional-transversional
+    * translational-translational-translational-translational
+test2:
+    * first contig some minor differences
+    * second contig: only differences are indels => dist=0
+
