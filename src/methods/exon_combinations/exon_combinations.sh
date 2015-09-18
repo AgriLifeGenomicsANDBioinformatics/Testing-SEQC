@@ -6,6 +6,9 @@ abspath_script="$(readlink -f -e "$0")"
 script_absdir="$(dirname "$abspath_script")"
 script_name="$(basename "$0" .sh)"
 
+# Find perl scripts
+perl_script="${script_absdir}/perl/${script_name}.pl"
+
 if [ $# -eq 0 ]
     then
         cat "$script_absdir/${script_name}_help.txt"
@@ -60,7 +63,7 @@ transcript_basename="$(basename ${transcript_file})"
 
 # Output file and Logfile
 prefix="${transcript_basename%%.*}"
-outfile="${outdir}/${prefix}_hits.fa"
+prefix_outfile="${outdir}/${prefix}_"
 logfile="${PWD}/${prefix}.log"
 
 # Create output directory
@@ -74,13 +77,12 @@ touch "$logfile"
 # filters the result accoring to some criteria. E.g. if more than one contig have
 # the same exon combination get the one with lowest e-value.
 echo "$(date): Starting blastn ..." | tee -a "$logfile"
-#parallel --block 100k --max-proc "$threads" --recstart '>' --pipe blastn \
-cat "$transcript_file" | parallel --progress --block 100k --max-proc "$threads" --recstart '>' --pipe blastn -evalue 0.0001 \
-    -outfmt 6 \
-    -subject "$exon_file" \
-    -query - \
-    >"$outfile" 2>>"$logfile"
+# parallel --block 100k --recstart '>' --pipe blastn -evalue 0.0001 -db $DB
+blastn -outfmt 6 -num_threads "$threads" -subject "$exon_file" \
+    -query "$transcript_file" 2>>"$logfile" \
+    | cut -f 1,2,11 \
+    | groupBy -g 1 -c 2,3 -o collapse,collapse \
+    | "$perl_script" "$transcript_file" "$prefix_outfile"
 
 # Done
 echo "$(date): Done." | tee -a "$logfile"
-
