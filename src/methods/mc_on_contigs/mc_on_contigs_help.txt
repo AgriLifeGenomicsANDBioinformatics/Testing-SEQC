@@ -1,0 +1,23 @@
+Description:
+    Generate Markov matrix and find analytical Steady State Distribution (SSD). 
+
+Usage:
+    mc_on_contigs.sh  [options]  -- TRANSCRIPTOMES_FOLDER
+
+Options:
+    -h|--help           Help.
+    -d|--outdir         Output directory. Default: $PWD.
+    -t|--threads        Threads used. Default: 2.
+
+Examples:
+    mc_on_contigs.sh -t 1 -d out -- transcriptomes 
+
+Dependancies:
+    - Perl{Algorithm::Combinatorics}
+
+Date:
+    2015/12/02
+
+Author:
+    Jordi Abante <abante.jordi@gmail.com>
+    https://jordiabante.wordpress.com

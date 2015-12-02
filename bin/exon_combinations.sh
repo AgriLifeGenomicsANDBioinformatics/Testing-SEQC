@@ -1,0 +1,1 @@
+../src/methods/exon_combinations/exon_combinations.sh

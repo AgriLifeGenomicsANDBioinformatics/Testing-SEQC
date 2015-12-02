@@ -1,0 +1,1 @@
+../src/methods/mc_on_contigs/mc_on_contigs.sh
