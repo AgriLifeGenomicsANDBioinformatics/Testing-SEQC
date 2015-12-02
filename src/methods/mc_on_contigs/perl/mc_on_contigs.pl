@@ -102,25 +102,24 @@ sub fill_markov_matrix
             my $col=$transition_hash{$seq_2};
             # Fill markov_matrix
             $markov_matrix[$row][$col]+=1; 
-            #print STDERR "$first_codon\t$second_codon\n";
         }
-        # Scale matrix
-        my $sum;
-        for(my $i=0;$i<=$dim;$i++)
+    }
+    # Scale matrix
+    my $sum;
+    for(my $i=0;$i<=$dim;$i++)
+    {
+        $sum=0;
+        # Counts per row
+        for(my $j=0;$j<=$dim;$j++)
         {
-            $sum=0;
-            # Count mutations per row
+            $sum+=$markov_matrix[$i][$j];
+        }
+        # Normalize each row
+        if($sum!=0)
+        {
             for(my $j=0;$j<=$dim;$j++)
             {
-                $sum+=$markov_matrix[$i][$j];
-            }
-            # Normalize each row
-            if($sum!=0)
-            {
-                for(my $j=0;$j<=$dim;$j++)
-                {
-                    $markov_matrix[$i][$j]/=$sum;
-                }
+                $markov_matrix[$i][$j]/=$sum;
             }
         }
     }
