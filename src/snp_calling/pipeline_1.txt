@@ -1,0 +1,13 @@
+bwa aln -t 4 hg19.fa seq1.fastq > 1.sai
+bwa aln -t 4 hg19.fa seq2.fastq > 2.sai
+bwa sampe -r "@RG\tID:exomeID\tLB:exomeLB\tSM:exomeSM\tPL:illumina\tPU:exomePU" hg19.fa 1.sai 2.sai seq1.fastq seq2.fastq > original.sam
+
+java -Xmx5g -jar FixMateInformation.jar I=original.sam O=fixed.sam SO=coordinate VALIDATION_STRINGENCY=LENIENT
+java -Xmx5g -jar SortSam.jar I=fixed.sam SO=coordinate O=first.bam VALIDATION_STRINGENCY=LENIENT CREATE_INDEX=true
+java -Xmx5g -jar MarkDuplicates.jar I=first.bam O=marked.bam METRICS_FILE=metricsFile CREATE_INDEX=true VALIDATION_STRINGENCY=LENIENT REMOVE_DUPLICATES=true
+
+java -Xmx5g -jar GenomeAnalysisTK.jar -nt 4 -T RealignerTargetCreator -R hg19.fa -o intervalsList -I marked.bam -known Mills_and_1000G_gold_standard.indels.hg19.vcf
+java -Xmx5g -jar GenomeAnalysisTK.jar -nt 4 -T IndelRealigner -R hg19.fa -I marked.bam -targetIntervals intervalsList -known Mills_and_1000G_gold_standard.indels.hg19.vcf -o realigned.bam
+java -Xmx5g -jar GenomeAnalysisTK.jar -nt 4 -T CountCovariates -l INFO -R hg19.fa -I realigned.bam -cov ReadGroupCovariate -cov QualityScoreCovariate -cov CycleCovariate -cov DinucCovariate -recalFile recalFile -knownSites dbsnp_135.hg19.vcf
+java -Xmx5g -jar GenomeAnalysisTK.jar -nt 4 -T TableRecalibration -R hg19.fa -I realigned.bam -o recalibrated.bam -recalFile recalFile
+java -Xmx5g -jar GenomeAnalysisTK.jar -nt 4 -T UnifiedGenotyper -R hg19.fa -I recalibrated.bam -o resultSNPs.vcf -D dbsnp_135.hg19.vcf -metrics UniGenMetrics -stand_call_conf 50.0 -stand_emit_conf 10.0 -dcov 1000 -A DepthOfCoverage -A AlleleBalance -L exomes.bed

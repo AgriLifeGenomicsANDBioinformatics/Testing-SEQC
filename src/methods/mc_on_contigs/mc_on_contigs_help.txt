@@ -8,6 +8,7 @@ Options:
     -h|--help           Help.
     -d|--outdir         Output directory. Default: $PWD.
     -t|--threads        Threads used. Default: 2.
+    -k|--kmer_size      k-mer size. Default: 5.
 
 Examples:
     mc_on_contigs.sh -t 1 -d out -- transcriptomes 

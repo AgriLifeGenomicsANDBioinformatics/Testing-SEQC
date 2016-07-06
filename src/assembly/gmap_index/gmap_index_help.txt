@@ -1,0 +1,32 @@
+Description:
+  Wrapper for CEGMA (Core Eukaryotic Genes Mapping).
+
+Usage:
+  cegma.sh  [OPTIONS]  -- ASSEMBLY CORE_GENES OUTPUT_DIR
+
+Options:
+  -h--help                Help.
+  -t--threads             Threads used by DETONATE. Default: 1.
+  -i--maxIntron           Introns maximum size. Default: 50.
+
+Examples:
+  cegma.sh -t 3 -- assembly/assembly1.fa coreGenes/coreGenes.fa cegmaPEOut
+
+Upstream:
+  trinityPE.sh
+
+Dependancies:
+  CEGMA
+  genewise
+  geneid
+
+Notes:
+  - The assemblies can be compressed. If that is the case, the file will be compressed after the whole process.
+  - There seems to be a problem trying to parallelize runs with different assemblies and the same core genes file. It is probably better to do it sequencially and increment the number of threads per run instead.
+
+Date:
+  2015/07/02
+
+Author:
+  Jordi Abante <abante.jordi@gmail.com>
+  https://jordiabante.wordpress.com

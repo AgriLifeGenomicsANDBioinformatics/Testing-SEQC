@@ -2,4 +2,4 @@
 set -x
 
 ../busco_trans.sh -t 4 -- assembly/transcriptome1.fa out
-../busco_trans.sh -t 4 -- assembly/transcriptome2.fasta out
+../busco_trans.sh -l bacteria -t 4 -- assembly/transcriptome2.fasta out

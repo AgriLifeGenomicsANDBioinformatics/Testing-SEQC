@@ -3,7 +3,7 @@
 # Copyright (C) 2015 Howard Hughes Medical Institute.
 # Freely distributed under the GNU General Public License (GPLv3).
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# query HMM file:                  /Users/jordi/code/linux/bin/rna_seq/src/assembly/busco_trans/main/lineage/vertebrata/hmms/BUSCOvEOG79W3TK.hmm
+# query HMM file:                  /Users/jordi/code/linux/bin/denovo_transcriptome/src/assembly/busco_trans/main/lineage/vertebrata/hmms/BUSCOvEOG79W3TK.hmm
 # target sequence database:        ./run_transcriptome1//translated_proteins/TR9_c0_g1_i1_ts.fas
 # output directed to file:         temp
 # per-dom hits tabular output:     ./run_transcriptome1/hmmer_output/BUSCOvEOG79W3TK.out.1
@@ -35,7 +35,7 @@ Passed Vit filter:                         0  (0); expected 0.0 (0.001)
 Passed Fwd filter:                         0  (0); expected 0.0 (1e-05)
 Initial search space (Z):             143785  [as set by --Z on cmdline]
 Domain search space  (domZ):               0  [number of targets reported over threshold]
-# CPU time: 0.00u 0.00s 00:00:00.00 Elapsed: 00:00:00.00
-# Mc/sec: inf
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 141.38
 //
 [ok]

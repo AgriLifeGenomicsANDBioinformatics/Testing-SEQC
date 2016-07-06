@@ -98,3 +98,68 @@ Total BUSCOs partially recovered (>2 sigma) :  0
 Total groups searched: 3023
 Total BUSCOs not found:  3022
 Total running time:   52.29188513755798 seconds
+BUSCO_v1.1b1.py -in /Users/jordi/code/linux/bin/denovo_transcriptome/src/assembly/busco_trans/main/assembly/transcriptome2.fasta -l /Users/jordi/code/linux/bin/denovo_transcriptome/src/assembly/busco_trans/main/lineage/vertebrata -o transcriptome2 -f -c 4 -m transcriptome
+
+
+Building a new DB, current time: 07/06/2016 20:16:49
+New DB name:   /Users/jordi/code/linux/bin/denovo_transcriptome/src/assembly/busco_trans/main/out/transcriptome2/transcriptome2
+New DB title:  /Users/jordi/code/linux/bin/denovo_transcriptome/src/assembly/busco_trans/main/assembly/transcriptome2.fasta
+Sequence type: Nucleotide
+Keep Linkouts: T
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 71 sequences in 0.0131721 seconds.
+vertebrata
+*** Running tBlastN ***
+*** Getting coordinates for candidate transcripts! ***
+*** Extracting candidate transcripts! ***
+TR9_c0_g1_i1transcriptome2_.temp w
+TR11_c0_g1_i1transcriptome2_.temp w
+TR11_c0_g2_i1transcriptome2_.temp w
+TR11_c0_g3_i1transcriptome2_.temp w
+TR13_c0_g1_i1transcriptome2_.temp w
+TR13_c0_g1_i2transcriptome2_.temp w
+TR14_c0_g1_i1transcriptome2_.temp w
+TR14_c0_g1_i2transcriptome2_.temp w
+TR15_c0_g1_i1transcriptome2_.temp w
+TR17_c0_g2_i1transcriptome2_.temp w
+TR17_c0_g2_i3transcriptome2_.temp w
+TR17_c0_g2_i4transcriptome2_.temp w
+TR18_c0_g1_i1transcriptome2_.temp w
+TR22_c0_g1_i1transcriptome2_.temp w
+Translating candidate transcripts !
+TR11_c0_g1_i1transcriptome2_.temp
+TR11_c0_g2_i1transcriptome2_.temp
+TR11_c0_g3_i1transcriptome2_.temp
+TR13_c0_g1_i1transcriptome2_.temp
+TR13_c0_g1_i2transcriptome2_.temp
+TR14_c0_g1_i1transcriptome2_.temp
+TR14_c0_g1_i2transcriptome2_.temp
+TR15_c0_g1_i1transcriptome2_.temp
+TR17_c0_g2_i1transcriptome2_.temp
+TR17_c0_g2_i3transcriptome2_.temp
+TR17_c0_g2_i4transcriptome2_.temp
+TR18_c0_g1_i1transcriptome2_.temp
+TR22_c0_g1_i1transcriptome2_.temp
+TR9_c0_g1_i1transcriptome2_.temp
+*** Running HMMER to confirm transcript orthology ***
+Total complete BUSCOs found in assembly (<2 sigma) :  1	(0 duplicated).
+Total BUSCOs partially recovered (>2 sigma) :  0
+Total groups searched: 3023
+Total BUSCOs not found:  3022
+Total running time:   58.5868558883667 seconds
+BUSCO_v1.1b1.py -in /Users/jordi/code/linux/bin/denovo_transcriptome/src/assembly/busco_trans/main/assembly/transcriptome2.fasta -l /Users/jordi/code/linux/bin/denovo_transcriptome/src/assembly/busco_trans/main/lineage/bacteria -o transcriptome2 -f -c 4 -m transcriptome
+
+
+Building a new DB, current time: 07/06/2016 20:20:02
+New DB name:   /Users/jordi/code/linux/bin/denovo_transcriptome/src/assembly/busco_trans/main/out/transcriptome2/transcriptome2
+New DB title:  /Users/jordi/code/linux/bin/denovo_transcriptome/src/assembly/busco_trans/main/assembly/transcriptome2.fasta
+Sequence type: Nucleotide
+Keep Linkouts: T
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 71 sequences in 0.00752592 seconds.
+bacteria
+*** Running tBlastN ***
+*** Getting coordinates for candidate transcripts! ***
+*** Extracting candidate transcripts! ***

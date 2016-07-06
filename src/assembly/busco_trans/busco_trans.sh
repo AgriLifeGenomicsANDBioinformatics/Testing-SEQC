@@ -12,7 +12,7 @@ if [ $# -eq 0 ]
         exit 1
 fi
 
-TEMP=$(getopt -o ht: -l help,threads: -n "$script_name.sh" -- "$@")
+TEMP=$(getopt -o ht:l: -l help,threads:,lineage: -n "$script_name.sh" -- "$@")
 
 if [ $? -ne 0 ]
 then
@@ -24,6 +24,7 @@ eval set -- "$TEMP"
 
 # Defaults
 threads=1
+lineage="vertebrata"
 
 # Options
 while true
@@ -35,6 +36,10 @@ do
       ;;
     -t|--threads)	
       threads="$2"
+      shift 2
+      ;;
+    -l|--lineage)	
+      lineage="$2"
       shift 2
       ;;
    --)
@@ -63,7 +68,7 @@ mkdir -p "${outdir}/${prefix}"
 
 # Run
 cd "${outdir}/${prefix}"
-cmd="BUSCO_v1.1b1.py -in "$transcriptome_path" -l "${script_absdir}/main/lineage/vertebrata" -o "${prefix}" -f -c "$threads" -m "transcriptome""
+cmd="BUSCO_v1.1b1.py -in "$transcriptome_path" -l "${script_absdir}/main/lineage/${lineage}" -o "${prefix}" -f -c "$threads" -m "transcriptome""
 echo "$cmd" | tee -a "$logfile"
 eval "$cmd" | tee -a "$logfile"
 
